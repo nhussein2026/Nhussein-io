@@ -19,65 +19,63 @@ const Navbar = () => {
     };
 
     return (
-        <BrowserRouter>
-            <nav className={style.nav}>
-                {/*small screens  */}
-                <div className={style.menue}>
-                    <TbMenu className={style.menueIcon} onClick={toggleVisiblity} />
-                    <div
-                        className={`${style.sideMenue} ${isVisible ? style.visible : ""}`}
-                    >
-                        {isVisible && (
-                            <div className={style.popMenue}>
-                                <ul className={style.navItemSmallScreen}>
-                                    {
-                                        navLinks &&
-                                        navLinks.map(({ url, name }, i) => (
-                                            <li className={style.navLinks} key={i}>
-                                                <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
-                                                <Link to={url}>{name}</Link>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                        )}
-
-                        <div className={style.menueSocial}>
-                            
+        <nav className={style.nav}>
+            {/*small screens  */}
+            <div className={style.menue}>
+                <TbMenu className={style.menueIcon} onClick={toggleVisiblity} />
+                <div
+                    className={`${style.sideMenue} ${isVisible ? style.visible : ""}`}
+                >
+                    {isVisible && (
+                        <div className={style.popMenue}>
+                            <ul className={style.navItemSmallScreen}>
+                                {
+                                    navLinks &&
+                                    navLinks.map(({ url, name }, i) => (
+                                        <li className={style.navLinks} key={i}>
+                                            <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
+                                            <Link to={url}>{name}</Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
                         </div>
+                    )}
+
+                    <div className={style.menueSocial}>
+
                     </div>
                 </div>
+            </div>
 
-                {/* logo Section */}
-                <div className={style.logo}>
-                    <a href="/">
-                        <code className={style.Logo}>Nasser <span className={style.Hussein}>Hussein</span></code>
-                    </a>
-                </div>
+            {/* logo Section */}
+            <div className={style.logo}>
+                <a href="/">
+                    <code className={style.Logo}>Nasser <span className={style.Hussein}>Hussein</span></code>
+                </a>
+            </div>
 
-                {/* large screen */}
-                <div className={style.navItems}>
-                    <ul className={style.navItem}>
-                        {
-                            navLinks &&
-                            navLinks.map(({ url, name }, i) => (
-                                <li className={style.navLinks} key={i}>
-                                    <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
-                                    <Link to={url}>{name}</Link>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
+            {/* large screen */}
+            <div className={style.navItems}>
+                <ul className={style.navItem}>
+                    {
+                        navLinks &&
+                        navLinks.map(({ url, name }, i) => (
+                            <li className={style.navLinks} key={i}>
+                                <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
+                                <Link to={url}>{name}</Link>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
 
-                {/* Resume Button */}
-                <div className={style.resume}>
+            {/* Resume Button */}
+            <div className={style.resume}>
                 <a id={style.resumeButton} target='_blank' href={resume} rel="noopener noreferrer">Resume</a>
-                </div>
+            </div>
 
-            </nav>
-        </BrowserRouter>
+        </nav>
     )
 }
 
