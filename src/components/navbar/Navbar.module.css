@@ -1,0 +1,164 @@
+:root {
+    --first-color: '#7dfcdb';
+    --second-color: '#F4F4F4';
+    --third-color:  '#64ffda';
+    --fourth-color: '#c4c6c8';
+
+    --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #131a24;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+
+.Logo {
+    color: #64ffda;
+    margin: 10px;
+    font-family: "Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+    font-size: 25px;
+}
+
+
+.menueIcon {
+    color: #67cee2 !important;
+}
+
+.sideMenue {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 290px;
+    height: 100vh;
+    background-color: #c4c6c8;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.visible {
+    transform: translateX(0);
+}
+
+.popMenue {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navLinks {
+    margin: 10px;
+    padding: 10px;
+}
+
+.menue {
+    display: none;
+}
+
+.navItems {
+    font-family: "Roboto mono";
+}
+
+.navItem {
+    display: flex;
+    list-style-type: none;
+    font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, monospace;
+    font-size: 20px !important;
+}
+
+.navItemSmallScreen {
+    list-style-type: none;
+    font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, monospace;
+    font-size: 15px !important;
+}
+
+.itemNum {
+    color: #31f5c7;
+    font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, monospace;
+    /* font-weight: bold; */
+    font-size:20px;
+    padding: 5px;
+    left: -15px;
+}
+
+
+
+.menueSocial {
+    margin: -10px;
+    padding: -10px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Rusume button */
+
+.resume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 39px;
+    width: 82px;
+    margin: 10px;
+    margin-right: 15px;
+    border:1px solid #31f5c7;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+}
+
+.resume:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #131a24;
+        display: flex;
+        justify-content: space-between !important;
+        height: 75px;
+        align-items: center;
+    }
+
+    nav a {
+        font-family: "JetBrains Mono", monospace;
+        color: #1f3e60;
+    }
+
+    .navItems {
+        display: none;
+    }
+
+    .social {
+        display: none;
+    }
+
+    .menue {
+        color: #fff;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 55px;
+        margin: 12px;
+    }
+
+}
