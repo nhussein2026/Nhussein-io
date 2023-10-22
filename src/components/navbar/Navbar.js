@@ -50,9 +50,9 @@ const Navbar = () => {
 
             {/* logo Section */}
             <div className={style.logo}>
-                <a href="/">
+                <Link to='/'>
                     <code className={style.Logo}>Nasser <span className={style.Hussein}>Hussein</span></code>
-                </a>
+                </Link>
             </div>
 
             {/* large screen */}
