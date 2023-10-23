@@ -63,7 +63,7 @@ const Navbar = () => {
                         navLinks.map(({ url, name }, i) => (
                             <li className={style.navLinks} key={i}>
                                 <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
-                                <Link to={url}>{name}</Link>
+                                <Link to={url}>// {name}</Link>
                             </li>
                         ))
                     }

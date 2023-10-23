@@ -91,9 +91,16 @@ nav a {
     color: #31f5c7;
     font-family: SF Mono, Fira Code, Fira Mono, Roboto Mono, monospace;
     /* font-weight: bold; */
-    font-size:20px;
-    padding: 5px;
-    left: -15px;
+    font-size: 15px;
+    width: auto;
+    top: 1.25em;
+    position: absolute;
+    line-height: .1em;
+    display: inline-block;
+    height: auto;
+    opacity: .75;
+    padding-left: 30px; 
+    /* need to make it more professional */
 }
 
 
