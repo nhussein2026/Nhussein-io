@@ -1,0 +1,37 @@
+.social {
+display: flex;
+flex-direction: column-reverse;
+justify-content: flex-start;
+align-items: center;
+padding: 70px;
+padding-bottom: 20px;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialLinks ul{
+    margin: 0;
+    padding: 0;
+}
+
+.socialLinks li  {
+    list-style: none;
+    text-decoration: none;
+    margin: 15px;
+    padding: 6px;
+}
+.icon {
+    color: aliceblue;
+    font-size: 30px;
+}
+
+.line {
+    height: 90px;
+    border-right: 1px solid #F4F4F4;
+    position: absolute;
+    bottom: 0;
+}
