@@ -1,3 +1,22 @@
 .mainContent {
     display: flex;
+    justify-content: space-between;
+}
+
+.socialComponent {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.heroComponent {
+    width: 80%;
+}
+
+.emailComponent {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
 }

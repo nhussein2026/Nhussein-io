@@ -7,9 +7,15 @@ const MainContent = () => {
 
     return (
         <div className={styles.mainContent}>
-            <SocialMedia />
-            <Hero />
-            <EmailSection />
+            <div className={styles.socialComponent}>
+                <SocialMedia />
+            </div>
+            <div className={styles.heroComponent}>
+                <Hero />
+            </div>
+            <div className={styles.emailComponent}>
+                <EmailSection />
+            </div>
         </div>
     )
 }
