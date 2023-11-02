@@ -1,14 +1,16 @@
 .EmailSection {
+    position: fixed;
+    height: 100vh;
     display: flex;
-    /* flex-direction: column-reverse; */
-    justify-content: center;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .emailLine {
-    height: 100px;
+    height: 111px;
     border-right: 3px solid #f4f4f49d;
-    position: absolute;
+    margin-top: 150px;
     bottom: 0;
 }
 
@@ -24,8 +26,6 @@
 
 .email {
     rotate: 90deg;
-    position: absolute;
-    bottom: 250px;
 
 }
 

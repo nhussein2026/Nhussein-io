@@ -10,11 +10,11 @@ const MainContent = () => {
             <div className={styles.socialComponent}>
                 <SocialMedia />
             </div>
-            <div className={styles.heroComponent}>
+            <div className={styles.meddleComponent}>
                 <Hero />
             </div>
             <div className={styles.emailComponent}>
-                <EmailSection />
+                <EmailSection  />
             </div>
         </div>
     )

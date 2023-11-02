@@ -1,10 +1,9 @@
 .social {
-display: flex;
-flex-direction: column-reverse;
-justify-content: flex-start;
-align-items: center;
-padding: 70px;
-padding-bottom: 20px;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 .socialLinks {
@@ -13,17 +12,18 @@ padding-bottom: 20px;
     align-items: center;
 }
 
-.socialLinks ul{
+.socialLinks ul {
     margin: 0;
     padding: 0;
 }
 
-.socialLinks li  {
+.socialLinks li {
     list-style: none;
     text-decoration: none;
     margin: 15px;
     padding: 6px;
 }
+
 .icon {
     color: #f4f4f49d;
     font-size: 30px;
@@ -35,8 +35,6 @@ padding-bottom: 20px;
 }
 
 .line {
-    height: 100px;
+    height: 111px;
     border-right: 3px solid #f4f4f49d;
-    position: absolute;
-    bottom: 0;
 }

@@ -7,10 +7,9 @@
     width: 10%;
     display: flex;
     justify-content: center;
-    margin-bottom: 70px;
 }
 
-.heroComponent {
+.meddleComponent {
     width: 80%;
 }
 

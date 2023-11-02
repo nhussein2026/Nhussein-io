@@ -5,7 +5,6 @@ import { TfiGithub } from 'react-icons/tfi'
 const SocialMedia = () => {
 
     return (
-        <>
             <div className={styles.social}>
                 <div className={styles.line}></div>
                 <div className={styles.socialLinks}>
@@ -26,7 +25,6 @@ const SocialMedia = () => {
                 </ul>
                 </div>
             </div>
-        </>
     )
 }
 
