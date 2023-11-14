@@ -1,0 +1,8 @@
+.comingSoon {
+    margin-top: -3px;
+    margin-left: -9px;
+    overflow: -moz-hidden-unscrollable !important;
+    height: 100vh;
+    background-image: url(../../assets/images/coming-soon.png);
+    filter: blur(5px);
+}
