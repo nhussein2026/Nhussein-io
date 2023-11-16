@@ -25,5 +25,28 @@
   color: #8892b0;
   font-family: Calibre, Inter, "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
   font-size: 20px;
- max-width: 820px;
+  max-width: 820px;
+}
+
+@media (max-width: 640px) {
+  .nhussein {
+    margin: 0;
+    color: #f4f4f4;
+    font-family: Calibre, Inter, "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+    font-size: 35px;
+  }
+
+  .heading {
+    margin: 0;
+    color: #8892b0;
+    font-family: Calibre, Inter, "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+    font-size: 25px;
+  }
+  .intro {
+    margin: 0;
+    color: #8892b0;
+    font-family: Calibre, Inter, "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+    font-size: 15px;
+    max-width: 820px;
+  }
 }

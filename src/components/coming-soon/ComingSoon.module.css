@@ -1,8 +1,23 @@
-.comingSoon {
-    margin-top: -3px;
-    margin-left: -9px;
-    overflow: -moz-hidden-unscrollable !important;
-    height: 100vh;
-    background-image: url(../../assets/images/coming-soon.png);
-    filter: blur(5px);
+
+
+@media only screen and (min-width: 601px) {
+    .comingSoon {
+        margin-top: -3px;
+        margin-left: -9px;
+        overflow: -moz-hidden-unscrollable !important;
+        height: 100vh;
+        background-image: url(../../assets/images/coming-soon.png);
+        filter: blur(5px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .comingSoon {
+        margin-top: 0;
+        margin-left: -9px;
+        overflow: -moz-hidden-unscrollable !important;
+        height: 100px;
+        background-image: url(../../assets/images/coming-soon.png);
+        filter: blur(5px);
+    }
 }

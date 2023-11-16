@@ -167,5 +167,11 @@ nav a {
         font-size: 55px;
         margin: 12px;
     }
-
+    .Logo {
+        color: #64ffda;
+        margin: 0;
+        font-family: "Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: 500;
+        font-size: 20px;
+    }
 }

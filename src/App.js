@@ -2,10 +2,7 @@
 // import "./App.css";
 import ComingSoon from "./components/coming-soon/ComingSoon";
 import Cursor from "./components/cursor/Cursor";
-import Hero from "./components/hero/Hero";
-import MainContent from "./components/mainContent/MainContent";
-import Navbar from "./components/navbar/Navbar";
-import SocialMedia from "./components/socialMedia/SocialMedia";
+import Timeline from "./components/timeline/Timeline";
 import data from "./data/data";
 import { Routes, Route } from 'react-router-dom'
 
@@ -17,12 +14,10 @@ function App() {
       <Routes>
         <Route path='/' element={<ComingSoon />} />
 
-        <Route path='nav' element={<Navbar />} />
-        <Route path='main' element={<MainContent />} />
+        <Route path='/timeline' element={<Timeline />} />
       </Routes>
-      {/* <Cursor />
-      <Navbar />
-      <MainContent /> */}
+       <Cursor />
+
     </>
   );
 }
