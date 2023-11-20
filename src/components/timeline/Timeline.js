@@ -1,3 +1,4 @@
+import Footer from "../footer/Footer";
 import MainContent from "../mainContent/MainContent";
 import Navbar from "../navbar/Navbar";
 
@@ -8,6 +9,7 @@ const Timeline = () => {
         <div>
             <Navbar />
             <MainContent />
+            <Footer />
         </div>
     )
 }

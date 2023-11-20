@@ -23,7 +23,7 @@ const data = {
             link: "/#about"
         },
         {
-            name: "Eperience",
+            name: "Experience",
             link: "/#experience"
         },
         {
