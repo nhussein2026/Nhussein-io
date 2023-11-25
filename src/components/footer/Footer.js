@@ -8,7 +8,7 @@ const Footer = () => {
 
     useEffect(() => {
         const fetchRepoData = async () => {
-            const accessToken = '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'; // Replace with your GitHub API access token
+            const accessToken = process.env.REACT_APP_GITHUB_TOKEN; // Replace with your GitHub API access token
             const repositoryName = 'Nhussein-io'; // Replace with your repository name
 
             try {

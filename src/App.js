@@ -16,8 +16,7 @@ function App() {
 
         <Route path='/timeline' element={<Timeline />} />
       </Routes>
-       <Cursor />
-
+      <Cursor />
     </>
   );
 }

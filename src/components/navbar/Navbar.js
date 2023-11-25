@@ -72,9 +72,10 @@ const Navbar = () => {
 
             {/* Resume Button */}
             <div className={style.resume}>
-                <a id={style.resumeButton} target='_blank' href={resume} rel="noopener noreferrer">Resume</a>
+                <a id={style.resumeButton} target='_blank' href={resume} rel="noopener noreferrer" onClick={() => window.open(resume)}>
+                    Resume
+                </a>
             </div>
-
         </nav>
     )
 }
