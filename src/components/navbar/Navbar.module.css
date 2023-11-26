@@ -25,6 +25,9 @@ nav a {
 
 }
 
+.logoSmall {
+    
+}
 
 .Logo {
     color: #64ffda;
@@ -34,7 +37,16 @@ nav a {
     font-size: 25px;
 }
 
-
+.menueIconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    font-size: 50px;
+    border: none;
+    background-color: transparent;
+}
 .menueIcon {
     color: #67cee2 !important;
 }
@@ -45,15 +57,20 @@ nav a {
     left: 0;
     width: 290px;
     height: 100vh;
-    background-color: #c4c6c8;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+   backdrop-filter: blur(7px);
 }
 
 .visible {
     transform: translateX(0);
 }
 
+.navMenueLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .popMenue {
     margin: 10px;
     padding: 5px;
@@ -103,20 +120,7 @@ nav a {
     /* need to make it more professional */
 }
 
-
-
-.menueSocial {
-    margin: -10px;
-    padding: -10px;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
 /* Rusume button */
-
 .resume{
     display: flex;
     justify-content: center;
@@ -128,10 +132,15 @@ nav a {
     border:1px solid #31f5c7;
     border-radius: 4px;
     font-family: var(--font-mono);
+    z-index: 5;
 }
 
 .resume:hover {
     cursor: pointer;
+}
+
+.MenueItems {
+    color: #7dfcdb;
 }
 
 @media (max-width: 640px) {
@@ -145,6 +154,7 @@ nav a {
         justify-content: space-between !important;
         height: 75px;
         align-items: center;
+        z-index: 5;
     }
 
     nav a {
@@ -156,22 +166,25 @@ nav a {
         display: none;
     }
 
-    .social {
-        display: none;
-    }
 
     .menue {
         color: #fff;
         display: flex;
         justify-content: flex-start;
-        font-size: 55px;
-        margin: 12px;
+        margin: 5px;
+   
     }
-    .Logo {
+    .LogoSmall {
         color: #64ffda;
         margin: 0;
         font-family: "Space Grotesk Bold", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-weight: 500;
-        font-size: 20px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .logo {
+        display: none;
+    }
+    code {
+        margin: 0;
     }
 }

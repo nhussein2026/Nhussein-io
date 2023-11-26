@@ -19,3 +19,21 @@
     justify-content: center;
     overflow-x: hidden;
 }
+
+
+/* small screens */
+@media (max-width: 640px) {
+    .emailComponent {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    .socialComponent {
+        height: 100%;
+        width: 14%;
+        display: flex;
+        justify-content: center;
+    }
+    
+}

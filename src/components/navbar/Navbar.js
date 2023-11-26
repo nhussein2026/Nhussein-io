@@ -22,7 +22,19 @@ const Navbar = () => {
         <nav className={style.nav}>
             {/*small screens  */}
             <div className={style.menue}>
-                <TbMenu className={style.menueIcon} onClick={toggleVisiblity} />
+                {/* small screen menue and logo */}
+                <div className={style.navMenueLogo}>
+                    <button className={style.menueIconButton} onClick={toggleVisiblity}>
+                        <TbMenu className={style.menueIcon} />
+                    </button>
+                    {/* logo Section */}
+                    <div className={style.smallScreenLogo}>
+                        <Link to='/'>
+                            <code className={style.LogoSmall}><span className={style.Nasser}>Nasser </span> <span className={style.Hussein}>Hussein</span></code>
+                        </Link>
+                    </div>
+                </div>
+
                 <div
                     className={`${style.sideMenue} ${isVisible ? style.visible : ""}`}
                 >
@@ -33,30 +45,27 @@ const Navbar = () => {
                                     navLinks &&
                                     navLinks.map(({ url, name }, i) => (
                                         <li className={style.navLinks} key={i}>
-                                            <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
-                                            <Link to={url}>{name}</Link>
+                                            {/* <span className={style.itemNum}></span> */}
+                                            <Link to={url} className={style.MenueItems}>{i + 1 < 10 ? `0${i + 1} ` : i + 1}{name}</Link>
                                         </li>
                                     ))
                                 }
                             </ul>
                         </div>
                     )}
-
-                    <div className={style.menueSocial}>
-
-                    </div>
                 </div>
             </div>
 
-            {/* logo Section */}
+
+
+            {/* large screen */}
             <div className={style.logo}>
                 <Link to='/'>
                     <code className={style.Logo}>Nasser <span className={style.Hussein}>Hussein</span></code>
                 </Link>
             </div>
-
-            {/* large screen */}
             <div className={style.navItems}>
+
                 <ul className={style.navItem}>
                     {
                         navLinks &&
@@ -72,7 +81,7 @@ const Navbar = () => {
 
             {/* Resume Button */}
             <div className={style.resume}>
-                <a id={style.resumeButton} target='_blank' href={resume} rel="noopener noreferrer" onClick={() => window.open(resume)}>
+                <a id={style.resumeButton} target='_blank' href={resume} rel="noopener noreferrer" >
                     Resume
                 </a>
             </div>
