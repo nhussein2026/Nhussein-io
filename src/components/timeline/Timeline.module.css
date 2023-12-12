@@ -2,3 +2,24 @@
     display: flex;
     flex-direction: column;
 }
+.content {
+    height: 610px;
+}
+
+.About {
+    height: 610px;
+    
+}
+
+.experience {
+    height: 610px;
+    
+}
+
+.projects {
+    height: 610px;
+}
+
+.contact {
+    height: 525px;
+}

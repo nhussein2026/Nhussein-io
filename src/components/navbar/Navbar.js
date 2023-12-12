@@ -18,6 +18,13 @@ const Navbar = () => {
         setIsVisible(!isVisible);
     };
 
+        const scrollToTop = () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Add smooth scrolling effect
+          });
+        }
+
     return (
         <nav className={style.nav}>
             {/*small screens  */}
@@ -60,7 +67,7 @@ const Navbar = () => {
 
             {/* large screen */}
             <div className={style.logo}>
-                <Link to='/'>
+                <Link onClick={scrollToTop} to='/'>
                     <code className={style.Logo}>Nasser <span className={style.Hussein}>Hussein</span></code>
                 </Link>
             </div>
@@ -69,10 +76,11 @@ const Navbar = () => {
                 <ul className={style.navItem}>
                     {
                         navLinks &&
-                        navLinks.map(({ url, name }, i) => (
+                        navLinks.map(({ link, name }, i) => (
                             <li className={style.navLinks} key={i}>
                                 <span className={style.itemNum}>{i + 1 < 10 ? `0${i + 1}.` : i + 1}</span>
-                                <Link to={url}>// {name}</Link>
+                                {/* <Link onClick={(e) => handleClick(e, `${url}`)} to={`${url}`}>// {name}</Link> */}
+                                <a href={`${link}`}>//{name}</a>
                             </li>
                         ))
                     }

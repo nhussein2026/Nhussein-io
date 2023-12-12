@@ -6,6 +6,9 @@
 
     --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
 }
+html {
+    scroll-behavior: smooth;
+}
 nav {
     position: fixed;
     top: 0;

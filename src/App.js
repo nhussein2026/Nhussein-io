@@ -11,11 +11,12 @@ function App() {
   const { socialMedia } = data;
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<ComingSoon />} />
 
         <Route path='/timeline' element={<Timeline />} />
-      </Routes>
+      </Routes> */}
+      <Timeline />
       <Cursor />
     </>
   );
