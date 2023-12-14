@@ -1,0 +1,30 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.experience {
+    width: 1000px;
+    height: 350px;
+    border: 1px solid #ffffffb7;
+    display: flex;
+}
+
+.first {
+    height: 350px;
+    width: 333px;
+    border:1px solid #ffffff65;
+}
+
+.second {
+    height: 350px;
+    width: 333px;
+    border:1px solid #ffffff63;
+}
+
+.third {
+    height: 350px;
+    width: 333px;
+    border:1px solid #ffffff63;
+}
