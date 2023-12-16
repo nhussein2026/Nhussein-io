@@ -15,8 +15,8 @@ const Hero = () => {
                 <div>
                     <h3 className={style.heading}>Software Engineer | Web Developer</h3>
                 </div>
-                <div>
-                    <p className={style.intro}>
+                <div className={style.intro}>
+                    <p>
                         I’m a software engineering student and a web developer
                         who creates convenient and user-friendly digital experiences.
                         I have learned cutting-edge web development skills at a prestigious

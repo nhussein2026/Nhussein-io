@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-// import "./App.css";
+import "./App.css";
 import ComingSoon from "./components/coming-soon/ComingSoon";
 import Cursor from "./components/cursor/Cursor";
 import Timeline from "./components/timeline/Timeline";

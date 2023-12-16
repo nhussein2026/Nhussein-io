@@ -4,6 +4,7 @@ const About = () => {
 
     return (
         <div className={styles.about}>
+            <span className={styles.contactSpan}><span className={styles.smallSpan}>01. </span> About Me</span>
             
         </div>
     )

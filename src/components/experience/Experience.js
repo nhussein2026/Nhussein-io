@@ -3,6 +3,7 @@ const Experience = () => {
 
     return (
         <div className={styles.parent}>
+            <span className={styles.contactSpan}><span className={styles.smallSpan}>02. </span> Eager for New Ventures!</span>
             <h1>My Experience</h1>
             <div className={styles.experience}>
                 <div className={styles.first}></div>
