@@ -1,4 +1,6 @@
-
+:root{
+  /* animation-delay: 0.2s; */
+}
 body {
     --sb-track-color: #0d1c31;
     --sb-thumb-color: #57b479;

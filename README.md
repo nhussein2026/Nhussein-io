@@ -6,6 +6,7 @@
 # colors:
  - #69d3e6
  - #0d1c31
+ - #7DFCDB
 
 
 

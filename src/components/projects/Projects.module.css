@@ -1,0 +1,38 @@
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    width: 330px;
+    height: 250px;
+    transition: transform 0.3s;
+
+    /* flex-basis: 25%; */
+    background-color: #223550;
+    /* margin: 80px; */
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+.projectNav {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    font-size: 33px;
+}
+
+.icon {
+    color: #7DFCDB;
+}
