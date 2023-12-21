@@ -1,9 +1,16 @@
 .title {
+    margin: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #7DFCDB;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.smallTitle {
+    margin-right: 10px;
+}
 .projects {
     display: flex;
     flex-direction: row;
@@ -35,4 +42,29 @@
 
 .icon {
     color: #7DFCDB;
+}
+.icon a {
+    text-decoration: none;
+    color: #7DFCDB;
+}
+.projectDes {
+    
+}
+.ProjectTitle {
+    display: flex;
+    justify-content: center;
+    color: #7DFCDB;
+    font-size: 19px;
+    font-weight: 700;
+}
+.des {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.projecFooter {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
 }
