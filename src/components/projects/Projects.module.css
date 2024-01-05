@@ -9,8 +9,10 @@
 }
 
 .smallTitle {
+    top: 10px;
     margin-right: 10px;
 }
+
 .projects {
     display: flex;
     flex-direction: row;
@@ -33,6 +35,7 @@
 .project:hover {
     transform: translateY(-10px);
 }
+
 .projectNav {
     display: flex;
     justify-content: space-between;
@@ -43,26 +46,54 @@
 .icon {
     color: #7DFCDB;
 }
+
 .icon a {
     text-decoration: none;
     color: #7DFCDB;
 }
-.projectDes {
-    
+
+
+.externalLinkIcon a {
+    text-decoration: none;
+    color: #7DFCDB;
+    font-size: 30px;
+
 }
+
+.projectDes {}
+
 .ProjectTitle {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     color: #7DFCDB;
     font-size: 19px;
     font-weight: 700;
 }
+
+.longProjectTitle {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: #7DFCDB;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.twoIcons {
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .des {
     margin: 5px;
     padding: 10px;
     font-size: 14px;
     font-weight: 500;
 }
+
 .projecFooter {
     display: flex;
     justify-content: space-around;
