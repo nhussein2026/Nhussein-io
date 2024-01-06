@@ -1,3 +1,103 @@
 .about {
     
 }
+.smalltextSpan {
+  color: #52d1a9;
+  font-size: 16px;
+  font-weight:400;
+  font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono','monospace';
+}
+.smallSpan {
+  padding-right: 10px;
+}
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .location {
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .bio {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .skills {
+    margin-bottom: 1rem;
+  }
+  
+  .skills h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skills ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .skills li {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: #2d575a63;
+    border-radius: 5px;
+  }
+  
+  .experience {
+    margin-bottom: 1rem;
+  }
+  
+  .experience h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience p {
+    line-height: 1.5;
+  }
+  
+  .call-to-action {
+    text-align: center;
+  }
+  
+  .call-to-action h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .callAction a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .callAction a:hover {
+    background-color: #444;
+  }
+  
