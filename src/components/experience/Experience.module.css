@@ -1,39 +1,52 @@
 .smalltextSpan {
-    color: #52d1a9;
-    font-size: 16px;
-    font-weight:400;
-    font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono','monospace';
+  color: #52d1a9;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace';
 }
+
 .smallSpan {
-    padding-right: 10px;
+  padding-right: 10px;
 }
+
 .parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-  
-  .experience {
-    width: 100%; /* Change from fixed width to 100% for responsiveness */
-    max-width: 1000px; /* Set a maximum width for larger screens */
-    display: flex;
-    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
-    justify-content: space-around; /* Adjust spacing for smaller screens */
-    border: 2px solid #ffffffb7;
-  
+
+.experience {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid #ffffffb7;
 }
-  
-  .first, .second, .third {
-    height: auto; /* Remove fixed height */
-    width: calc(32% - 20px); /* Adjust width for spacing and borders */
-    border: 1px solid #ffffff65;
-    padding: 15px;
+
+.first,
+.second,
+.third {
+  height: auto;
+  width: calc(32% - 20px);
+  border: 1px solid #ffffff65;
+  padding: 15px;
+}
+
+@media (max-width: 980px) {
+  .first,
+  .second,
+  .third {
+      width: calc(48% - 20px);
+      margin-bottom: 20px; /* Add some space between items for better readability */
   }
-  
+}
+
 @media (max-width: 640px) {
-    .experience {
-        display: flex;
-        flex-direction: column;
-    }
+  .first,
+  .second,
+  .third {
+      width: 100%;
+  }
 }
