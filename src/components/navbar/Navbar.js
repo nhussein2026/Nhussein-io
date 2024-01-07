@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import data from "../../data/data"
 import style from "./Navbar.module.css";
 import { TbMenu } from "react-icons/tb";
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import resume from '../../assets/Resume2023.pdf'
 
 

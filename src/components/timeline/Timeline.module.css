@@ -2,36 +2,3 @@
     display: flex;
     flex-direction: column;
 }
-.content {
-    height: 610px;
-}
-
-.About {
-    height: 610px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.experience {
-    height: 610px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.projects {
-    height: 610px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 525px;
-}
