@@ -3,7 +3,7 @@ import data from "../../data/data"
 import style from "./Navbar.module.css";
 import { TbMenu } from "react-icons/tb";
 import { Link } from 'react-router-dom';
-import resume from '../../assets/Resume2023.pdf'
+import resume from '../../assets/pdf/Nasser_Hussein_2024_Software_Engineering_CV.pdf'
 
 
 const Navbar = () => {
@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className={style.menue}>
                 {/* small screen menue and logo */}
                 <div className={style.navMenueLogo}>
-                    <button className={style.menueIconButton} onClick={toggleVisiblity}>
+                    <button className={style.menueIconButton} onClick={toggleVisiblity} name='Navbar Menu'>
                         <TbMenu className={style.menueIcon} />
                     </button>
                     {/* logo Section */}

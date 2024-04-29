@@ -26,7 +26,9 @@
     width: 330px;
     height: 250px;
     transition: transform 0.3s;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* flex-basis: 25%; */
     background-color: #223550;
     /* margin: 80px; */
@@ -95,7 +97,20 @@
 }
 
 .projecFooter {
+    margin: 8px;
+    padding: 5px;
     display: flex;
     justify-content: space-around;
     font-weight: bold;
+}
+#skillsSpan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 25px;
+    width: 95px;
+    border-radius: 5px;
+    background-color: #0a152465;
+    color: #64bba4;
 }
