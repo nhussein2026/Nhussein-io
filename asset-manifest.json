@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.27b4c2de.css",
-    "main.js": "/static/js/main.1e68a47e.js",
+    "main.css": "/static/css/main.dc3aaa5c.css",
+    "main.js": "/static/js/main.36249fc3.js",
     "static/js/787.8b3f9619.chunk.js": "/static/js/787.8b3f9619.chunk.js",
-    "static/media/Resume2023.pdf": "/static/media/Resume2023.28c6f0debc2d846547e4.pdf",
     "static/media/coming-soon.png": "/static/media/coming-soon.df16a2704f261b7adbab.png",
+    "static/media/Nasser_Hussein_2024_Software_Engineering_CV.pdf": "/static/media/Nasser_Hussein_2024_Software_Engineering_CV.2d9a6ac7e220e28149c6.pdf",
     "index.html": "/index.html",
-    "main.27b4c2de.css.map": "/static/css/main.27b4c2de.css.map",
-    "main.1e68a47e.js.map": "/static/js/main.1e68a47e.js.map",
+    "main.dc3aaa5c.css.map": "/static/css/main.dc3aaa5c.css.map",
+    "main.36249fc3.js.map": "/static/js/main.36249fc3.js.map",
     "787.8b3f9619.chunk.js.map": "/static/js/787.8b3f9619.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.27b4c2de.css",
-    "static/js/main.1e68a47e.js"
+    "static/css/main.dc3aaa5c.css",
+    "static/js/main.36249fc3.js"
   ]
 }
