@@ -190,4 +190,8 @@ nav a {
     code {
         margin: 0;
     }
+    #resumeButton {
+        color: #64ffda;
+
+    }
 }

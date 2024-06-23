@@ -23,7 +23,9 @@
 
 
 .About {
-    height: 610px;
+    /* height: 610px; */
+    margin-top: 5rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +33,8 @@
 }
 
 .experience {
+    margin-top: 5rem;
+
     /* height: 610px; */
     display: flex;
     justify-content: center;
@@ -39,17 +43,20 @@
 }
 
 .projects {
-    height: 610px;
+    margin-top: 5rem;
+
+    /* height: 610px; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .contact {
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 525px;
+    /* height: 525px; */
 }
 /* small screens */
 @media (max-width: 640px) {
