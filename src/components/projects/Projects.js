@@ -55,14 +55,13 @@ const Projects = () => {
                     </div>
                 </div>
                 {/* New Project - Safha */}
-                <div className={styles.project}>
+                {/* <div className={styles.project}>
                     <div className={styles.projectNav}>
                         <span className={styles.icon}><LuFolder /></span>
                         <span className={styles.ProjectTitle}>
                             Safha
                         </span>
                         <span className={styles.twoIcons}>
-                            {/* <span className={styles.icon}><a href='https://github.com/yourgithubusername/safha' target='_blank' rel='noopener noreferrer' ><TfiGithub /></a></span> */}
                             <span className={styles.externalLinkIcon}><a href='https://safha.dev' rel='noreferrer noopener' target='_blank'><FaExternalLinkAlt /></a></span>
                         </span>
                     </div>
@@ -77,7 +76,7 @@ const Projects = () => {
                         <span id={styles.skillsSpan}>Wordpress</span>
                         <span id={styles.skillsSpan}>PHP</span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
