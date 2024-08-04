@@ -15,7 +15,7 @@ const Projects = () => {
       title: "DevLab",
       des: "DevLab, a dynamic developer tools platform, showcases my proficiency in front-end technologies. Offering code editing, collaboration, and debugging, it embodies my commitment to enhancing coding experiences.",
       skills: ["JavaScript", "HTML/CSS"],
-      github: "https://github.com/nhussein2026/DevLab.gi",
+      github: "https://github.com/nhussein2026/DevLab",
       link: "https://devlab.nhussein.io",
     },
     {
