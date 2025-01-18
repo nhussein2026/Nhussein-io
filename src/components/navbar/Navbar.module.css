@@ -1,14 +1,16 @@
 :root {
     --first-color: '#7dfcdb';
     --second-color: '#F4F4F4';
-    --third-color:  '#64ffda';
+    --third-color: '#64ffda';
     --fourth-color: '#c4c6c8';
 
-    --font-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 nav {
     position: fixed;
     top: 0;
@@ -28,9 +30,7 @@ nav a {
 
 }
 
-.logoSmall {
-    
-}
+
 
 .Logo {
     color: #64ffda;
@@ -50,6 +50,7 @@ nav a {
     border: none;
     background-color: transparent;
 }
+
 .menueIcon {
     color: #67cee2 !important;
 }
@@ -62,7 +63,7 @@ nav a {
     height: 100vh;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-   backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
 }
 
 .visible {
@@ -74,6 +75,7 @@ nav a {
     justify-content: center;
     align-items: center;
 }
+
 .popMenue {
     margin: 10px;
     padding: 5px;
@@ -119,12 +121,12 @@ nav a {
     display: inline-block;
     height: auto;
     opacity: .75;
-    padding-left: 30px; 
+    padding-left: 30px;
     /* need to make it more professional */
 }
 
 /* Rusume button */
-.resume{
+.resume {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +134,7 @@ nav a {
     width: 82px;
     margin: 10px;
     margin-right: 15px;
-    border:1px solid #31f5c7;
+    border: 1px solid #31f5c7;
     border-radius: 4px;
     font-family: var(--font-mono);
     z-index: 5;
@@ -175,8 +177,9 @@ nav a {
         display: flex;
         justify-content: flex-start;
         margin: 5px;
-   
+
     }
+
     .LogoSmall {
         color: #64ffda;
         margin: 0;
@@ -184,12 +187,15 @@ nav a {
         font-weight: 600;
         font-size: 16px;
     }
+
     .logo {
         display: none;
     }
+
     code {
         margin: 0;
     }
+
     #resumeButton {
         color: #64ffda;
 

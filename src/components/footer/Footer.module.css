@@ -18,6 +18,7 @@ footer a {
 
 .footerIcons span {
     margin: 5px;
+    font-size: 1rem;
 }
 
 @media (max-width: 640px) {
