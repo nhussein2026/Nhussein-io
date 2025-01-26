@@ -21,6 +21,7 @@ nav {
     justify-content: space-between;
     height: 75px;
     align-items: center;
+    z-index: 999;
 }
 
 nav a {
