@@ -46,20 +46,28 @@ const Projects = () => {
                     {project.title}
                   </span>
                   <span className={styles.twoIcons}>
-                  {project.github && (
-                    <span className={styles.icon}>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <TfiGithub />
-                      </a>
-                    </span>
-                  )}
-                  {project.link && (
-                    <span className={styles.externalLinkIcon}>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <FaExternalLinkAlt />
-                      </a>
-                    </span>
-                  )}
+                    {project.github && (
+                      <span className={styles.icon}>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <TfiGithub />
+                        </a>
+                      </span>
+                    )}
+                    {project.link && (
+                      <span className={styles.externalLinkIcon}>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FaExternalLinkAlt />
+                        </a>
+                      </span>
+                    )}
                   </span>
                 </div>
                 <div className={styles.projectDes}>
