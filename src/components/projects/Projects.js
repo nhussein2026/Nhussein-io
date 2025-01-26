@@ -50,7 +50,14 @@ const Projects = () => {
       <div className={styles.projects}>
         {projects &&
           projects.map((project, index) => (
-            <div key={index} className={styles.project}>
+            <div
+              key={index}
+              className={styles.project}
+              onClick={() =>
+                project.link && window.open(project.link, "_blank")
+              }
+              style={{ cursor: project.link ? "pointer" : "default" }}
+            >
               <div className={styles.single}>
                 <div className={styles.projectNav}>
                   <span className={styles.folderIcon}>

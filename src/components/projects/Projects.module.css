@@ -34,6 +34,33 @@
     justify-content: space-between;
 }
 
+/* Add these to your CSS */
+.project[data-has-link="true"] {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project a {
+    position: relative;
+    /* Ensure links stay clickable */
+    z-index: 1;
+}
+
+.project::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* Add this to maintain clickable area */
+.project {
+    position: relative;
+}
+
 .project:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
