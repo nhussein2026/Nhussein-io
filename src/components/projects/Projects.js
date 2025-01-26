@@ -86,7 +86,7 @@ const Projects = () => {
                         </a>
                       </span>
                     )}
-                    {project.link && (
+                    {/* {project.link && (
                       <span className={styles.externalLinkIcon}>
                         <a
                           href={project.link}
@@ -96,7 +96,7 @@ const Projects = () => {
                           <FaExternalLinkAlt />
                         </a>
                       </span>
-                    )}
+                    )} */}
                   </span>
                 </div>
                 <div className={styles.projectDes}>
