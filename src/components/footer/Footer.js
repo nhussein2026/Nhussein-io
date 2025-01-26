@@ -8,7 +8,7 @@ const Footer = () => {
 
   useEffect(() => {
     const fetchRepoData = async () => {
-      const accessToken = process.env.REACT_APP_GITHUB_TOKEN;
+      const access = process.env.REACT_APP_GITHUB_TOKEN;
       const repositoryName = "Nhussein-io"; // Replace with your repository name
 
       try {
@@ -16,7 +16,7 @@ const Footer = () => {
           `https://api.github.com/repos/nhussein2026/${repositoryName}`,
           {
             headers: {
-              Authorization: `token ${accessToken}`,
+              Authorization: `token ${access}`,
             },
           }
         );

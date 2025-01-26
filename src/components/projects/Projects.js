@@ -25,6 +25,20 @@ const Projects = () => {
       github: null,
       link: "https://safha.dev",
     },
+    {
+      title: "Eskici",
+      des: "Eskici is scond-hand platform that make bridge between the buyer and seller without any freely with various features",
+      skills: [
+        "JavaScript",
+        "HTML/CSS",
+        "Reactjs",
+        "Expressjs",
+        "MongoDB",
+        "Socket.io",
+      ],
+      github: null,
+      link: "https://3skici.com",
+    },
   ];
 
   return (
@@ -39,7 +53,7 @@ const Projects = () => {
             <div key={index} className={styles.project}>
               <div className={styles.single}>
                 <div className={styles.projectNav}>
-                  <span className={styles.icon}>
+                  <span className={styles.folderIcon}>
                     <LuFolder />
                   </span>
                   <span className={styles.longProjectTitle}>
@@ -77,7 +91,7 @@ const Projects = () => {
                 <div className={styles.projecFooter}>
                   {project.skills &&
                     project.skills.map((skill) => (
-                      <span id={styles.skillsSpan}>{skill}</span>
+                      <span className={styles.skillSpan}>{skill}</span>
                     ))}
                 </div>
               </div>
