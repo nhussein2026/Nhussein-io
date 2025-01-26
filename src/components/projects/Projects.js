@@ -32,12 +32,20 @@ const Projects = () => {
         "JavaScript",
         "HTML/CSS",
         "Reactjs",
+        "Tailwindcss",
         "Expressjs",
         "MongoDB",
         "Socket.io",
       ],
       github: null,
       link: "https://3skici.com",
+    },
+    {
+      title: "My Portfolio",
+      des: "A showcase of my skills and projects. It demonstrates my proficiency in front-end and back-end development, as well as my commitment to creating user-friendly and visually appealing interfaces.",
+      skills: ["JavaScript", "HTML/CSS", "Reactjs"],
+      github: null,
+      link: "https://nhussein.io",
     },
   ];
 
