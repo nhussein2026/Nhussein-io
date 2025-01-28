@@ -3,7 +3,7 @@ import data from "../../data/data";
 import style from "./Navbar.module.css";
 import { TbMenu } from "react-icons/tb";
 import { HashLink as Link } from "react-router-hash-link";
-import resume from "../../assets/pdf/Nasser_Hussein_CV.pdf";
+import resume from "../../assets/pdf/Nasser_Hussein_2025_CV.pdf";
 
 const Navbar = () => {
   //destructuring the navbar items
