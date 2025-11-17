@@ -1,0 +1,39 @@
+.ShowcaseSection {
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.line {
+    height: 111px;
+    border-right: 3px solid #f4f4f49d;
+    bottom: 0;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    color: #f4f4f49d;
+    text-decoration: none;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    line-height: 18px;
+    letter-spacing: 0.2em;
+    margin: 1rem 0;
+    /* spacing between icons */
+    font-size: 1.5rem;
+    /* adjust icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+.icon:hover {
+    color: aqua;
+    transform: scale(1.2) rotate(360deg);
+    /* keeps rotation + adds hover scale */
+}
