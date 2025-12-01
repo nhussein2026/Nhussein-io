@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.e76a31f4.css",
-    "main.js": "/static/js/main.46fa0940.js",
+    "main.css": "/static/css/main.265558b8.css",
+    "main.js": "/static/js/main.7792ce53.js",
+    "static/js/666.edd122bc.chunk.js": "/static/js/666.edd122bc.chunk.js",
     "static/js/787.223baef7.chunk.js": "/static/js/787.223baef7.chunk.js",
-    "static/media/coming-soon.png": "/static/media/coming-soon.df16a2704f261b7adbab.png",
     "static/media/Nasser_Hussein_CV_2025-Oct.pdf": "/static/media/Nasser_Hussein_CV_2025-Oct.e2614b19fcdbc78d83b8.pdf",
+    "static/media/N-without-bg.png": "/static/media/N-without-bg.542dc16b4254799f5c84.png",
     "index.html": "/index.html",
-    "main.e76a31f4.css.map": "/static/css/main.e76a31f4.css.map",
-    "main.46fa0940.js.map": "/static/js/main.46fa0940.js.map",
+    "main.265558b8.css.map": "/static/css/main.265558b8.css.map",
+    "main.7792ce53.js.map": "/static/js/main.7792ce53.js.map",
+    "666.edd122bc.chunk.js.map": "/static/js/666.edd122bc.chunk.js.map",
     "787.223baef7.chunk.js.map": "/static/js/787.223baef7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e76a31f4.css",
-    "static/js/main.46fa0940.js"
+    "static/css/main.265558b8.css",
+    "static/js/main.7792ce53.js"
   ]
 }
