@@ -10,34 +10,34 @@ import styles from "./ShowcaseSection.module.css";
 
 const ShowcaseSection = () => {
   const icons = [
-    {
-      icon: <FiCode />,
-      // link: "/code",
-      label: "Code",
-      description: "Display your coding samples or snippets",
-    },
-    {
-      icon: <FiBriefcase />,
-      // link: "/experience",
-      label: "Experience",
-      description: "Timeline of your work experience",
-    },
+    // {
+    //   icon: <FiCode />,
+    //   // link: "/code",
+    //   label: "Code",
+    //   description: "Display your coding samples or snippets",
+    // },
+    // {
+    //   icon: <FiBriefcase />,
+    //   // link: "/experience",
+    //   label: "Experience",
+    //   description: "Timeline of your work experience",
+    // },
     // {
     //   icon: <FiGithub />,
     //   // link: "/github-profile",
     //   label: "GitHub Profile",
     //   description: "Internal page showing commits and contributions",
     // },
-    {
-      icon: <FiFolder />,
-      // link: "/projects",
-      label: "Projects",
-      description: "Showcase your production projects",
-    },
+    // {
+    //   icon: <FiFolder />,
+    //   // link: "/projects",
+    //   label: "Projects",
+    //   description: "Showcase your production projects",
+    // },
     {
       icon: <FiShare2 />,
-      // link: "/open-source",
-      label: "Open Source Contributions",
+      link: "/github-profile",
+      label: "Code and Contributions",
       description: "Highlight GitHub open source contributions coding skills",
     },
   ];

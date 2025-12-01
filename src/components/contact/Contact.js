@@ -15,20 +15,17 @@ const Contact = () => {
         possible!
       </p>
       <div className={styles.contact}>
-        <span className={styles.social}>
-          <a
-            href="https://www.linkedin.com/in/nhussein2026/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GrLinkedinOption />
-          </a>{" "}
-        </span>
-        <span className={styles.social}>
-          <a href="mailto:naser738nas@gmail.com">
-            <HiOutlineMail />
-          </a>
-        </span>
+        <a
+          className={styles.social}
+          href="https://www.linkedin.com/in/nhussein2026/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GrLinkedinOption />
+        </a>
+        <a className={styles.social} href="mailto:naser738nas@gmail.com">
+          <HiOutlineMail />
+        </a>
       </div>
     </div>
   );

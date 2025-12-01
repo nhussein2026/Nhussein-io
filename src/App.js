@@ -1,22 +1,32 @@
 // import logo from './logo.svg';
 import "./App.css";
-import ComingSoon from "./components/coming-soon/ComingSoon";
 import Cursor from "./components/cursor/Cursor";
+import GitHubProfile from "./components/github-profile/GitHubProfile";
 import Timeline from "./components/timeline/Timeline";
-import data from "./data/data";
-import { Routes, Route } from 'react-router-dom'
-
+import { Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import { NotFound } from "./components/404";
 function App() {
-  //destracting data file
-  const { socialMedia } = data;
+  const location = useLocation();
+
   return (
     <>
-      {/* <Routes>
-        <Route path='/' element={<ComingSoon />} />
-
-        <Route path='/timeline' element={<Timeline />} />
-      </Routes> */}
-      <Timeline />
+      {location.pathname === "/" ? (
+        <Timeline />
+      ) : (
+        <>
+          <Navbar />
+          <div id="app-container">
+            <Routes>
+              <Route path="/github-profile" element={<GitHubProfile />} />
+              {/* Catch-all route for 404 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
+        </>
+      )}
       <Cursor />
     </>
   );

@@ -1,26 +1,117 @@
-:root{
+:root {
   /* animation-delay: 0.2s; */
 }
+
 body {
-    --sb-track-color: #0d1c31;
-    --sb-thumb-color: #57b479;
-    --sb-size: 3px;
-  
-    scrollbar-color: var(--sb-thumb-color) 
-                     var(--sb-track-color);
-  }
-  
-  body::-webkit-scrollbar {
-    width: var(--sb-size) 
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 3px;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 3px;
-    
-    }
+  --sb-track-color: #0d1c31;
+  --sb-thumb-color: #57b479;
+  --sb-size: 3px;
+
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+
+}
+
+#app-container {
+  padding-top: 75px;
+  /* same as the navbar height */
+}
+
+/* GitHub Heatmap */
+.heatmap-container {
+  background-color: #0d1c31;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Heatmap color scales */
+.react-calendar-heatmap .color-empty {
+  fill: #152f54 !important;
+  /* your background color */
+}
+
+/* match background */
+.color-scale-1 {
+  fill: #295a9d;
+}
+
+/* lightest contribution */
+.color-scale-2 {
+  fill: #397ad5;
+}
+
+/* you can adjust gradient if needed */
+.color-scale-3 {
+  fill: #5abbe2eb
+}
+
+/* medium contribution */
+.color-scale-4 {
+  fill: #72cef2fa;
+}
+
+
+/* Optional hover effect */
+.react-calendar-heatmap .react-calendar-heatmap-value:hover {
+  stroke: #0d1c31;
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+/* 404 style */
+/* Container for the whole 404 */
+.nf-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #0d1c31;
+  /* dark background */
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center the text and handle span */
+.nf-copy.nf-center-xy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Main 404 text */
+.nf-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #69d3e6;
+  /* highlight green */
+}
+
+/* Decorative handle */
+.nf-span {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nf-handle {
+  width: 10px;
+  height: 3px;
+  background-color: #69d3e6;
+  border-radius: 3px;
+  margin: 10px;
+}
