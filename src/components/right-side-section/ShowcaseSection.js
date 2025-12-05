@@ -5,11 +5,19 @@ import {
   FiGithub,
   FiFolder,
   FiShare2,
+  FiCompass,
+  FiLayers,
 } from "react-icons/fi";
 import styles from "./ShowcaseSection.module.css";
 
 const ShowcaseSection = () => {
   const icons = [
+    // {
+    //   icon: <FiLayers />,
+    //   link: "/resources",
+    //   label: "Developer Resources",
+    //   description: "Websites, tools, and references I use as a developer",
+    // },
     // {
     //   icon: <FiCode />,
     //   // link: "/code",
@@ -22,24 +30,24 @@ const ShowcaseSection = () => {
     //   label: "Experience",
     //   description: "Timeline of your work experience",
     // },
-    // {
-    //   icon: <FiGithub />,
-    //   // link: "/github-profile",
-    //   label: "GitHub Profile",
-    //   description: "Internal page showing commits and contributions",
-    // },
+    {
+      icon: <FiGithub />,
+      link: "/github-profile",
+      label: "GitHub Profile",
+      description: "Internal page showing commits, contributions, and skills",
+    },
     // {
     //   icon: <FiFolder />,
     //   // link: "/projects",
     //   label: "Projects",
     //   description: "Showcase your production projects",
     // },
-    {
-      icon: <FiShare2 />,
-      link: "/github-profile",
-      label: "Code and Contributions",
-      description: "Highlight GitHub open source contributions coding skills",
-    },
+    // {
+    //   icon: <FiShare2 />,
+    //   // link: "/github-profile",
+    //   label: "Code and Contributions",
+    //   description: "Highlight GitHub open source contributions coding skills",
+    // },
   ];
 
   return (

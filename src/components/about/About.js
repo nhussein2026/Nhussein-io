@@ -1,4 +1,5 @@
 import styles from "./About.module.css";
+import skills from "../../data/skills";
 
 const About = () => {
   return (
@@ -17,15 +18,9 @@ const About = () => {
         <div className={styles.skills}>
           <h3>Skills</h3>
           <ul>
-            <li>Java</li>
-            <li>JavaScript</li>
-            <li>MySQL</li>
-            <li>Mangodb</li>
-            <li>Node.js</li>
-            <li>React</li>
-            <li>Express.js</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            {skills.map((skill, index) => (
+              <li key={index}>{skill}</li>
+            ))}
           </ul>
         </div>
       </div>

@@ -8,15 +8,15 @@ const SocialMedia = () => {
       <div className={styles.line}></div>
       <div className={styles.socialLinks}>
         <ul>
-          <li>
+          {/* <li>
             <a
               href="https://github.com/nhussein2026"
               target="_blank"
               rel="noreferrer"
             >
-              <TfiGithub className={styles.icon} />
+              <TfiGithub className={styles.icon} /> 
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="https://www.linkedin.com/in/nhussein2026/"
