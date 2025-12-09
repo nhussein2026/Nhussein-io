@@ -12,12 +12,12 @@ import styles from "./ShowcaseSection.module.css";
 
 const ShowcaseSection = () => {
   const icons = [
-    // {
-    //   icon: <FiLayers />,
-    //   link: "/resources",
-    //   label: "Developer Resources",
-    //   description: "Websites, tools, and references I use as a developer",
-    // },
+    {
+      icon: <FiLayers />,
+      link: "/resources",
+      label: "Developer Resources",
+      description: "Websites, tools, and references I use as a developer",
+    },
     // {
     //   icon: <FiCode />,
     //   // link: "/code",

@@ -1,0 +1,196 @@
+/* Main Wrapper */
+.Resources {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background: #0d1c31;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Page Title */
+.Resources h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    color: #7dfcdb;
+    letter-spacing: 1px;
+}
+
+/* Category Section */
+.category {
+    margin-bottom: 5rem;
+}
+
+/* Category Title */
+.category h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #69d3e6;
+    border-left: 5px solid #7dfcdb;
+    padding-left: 1rem;
+}
+
+/* Sub Category */
+.subCategory {
+    margin-bottom: 3rem;
+}
+
+/* Subcategory Title */
+.subCategory h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+/* Grid List */
+.subCategory ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Card */
+.resourceItem {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 18px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    border: 1px solid rgba(105, 211, 230, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow Hover Effect */
+.resourceItem::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(125, 252, 219, 0.15),
+            transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.resourceItem:hover::before {
+    opacity: 1;
+}
+
+.resourceItem:hover {
+    transform: translateY(-6px);
+    border-color: #7dfcdb;
+    box-shadow: 0 10px 40px rgba(125, 252, 219, 0.15);
+}
+
+/* Icon */
+.icon {
+    font-size: 1.8rem;
+    color: #7dfcdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+/* Content */
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* Resource Title */
+.title {
+    color: #69d3e6;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.25s ease;
+}
+
+.title:hover {
+    color: #7dfcdb;
+}
+
+/* Description */
+.description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+/* Title + Time Layout */
+.titleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+/* Time Badge */
+.timeBadge {
+    background: linear-gradient(135deg, #69d3e6, #7dfcdb);
+    color: #0d1c31;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 12px rgba(125, 252, 219, 0.35);
+}
+
+/* Make entire card clickable */
+.resourceLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   Responsive Tweaks
+========================= */
+
+@media (max-width: 768px) {
+    .Resources {
+        padding: 3rem 1.2rem;
+    }
+
+    .Resources h1 {
+        font-size: 2.1rem;
+    }
+
+    .category h2 {
+        font-size: 1.6rem;
+    }
+
+    .resourceItem {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Resources h1 {
+        font-size: 1.8rem;
+    }
+
+    .resourceItem {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+}

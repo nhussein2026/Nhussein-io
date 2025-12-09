@@ -7,6 +7,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { NotFound } from "./components/404";
+import Resources from "./components/resources/Resources";
 function App() {
   const location = useLocation();
 
@@ -20,6 +21,7 @@ function App() {
           <div id="app-container">
             <Routes>
               <Route path="/github-profile" element={<GitHubProfile />} />
+              <Route path="/resources" element={<Resources />} />
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>

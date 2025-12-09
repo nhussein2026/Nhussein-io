@@ -11,9 +11,8 @@ const About = () => {
         <h2 className={styles.name}>Nasser Hussein</h2>
         <p className={styles.location}>Istanbul, Turkey</p>
         <p className={styles.bio}>
-          Software Engineering student and web developer passionate about
-          crafting dynamic and responsive websites that elevate user
-          experiences. ‍
+          Software Engineering and web developer passionate about crafting
+          dynamic and responsive websites that elevate user experiences. ‍
         </p>
         <div className={styles.skills}>
           <h3>Skills</h3>
