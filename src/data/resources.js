@@ -13,6 +13,12 @@ const resources = {
         time: "67 hours",
         icon: <FiBarChart2 />,
       },
+      {
+        title: "Google Cloud Training",
+        description:
+          "Official training programs by Google Cloud covering data science, machine learning, and cloud computing skills.",
+        link: "https://cloud.google.com/learn/training",
+      },
     ],
   },
 
@@ -91,6 +97,86 @@ const resources = {
         description:
           "A public archive of known security exploits and vulnerabilities for penetration testing and research.",
         link: "https://www.exploit-db.com/",
+      },
+    ],
+  },
+
+  frontend: {
+    uiUx: [
+      {
+        title: "Behance",
+        description:
+          "A creative platform to showcase and discover UI, UX, and graphic design projects.",
+        link: "https://www.behance.net/",
+      },
+      {
+        title: "Pinterest",
+        description:
+          "A visual discovery platform for UI, UX, branding, and design inspiration.",
+        link: "https://pinterest.com/",
+      },
+      {
+        title: "Designspiration",
+        description:
+          "A curated gallery for web, UI, and graphic design inspiration.",
+        link: "https://www.designspiration.com/",
+      },
+      {
+        title: "Site Inspire",
+        description: "A showcase of high-quality web design inspiration.",
+        link: "https://www.siteinspire.com/",
+      },
+      {
+        title: "LogoPond",
+        description:
+          "A logo design inspiration gallery for branding and identity projects.",
+        link: "https://logopond.com/search/",
+      },
+      {
+        title: "Coolors Palettes",
+        description:
+          "Trending color palettes for UI, branding, and design projects.",
+        link: "https://coolors.co/palettes/trending",
+      },
+      {
+        title: "unDraw",
+        description:
+          "Open-source illustrations for websites, apps, and UI projects.",
+        link: "https://undraw.co/",
+      },
+      {
+        title: "Freepik",
+        description:
+          "A large library of free vectors, illustrations, photos, and UI assets.",
+        link: "https://www.freepik.com/",
+      },
+      {
+        title: "Font Awesome",
+        description: "A popular icon library for web and UI design.",
+        link: "https://fontawesome.com/",
+      },
+      {
+        title: "SheCodes Color Palettes",
+        description:
+          "A collection of modern color palettes for UI and web design.",
+        link: "https://www.shecodes.io/palettes/",
+      },
+    ],
+  },
+
+  seo: {
+    tools: [
+      {
+        title: "Google Search Console",
+        description:
+          "A free tool by Google to monitor, maintain, and improve your website’s presence in search results.",
+        link: "https://search.google.com/u/1/search-console/about",
+      },
+      {
+        title: "Ahrefs",
+        description:
+          "A powerful SEO toolset for backlink analysis, keyword research, and competitor tracking.",
+        link: "https://ahrefs.com/",
       },
     ],
   },
