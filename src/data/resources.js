@@ -162,6 +162,15 @@ const resources = {
         link: "https://www.shecodes.io/palettes/",
       },
     ],
+
+    courses: [
+      {
+        title: "Webflow Full Site Build Course",
+        description:
+          "A step-by-step hands-on course by Webflow University that teaches how to design and build a complete professional website from scratch.",
+        link: "https://university.webflow.com/courses/full-site-build?video=gdhU2yw674k",
+      },
+    ],
   },
 
   seo: {
