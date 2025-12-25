@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.7266a12c.css",
-    "main.js": "/static/js/main.ca8b13e7.js",
+    "main.js": "/static/js/main.b98e799e.js",
     "static/js/666.edd122bc.chunk.js": "/static/js/666.edd122bc.chunk.js",
     "static/js/787.223baef7.chunk.js": "/static/js/787.223baef7.chunk.js",
     "static/media/Nasser_Hussein_CV_2025-Oct.pdf": "/static/media/Nasser_Hussein_CV_2025-Oct.e2614b19fcdbc78d83b8.pdf",
     "static/media/N-without-bg.png": "/static/media/N-without-bg.542dc16b4254799f5c84.png",
     "index.html": "/index.html",
     "main.7266a12c.css.map": "/static/css/main.7266a12c.css.map",
-    "main.ca8b13e7.js.map": "/static/js/main.ca8b13e7.js.map",
+    "main.b98e799e.js.map": "/static/js/main.b98e799e.js.map",
     "666.edd122bc.chunk.js.map": "/static/js/666.edd122bc.chunk.js.map",
     "787.223baef7.chunk.js.map": "/static/js/787.223baef7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7266a12c.css",
-    "static/js/main.ca8b13e7.js"
+    "static/js/main.b98e799e.js"
   ]
 }
