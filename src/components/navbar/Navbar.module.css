@@ -149,7 +149,7 @@ nav a {
     color: #7dfcdb;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
     nav {
         position: fixed;
         top: 0;

@@ -31,7 +31,7 @@ const data = {
             link: "/#projects"
         },
         {
-            name: "contact",
+            name: "Contact",
             link: "/#contact"
         }
     ],

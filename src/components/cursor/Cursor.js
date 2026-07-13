@@ -3,19 +3,27 @@ import { useState, useEffect } from 'react';
 const Cursor = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isHoveringLink, setIsHoveringLink] = useState(false);
+    // Only enable the custom cursor for precise pointers (mouse) when the user
+    // hasn't asked to reduce motion — it's meaningless/harmful on touch + a11y.
+    const [enabled, setEnabled] = useState(false);
 
     useEffect(() => {
+        const finePointer = window.matchMedia('(pointer: fine)').matches;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        setEnabled(finePointer && !reducedMotion);
+    }, []);
+
+    useEffect(() => {
+        if (!enabled) return undefined;
         const updatePosition = (event) => {
             setPosition({ x: event.clientX, y: event.clientY });
-            if (event.target.tagName === 'A') {
-                setIsHoveringLink(true);
-            } else {
-                setIsHoveringLink(false);
-            }
+            setIsHoveringLink(event.target.tagName === 'A');
         };
         window.addEventListener('mousemove', updatePosition);
         return () => window.removeEventListener('mousemove', updatePosition);
-    }, []);
+    }, [enabled]);
+
+    if (!enabled) return null;
 
     return (
         <>
@@ -28,8 +36,9 @@ const Cursor = () => {
                     height: isHoveringLink ? '26px' : '7px',
                     borderRadius: '50%',
                     transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-                    backgroundColor: isHoveringLink ? '#66d9ed' : '#66d9ed',
+                    backgroundColor: 'var(--accent)',
                     pointerEvents: 'none',
+                    zIndex: 9999,
                 }}
             />
             <div
@@ -41,8 +50,9 @@ const Cursor = () => {
                     height: '30px',
                     borderRadius: '50%',
                     transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-                    border: isHoveringLink ? '1px solid #66d9ed' : '1px solid #66d9ed',
+                    border: '1px solid var(--accent)',
                     pointerEvents: 'none',
+                    zIndex: 9999,
                 }}
             />
         </>

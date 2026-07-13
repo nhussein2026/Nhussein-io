@@ -2,7 +2,7 @@
 import "./App.css";
 import Cursor from "./components/cursor/Cursor";
 import GitHubProfile from "./components/github-profile/GitHubProfile";
-import Timeline from "./components/timeline/Timeline";
+import Home from "./components/home/Home";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       {location.pathname === "/" ? (
-        <Timeline />
+        <Home />
       ) : (
         <>
           <Navbar />

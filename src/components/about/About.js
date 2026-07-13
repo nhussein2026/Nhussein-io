@@ -9,18 +9,28 @@ const About = () => {
       </span>
       <div className={styles.aboutMe}>
         <h2 className={styles.name}>Nasser Hussein</h2>
-        <p className={styles.location}>Istanbul, Turkey</p>
+        <p className={styles.location}>Istanbul, Türkiye</p>
         <p className={styles.bio}>
-          Software Engineering and web developer passionate about crafting
-          dynamic and responsive websites that elevate user experiences. ‍
+          I'm a Software Engineer and full-stack web developer based in Istanbul.
+          I build web applications end to end — React/Astro front ends and
+          Node/Express back ends on MongoDB or PostgreSQL. I'm a Software
+          Engineering graduate (Nişantaşı University), currently building
+          production apps for clients at Veribir, and I've contributed to open
+          source (a merged pull request to a widely-used developer tool). I like
+          owning a feature from the database all the way to the UI.
         </p>
         <div className={styles.skills}>
           <h3>Skills</h3>
-          <ul>
-            {skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
+          {skills.map((group) => (
+            <div key={group.group} className={styles.skillGroup}>
+              <h4 className={styles.skillGroupTitle}>{group.group}</h4>
+              <ul>
+                {group.items.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,52 +1,98 @@
+.parent {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
 .smalltextSpan {
-  color: #52d1a9;
+  color: var(--accent);
   font-size: 16px;
   font-weight: 400;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace';
+  font-family: var(--font-mono);
+  display: block;
+  text-align: center;
 }
 
 .smallSpan {
   padding-right: 10px;
 }
 
-.parent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.title {
+  color: var(--text-strong);
+  text-align: center;
+  margin: 0.25rem 0 1.75rem;
 }
 
 .experience {
   width: 100%;
   max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1.4rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.role {
+  color: var(--text-strong);
+  font-size: 1.05rem;
+  margin: 0 0 0.15rem;
+}
+
+.company {
+  color: var(--text);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.period {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin: 0.35rem 0 0.9rem;
+}
+
+.points {
+  color: var(--text);
+  padding-left: 1.1rem;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.points li {
+  margin-bottom: 0.5rem;
+}
+
+.skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  border: 2px solid #ffffffb7;
+  gap: 0.4rem;
 }
 
-.first,
-.second,
-.third {
-  height: auto;
-  width: calc(32% - 20px);
-  border: 1px solid #ffffff65;
-  padding: 15px;
-}
-
-@media (max-width: 980px) {
-  .first,
-  .second,
-  .third {
-      width: calc(48% - 20px);
-      margin-bottom: 20px; /* Add some space between items for better readability */
-  }
-}
-
-@media (max-width: 640px) {
-  .first,
-  .second,
-  .third {
-      width: 100%;
-  }
+.skillSpan {
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  background-color: var(--accent-tint);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
 }

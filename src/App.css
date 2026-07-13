@@ -3,7 +3,7 @@
 }
 
 body {
-  --sb-track-color: #0d1c31;
+  --sb-track-color: var(--bg);
   --sb-thumb-color: #57b479;
   --sb-size: 3px;
 
@@ -32,7 +32,7 @@ body::-webkit-scrollbar-thumb {
 
 /* GitHub Heatmap */
 .heatmap-container {
-  background-color: #0d1c31;
+  background-color: var(--bg);
   padding: 20px;
   border-radius: 8px;
 }
@@ -66,7 +66,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Optional hover effect */
 .react-calendar-heatmap .react-calendar-heatmap-value:hover {
-  stroke: #0d1c31;
+  stroke: var(--bg);
   stroke-width: 1px;
   cursor: pointer;
 }
@@ -78,7 +78,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   height: 70vh;
-  background-color: #0d1c31;
+  background-color: var(--bg);
   /* dark background */
   color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

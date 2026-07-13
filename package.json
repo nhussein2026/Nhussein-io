@@ -30,6 +30,7 @@
     "react-activity-calendar": "^3.0.1",
     "react-calendar-heatmap": "^1.10.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.18.0",
     "react-router-hash-link": "^2.4.3",
@@ -40,10 +41,23 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "PUPPETEER_EXECUTABLE_PATH=\"$(command -v chromium-browser || command -v chromium || command -v google-chrome-stable || command -v google-chrome || true)\" react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "crawl": false,
+    "include": [
+      "/"
+    ],
+    "skipThirdPartyRequests": true,
+    "inlineCss": false
   },
   "eslintConfig": {
     "extends": [
@@ -66,7 +80,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.0.0",
-    "prettier": "3.1.1"
+    "prettier": "3.1.1",
+    "react-snap": "^1.23.0"
   },
   "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }

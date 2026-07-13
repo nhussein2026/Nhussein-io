@@ -1,10 +1,10 @@
 .about {}
 
 .smalltextSpan {
-  color: #52d1a9;
+  color: var(--accent);
   font-size: 16px;
   font-weight: 400;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', 'monospace';
+  font-family: var(--font-mono);
 }
 
 .smallSpan {
@@ -32,14 +32,19 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: var(--text-strong);
 }
 
 .location {
-  color: #777;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .bio {
+  color: var(--text);
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
@@ -52,6 +57,18 @@
   margin-bottom: 0.5rem;
 }
 
+.skillGroup {
+  margin-bottom: 1rem;
+}
+
+.skillGroupTitle {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin: 0.75rem 0 0.25rem;
+}
+
 .skills ul {
   padding: 0;
   list-style: none;
@@ -60,9 +77,11 @@
 .skills li {
   display: inline-block;
   margin: 0.5rem;
-  padding: 0.5rem;
-  background-color: #2d575a63;
+  padding: 0.4rem 0.7rem;
+  background-color: var(--accent-tint);
+  color: var(--text);
   border-radius: 5px;
+  font-size: 0.9rem;
 }
 
 .experience {

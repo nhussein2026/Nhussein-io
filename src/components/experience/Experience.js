@@ -1,45 +1,71 @@
-import styles from './Experience.module.css'
-const Experience = () => {
+import styles from "./Experience.module.css";
 
-    return (
-        <div className={styles.parent}>
-        <span className={styles.smalltextSpan}><span className={styles.smallSpan}>02. </span> Eager for New Ventures!</span>
-        <h1>My Experience</h1>
-        <div className={styles.experience}>
-            <div className={styles.first}>
-                <h4>Full-Stack Web Development Bootcamp</h4>
-                <p>Woz U, June 2023 - October 2023</p>
-                <ul>
-                    <li>Completed a comprehensive four-month bootcamp focusing on full-stack web development.</li>
-                    <li>Mastered technologies such as JavaScript, MySQL, Node.js, React, Express.js, HTML, and CSS.</li>
-                    <li>Collaborated with a team to create a fully functional book review website, showcasing skills in user registration, book reviews, and comment sections.</li>
-                </ul>
-                <p>Relevant Skills: JavaScript, MySQL, Node.js, React, Express.js, HTML, CSS</p>
+const roles = [
+  {
+    title: "Frontend Web Developer",
+    company: "Veribir Technology Services Ltd",
+    period: "Jul 2025 – Present",
+    points: [
+      "Develop responsive production front-end features with Astro.js, Tailwind CSS, and JavaScript for client web projects.",
+      "Build a client's application end to end — implementing backend logic and a headless CMS alongside the front end and fixing issues across the stack.",
+      "Integrate AI tooling (MCP) to automate onboarding a client's entire site into the CMS.",
+      "Refactor code into reusable, modular components and work in Git-based workflows with regular code reviews.",
+    ],
+    skills: ["Astro.js", "Tailwind CSS", "JavaScript", "Node.js", "headless CMS"],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "Veribir Technology Services Ltd",
+    period: "Feb 2025 – Jul 2025",
+    points: [
+      "Built a custom headless-CMS front end using Astro, Tailwind CSS, and Flowbite UI components for dynamic content delivery.",
+      "Defined TypeScript interfaces and type definitions to improve data integrity and reduce runtime errors.",
+      "Followed Git/GitHub best practices: feature branches, pull requests, and code reviews before merging.",
+    ],
+    skills: ["Astro.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "EARTech Information Technology",
+    period: "Dec 2023 – Feb 2024",
+    points: [
+      "Built and tested backend features using Node.js and configured local development environments.",
+      "Collaborated within a team using GitHub workflows and structured development and deployment processes.",
+    ],
+    skills: ["Node.js", "JavaScript", "Git"],
+  },
+];
+
+const Experience = () => {
+  return (
+    <div className={styles.parent}>
+      <span className={styles.smalltextSpan}>
+        <span className={styles.smallSpan}>02. </span> Where I've Worked
+      </span>
+      <h1 className={styles.title}>Experience</h1>
+      <div className={styles.experience}>
+        {roles.map((role, i) => (
+          <div key={i} className={styles.card}>
+            <h4 className={styles.role}>{role.title}</h4>
+            <p className={styles.company}>{role.company}</p>
+            <p className={styles.period}>{role.period}</p>
+            <ul className={styles.points}>
+              {role.points.map((point, j) => (
+                <li key={j}>{point}</li>
+              ))}
+            </ul>
+            <div className={styles.skills}>
+              {role.skills.map((skill) => (
+                <span key={skill} className={styles.skillSpan}>
+                  {skill}
+                </span>
+              ))}
             </div>
-            <div className={styles.second}>
-                <h4>Software Engineering Intern</h4>
-                <p>EARTech Information Technology, December 2023 - Present</p>
-                <ul>
-                    <li>Engaged in real-world software engineering projects, gaining hands-on experience in DevOps practices.</li>
-                    <li>Utilized skills in JavaScript, HTML, and CSS to contribute to the development of dynamic and responsive websites.</li>
-                    <li>Continuously involved in learning and adapting to new challenges in the software development industry.</li>
-                </ul>
-                <p>Relevant Skills: DevOps, JavaScript, HTML, CSS</p>
-            </div>
-            <div className={styles.third}>
-                <h4>Core Team Member</h4>
-                <p>Google Developer Student Club, October 2023 - Present</p>
-                <ul>
-                    <li>Actively participated as a core team member, contributing to various development projects.</li>
-                    <li>Applied expertise in JavaScript, Express.js, React, and Node.js to enhance the functionality of web applications.</li>
-                    <li>Thrives on embracing new challenges and learning opportunities within the software development field.</li>
-                </ul>
-                <p>Relevant Skills: JavaScript, Express.js, React, Node.js</p>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
-    
-    )
-}
+  );
+};
 
 export default Experience;

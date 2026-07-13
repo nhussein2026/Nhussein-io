@@ -14,6 +14,7 @@
     margin-bottom: 4rem;
     color: #7dfcdb;
     letter-spacing: 1px;
+    overflow-wrap: anywhere;
 }
 
 /* Category Section */
@@ -28,6 +29,7 @@
     color: #69d3e6;
     border-left: 5px solid #7dfcdb;
     padding-left: 1rem;
+    overflow-wrap: anywhere;
 }
 
 /* Sub Category */
@@ -42,13 +44,14 @@
     color: #ffffff;
     text-transform: capitalize;
     opacity: 0.9;
+    overflow-wrap: anywhere;
 }
 
 /* Grid List */
 .subCategory ul {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
     gap: 1.5rem;
     padding: 0;
     margin: 0;
@@ -107,6 +110,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 /* Resource Title */
@@ -116,6 +121,7 @@
     text-decoration: none;
     font-size: 1.05rem;
     transition: color 0.25s ease;
+    overflow-wrap: anywhere;
 }
 
 .title:hover {

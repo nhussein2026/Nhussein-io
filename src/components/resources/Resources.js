@@ -1,10 +1,18 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import resources from "../../data/resources";
 import styles from "./Resources.module.css";
 
 const Resources = () => {
   return (
     <div className={styles.Resources}>
+      <Helmet>
+        <title>Developer Resources — Nasser Hussein</title>
+        <meta
+          name="description"
+          content="Websites, tools, and references Nasser Hussein uses as a developer — a curated list of developer resources."
+        />
+      </Helmet>
       <h1>Developer Resources</h1>
 
       {Object.keys(resources).map((category) => (
