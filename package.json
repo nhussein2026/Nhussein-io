@@ -1,7 +1,7 @@
 {
   "name": "nhussein-io",
   "description": "This is a dynamic portfolio website built with React.js, showcasing my skills and projects as a Software Engineer and Web Developer.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Nasser Hussein <naser738nas@gmail.com>",
   "homepage": "https://nhussein.io",
   "private": true,
