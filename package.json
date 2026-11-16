@@ -1,87 +1,50 @@
 {
   "name": "nhussein-io",
-  "description": "This is a dynamic portfolio website built with React.js, showcasing my skills and projects as a Software Engineer and Web Developer.",
-  "version": "1.0.1",
-  "author": "Nasser Hussein <naser738nas@gmail.com>",
+  "version": "2.0.0-alpha.1",
+  "description": "Personal site of Nasser Hussein, software engineer and Computer Engineering M.Sc. student at İTÜ.",
+  "author": "Nasser Hussein <nhussein2026@gmail.com>",
   "homepage": "https://nhussein.io",
-  "private": true,
-  "keywords": [
-    "Reacjs",
-    "Portfolio",
-    "Web",
-    "Development",
-    "Software",
-    "Engineering",
-    "Front-end",
-    "Back-end",
-    "Full",
-    "stack",
-    "JavaScript",
-    "Nhussein",
-    "Nasser Hussein"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhussein2026/Nhussein-io.git"
+  },
   "license": "MIT",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "dotenv": "^16.4.7",
-    "react": "^18.2.0",
-    "react-activity-calendar": "^3.0.1",
-    "react-calendar-heatmap": "^1.10.0",
-    "react-dom": "^18.2.0",
-    "react-helmet-async": "^2.0.5",
-    "react-icons": "^4.11.0",
-    "react-router-dom": "^6.18.0",
-    "react-router-hash-link": "^2.4.3",
-    "react-scripts": "5.0.1",
-    "react-scroll": "^1.9.0",
-    "web-vitals": "^2.1.4"
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "portfolio",
+    "astro",
+    "nasser-hussein",
+    "software-engineer"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postbuild": "PUPPETEER_EXECUTABLE_PATH=\"$(command -v chromium-browser || command -v chromium || command -v google-chrome-stable || command -v google-chrome || true)\" react-snap",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "astro dev",
+    "fetch-data": "node scripts/fetch-repos.mjs && node scripts/fetch-contributions.mjs",
+    "prebuild": "npm run fetch-data",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:links": "linkinator dist --recurse --skip \"^(https?:|mailto:)(?!//(localhost|127\\.0\\.0\\.1))\"",
+    "check:version": "node scripts/check-version.mjs",
+    "format": "prettier --write .",
+    "check:content": "node scripts/check-content.mjs"
   },
-  "reactSnap": {
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ],
-    "crawl": false,
-    "include": [
-      "/"
-    ],
-    "skipThirdPartyRequests": true,
-    "inlineCss": false
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@tailwindcss/vite": "4.3.4",
+    "astro": "7.4.1",
+    "tailwindcss": "4.3.4"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "gh-pages": "^6.0.0",
-    "prettier": "3.1.1",
-    "react-snap": "^1.23.0"
-  },
-  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
+    "@astrojs/check": "0.9.12",
+    "linkinator": "8.1.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "5.9.3"
+  }
 }
