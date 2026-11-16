@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource/jetbrains-mono/400.css";
+
+/*
+  Colour tokens. One accent (D3), light by default, dark when the device asks (D2).
+  Contrast (WCAG AA needs 4.5:1), on --bg and on --surface:
+    light: text 17.1, muted 6.7 / 6.2, accent 6.0 / 5.6
+    dark:  text 15.2, muted 8.4 / 7.6, accent 8.3 / 7.5
+*/
+:root {
+  color-scheme: light dark;
+  --bg: #fbfbf9;
+  --surface: #f1f2ef;
+  --text: #16181d;
+  --muted: #545a66;
+  --line: #d9dbd6;
+  --accent: #1f5bc4;
+  --accent-soft: #e3ebfa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12141a;
+    --surface: #1b1e26;
+    --text: #e7e9ee;
+    --muted: #a9afbc;
+    --line: #2c303b;
+    --accent: #84aefc;
+    --accent-soft: #1d2a45;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+/* Not inline: these must exist as CSS variables for the base styles below. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 106.25%; /* 17px body text */
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 650;
+    text-wrap: balance;
+  }
+
+  a {
+    color: var(--accent);
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/* Long-form text inside story pages. */
+@layer components {
+  .prose {
+    max-width: 68ch;
+  }
+  .prose h2 {
+    font-size: 1.25rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose p,
+  .prose ul {
+    margin-bottom: 1rem;
+  }
+  .prose ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  .prose li::marker {
+    color: var(--muted);
+  }
+  .prose strong {
+    font-weight: 600;
+  }
+}

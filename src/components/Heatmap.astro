@@ -1,0 +1,103 @@
+---
+// GitHub contribution calendar, drawn at build time from src/data/contributions.json (D10).
+// No visitor's browser calls GitHub; the weekly build refreshes the data.
+import data from "../data/contributions.json";
+
+const CELL = 11;
+const GAP = 3;
+const STEP = CELL + GAP;
+const TOP = 18;
+const LEFT = 28;
+
+const days = data.days;
+const firstWeekday = new Date(`${days[0]!.date}T00:00:00Z`).getUTCDay();
+const cells = days.map((d, i) => {
+  const slot = i + firstWeekday;
+  return { ...d, x: LEFT + Math.floor(slot / 7) * STEP, y: TOP + (slot % 7) * STEP };
+});
+const weeks = Math.ceil((days.length + firstWeekday) / 7);
+const width = LEFT + weeks * STEP;
+const height = TOP + 7 * STEP;
+
+const monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const months = cells
+  .filter((c, i) => c.date.endsWith("-01") || i === 0)
+  .map((c) => ({ x: c.x, label: monthNames[Number(c.date.slice(5, 7)) - 1] }))
+  // Skip a label that would overlap the next one.
+  .filter((m, i, all) => !all[i + 1] || all[i + 1]!.x - m.x >= STEP * 3);
+
+const fill = ["var(--surface)", "var(--accent)", "var(--accent)", "var(--accent)", "var(--accent)"];
+const opacity = [1, 0.3, 0.5, 0.75, 1];
+
+const activeDays = days.filter((d) => d.count > 0).length;
+const from = days[0]!.date;
+const to = days[days.length - 1]!.date;
+const fmt = (iso: string) =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+const summary = `${data.total.toLocaleString("en-US")} contributions on GitHub on ${activeDays} of ${days.length} days, ${fmt(from)} to ${fmt(to)}.`;
+---
+
+<figure>
+  <!-- dir="rtl" starts the scroll at the newest weeks on narrow screens; the inner div turns it back. -->
+  <div class="overflow-x-auto pb-2" dir="rtl">
+    <div dir="ltr" class="w-max">
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        width={width}
+        height={height}
+        role="img"
+        aria-label={summary}
+        class="max-w-none text-muted"
+      >
+        {months.map((m) => (
+          <text x={m.x} y="11" font-size="10" fill="currentColor">
+            {m.label}
+          </text>
+        ))}
+        {[
+          [1, "Mon"],
+          [3, "Wed"],
+          [5, "Fri"],
+        ].map(([row, label]) => (
+          <text x="0" y={TOP + Number(row) * STEP + 9} font-size="10" fill="currentColor">
+            {label}
+          </text>
+        ))}
+        {cells.map((c) => (
+          <rect
+            x={c.x}
+            y={c.y}
+            width={CELL}
+            height={CELL}
+            rx="2"
+            fill={fill[c.level]}
+            fill-opacity={opacity[c.level]}
+            stroke={c.level === 0 ? "var(--line)" : "none"}
+            stroke-width="0.5"
+          >
+            <title>{`${c.count} on ${fmt(c.date)}`}</title>
+          </rect>
+        ))}
+      </svg>
+    </div>
+  </div>
+  <figcaption class="mt-2 text-[0.9rem] text-muted">{summary}</figcaption>
+</figure>

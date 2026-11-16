@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  items: CollectionEntry<"journey">[];
+}
+const { items } = Astro.props;
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const label = (d: string) => {
+  const [y, m] = d.split("-");
+  return m ? `${months[Number(m) - 1]} ${y}` : y;
+};
+const kindLabel = { study: "Study", work: "Work", project: "Project", community: "Community" };
+---
+
+<ol class="border-l border-line">
+  {items.map(({ data }) => (
+    <li class="relative pb-7 pl-6 last:pb-0">
+      <span
+        class="absolute top-2.5 -left-[5px] size-[9px] rounded-full border-2 border-line bg-bg"
+        aria-hidden="true"
+      />
+      <p class="text-[0.85rem] text-muted">
+        <time datetime={data.date}>{label(data.date)}</time>
+        <span aria-hidden="true"> · </span>
+        <span>{kindLabel[data.kind]}</span>
+      </p>
+      <h3 class="text-base">{data.link ? <a href={data.link}>{data.title}</a> : data.title}</h3>
+      <p class="text-muted">{data.line}</p>
+    </li>
+  ))}
+</ol>

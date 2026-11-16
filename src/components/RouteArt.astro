@@ -1,0 +1,41 @@
+---
+// The site's one decoration (design rule 3): a quiet route with stops, read left to right
+// as the path from study to work. Draft version A; see doc/questions.md.
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+const stops = [
+  [24, 52],
+  [148, 30],
+  [276, 58],
+  [404, 26],
+  [536, 44],
+];
+---
+
+<svg
+  viewBox="0 0 560 80"
+  class:list={["h-auto w-full text-line", className]}
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    d="M24 52 C 70 52, 100 30, 148 30 S 230 58, 276 58 S 356 26, 404 26 S 500 44, 536 44"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-dasharray="1 7"
+  ></path>
+  {stops.map(([x, y], i) => (
+    <circle
+      cx={x}
+      cy={y}
+      r={i === stops.length - 1 ? 6 : 4}
+      fill={i === stops.length - 1 ? "var(--accent)" : "var(--bg)"}
+      stroke={i === stops.length - 1 ? "var(--accent)" : "currentColor"}
+      stroke-width="2"
+    />
+  ))}
+</svg>

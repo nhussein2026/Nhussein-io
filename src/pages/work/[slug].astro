@@ -1,0 +1,91 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import Tag from "../../components/Tag.astro";
+import { publicRepoUrl } from "../../data/site";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+const { project } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+
+const repoUrl = publicRepoUrl(d.repo);
+const links = [
+  d.live && { href: d.live, label: `Live: ${new URL(d.live).host}` },
+  repoUrl && { href: repoUrl, label: "Code on GitHub" },
+  !repoUrl && d.code && { href: d.code, label: "Code on GitHub" },
+].filter(Boolean) as { href: string; label: string }[];
+
+const facts = [
+  { term: "Role", value: d.role },
+  { term: "Team", value: d.team },
+  { term: "Dates", value: d.end ? `${d.start} – ${d.end}` : d.start },
+  { term: "Status", value: d.status },
+];
+---
+
+<Base title={d.title} description={`${d.title}: ${d.summary}. ${d.status}.`}>
+  <article>
+    <p class="text-[0.95rem]">
+      <a href="/work">← Work</a>
+    </p>
+    <header class="mt-4">
+      <h1 class="text-3xl">{d.title}</h1>
+      <p class="mt-2 text-lg text-muted">{d.summary}</p>
+      <dl class="mt-6 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-[0.95rem]">
+        {facts.map((f) => (
+          <>
+            <dt class="text-muted">{f.term}</dt>
+            <dd>{f.value}</dd>
+          </>
+        ))}
+      </dl>
+      <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Built with">
+        {d.stack.map((s) => (
+          <li>
+            <Tag>{s}</Tag>
+          </li>
+        ))}
+      </ul>
+      {links.length > 0 && (
+        <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+          {links.map((l) => (
+            <li>
+              <a href={l.href}>{l.label}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    {d.cover && (
+      <Image
+        src={d.cover}
+        alt={d.coverAlt ?? ""}
+        widths={[640, 960, 1600]}
+        sizes="(min-width: 768px) 720px, 100vw"
+        class="mt-8 h-auto w-full rounded-md border border-line"
+        loading="eager"
+      />
+    )}
+
+    <div class="prose mt-4">
+      <Content />
+    </div>
+
+    {d.aiNote && (
+      <p class="mt-8 max-w-[68ch] border-l-2 border-accent pl-4 text-[0.95rem] text-muted">
+        <span class="font-medium text-text">How AI was used: </span>
+        {d.aiNote}
+      </p>
+    )}
+  </article>
+</Base>

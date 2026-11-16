@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import RouteArt from "../components/RouteArt.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Button from "../components/Button.astro";
+import { profile } from "../data/profile";
+
+// Three home cards: Hop, Eskici, and the third slot (career-copilot until the
+// volunteer platform is live and cleared).
+const featured = (await getCollection("projects", ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<Base
+  title={profile.name}
+  description={`${profile.headline}. ${profile.secondLine} Based in Istanbul.`}
+  person
+>
+  <section aria-labelledby="intro">
+    <h1 id="intro" class="text-[2.1rem] sm:text-[2.6rem]">
+      {profile.name}
+    </h1>
+    <p class="mt-2 text-lg font-medium sm:text-xl">{profile.headline}</p>
+    <p class="mt-1 text-lg text-muted sm:text-xl">{profile.secondLine}</p>
+    <RouteArt class="mt-8 mb-8 max-w-xl" />
+    <p class="max-w-[62ch]">{profile.why}</p>
+    <p class="mt-4 text-[0.95rem] text-muted">{profile.now}</p>
+  </section>
+
+  <section aria-labelledby="work" class="mt-16">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 id="work" class="text-xl">
+        Selected work
+      </h2>
+      <a href="/work" class="text-[0.95rem]">
+        All work
+      </a>
+    </div>
+    <div class="mt-5 grid gap-4">
+      {featured.map((p) => (
+        <ProjectCard project={p} />
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="open" class="mt-16 rounded-lg bg-surface p-6">
+    <h2 id="open" class="text-xl">
+      Open to
+    </h2>
+    <p class="mt-2 max-w-[62ch]">{profile.openTo}</p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <Button href={`mailto:${profile.email}`}>Email me</Button>
+      <Button href={profile.cv} variant="ghost">
+        Download CV (PDF)
+      </Button>
+    </div>
+  </section>
+
+  <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2" aria-label="Elsewhere">
+    <li>
+      <a href={profile.links.github}>GitHub</a>
+    </li>
+    <li>
+      <a href={profile.links.linkedin}>LinkedIn</a>
+    </li>
+    <li>
+      <a href={profile.cv}>CV</a>
+    </li>
+  </ul>
+</Base>

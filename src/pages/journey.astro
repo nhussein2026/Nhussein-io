@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Timeline from "../components/Timeline.astro";
+import RepoList from "../components/RepoList.astro";
+import Heatmap from "../components/Heatmap.astro";
+import { repos } from "../data/site";
+
+const milestones = (await getCollection("journey")).sort((a, b) =>
+  b.data.date.localeCompare(a.data.date),
+);
+---
+
+<Base
+  title="Journey"
+  description="How Nasser Hussein got here: dated milestones from 2021, a year of GitHub activity and every public repository."
+>
+  <h1 class="text-3xl">Journey</h1>
+  <p class="mt-3 max-w-[62ch] text-muted">
+    The path so far, newest first. Early and unfinished work is listed as what it is.
+  </p>
+
+  <section aria-labelledby="milestones" class="mt-10">
+    <h2 id="milestones" class="mb-5 text-xl">
+      Milestones
+    </h2>
+    <Timeline items={milestones} />
+  </section>
+
+  <section aria-labelledby="activity" class="mt-16">
+    <h2 id="activity" class="mb-4 text-xl">
+      The last twelve months on GitHub
+    </h2>
+    <Heatmap />
+  </section>
+
+  <section aria-labelledby="repos" class="mt-16">
+    <h2 id="repos" class="text-xl">
+      Public repositories
+    </h2>
+    <p class="mt-2 text-[0.95rem] text-muted">
+      {repos.length} repositories, refreshed every week. Forks are left out.
+    </p>
+    <RepoList repos={repos} />
+  </section>
+</Base>

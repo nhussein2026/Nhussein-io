@@ -1,0 +1,77 @@
+# Milestones on /journey. The page sorts them newest first.
+# date: YYYY or YYYY-MM. kind: study, work, project or community.
+- id: hop-v1
+  date: "2026-10"
+  title: Hop v1
+  kind: project
+  line: My self-hosted planning app reached v1. I use it every day.
+- id: hack-day-2026
+  date: "2026-10"
+  title: Hacktoberfest Hack Day Istanbul × Hadith Tech
+  kind: community
+  line: Team member on Rafiq, a one-day prototype.
+  link: https://github.com/nhussein2026/Rafiq-ai
+- id: itu
+  date: "2026-09"
+  title: M.Sc. at İTÜ
+  kind: study
+  line: Started the Computer Engineering M.Sc. (thesis), beginning with the Turkish language preparation year.
+- id: career-copilot
+  date: "2026-07"
+  title: career-copilot
+  kind: project
+  line: Published 16 open-source Claude Code skills for a job search.
+  link: https://github.com/nhussein2026/career-copilot
+- id: livecodes
+  date: "2025-10"
+  title: First merged open-source pull request
+  kind: community
+  line: Added the Astro language documentation to livecodes, an open-source code playground.
+  link: https://github.com/live-codes/livecodes/pull/905
+- id: graduation
+  date: "2025-07"
+  title: B.Sc. in Software Engineering
+  kind: study
+  line: Graduated from İstanbul Nişantaşı Üniversitesi with Eskici as the graduation project.
+- id: veribir
+  date: "2025-07"
+  title: Software Engineer at Veribir
+  kind: work
+  line: Stayed on part-time and remote after the internship.
+- id: veribir-intern
+  date: "2025-02"
+  title: Internship at Veribir
+  kind: work
+  line: Software Engineer Intern; took on production tasks in the final month.
+- id: eskici
+  date: "2024-11"
+  title: Eskici
+  kind: project
+  line: Led a team of three on a marketplace in Arabic, English and Turkish.
+- id: eartech
+  date: "2023-12"
+  title: First internship
+  kind: work
+  line: Software Engineer Intern at EARTech Information Technology.
+- id: gdsc
+  date: "2023-10"
+  title: Google Developer Student Clubs
+  kind: community
+  line: Joined the core tech team and ran technical workshops until Jul 2024.
+- id: site-v1
+  date: "2023-10"
+  title: This site, version 1
+  kind: project
+  line: Built with React and based on Brittany Chiang's v4. It ran until 2026.
+  link: https://github.com/nhussein2026/Nhussein-io/releases/tag/v1.0.0
+- id: first-java
+  date: "2022-12"
+  title: First Java project
+  kind: project
+  line: A quiz management system, my first project outside coursework.
+  link: https://github.com/nhussein2026/quiz-management-system
+- id: bsc
+  date: "2021-10"
+  title: Started the B.Sc.
+  kind: study
+  line: Software Engineering at İstanbul Nişantaşı Üniversitesi, taught in English.

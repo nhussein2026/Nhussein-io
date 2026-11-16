@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  variant?: "primary" | "ghost";
+  download?: boolean;
+}
+const { href, variant = "primary", download = false } = Astro.props;
+---
+
+<a
+  href={href}
+  download={download || undefined}
+  class:list={[
+    "inline-flex min-h-11 items-center gap-2 rounded-md px-4 py-2 font-medium no-underline",
+    variant === "primary"
+      ? "bg-accent text-bg hover:opacity-90"
+      : "border border-line text-text hover:border-accent hover:text-accent",
+  ]}
+>
+  <slot />
+</a>

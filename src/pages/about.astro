@@ -1,0 +1,113 @@
+---
+import Base from "../layouts/Base.astro";
+import SkillList from "../components/SkillList.astro";
+import Button from "../components/Button.astro";
+import { profile, experience, education, languages } from "../data/profile";
+---
+
+<Base
+  title="About"
+  description="About Nasser Hussein: software engineer at Veribir and Computer Engineering M.Sc. student at İTÜ, in Istanbul. Experience, education, languages, skills and contact."
+  person
+>
+  <h1 class="text-3xl">About</h1>
+
+  <div class="prose mt-6">
+    <p>
+      I am a software engineer in Istanbul. I work part-time and remotely at Veribir, where I build
+      multilingual websites for industrial manufacturers, from the interface to the backend. I am
+      also starting an M.Sc. in Computer Engineering at İTÜ.
+    </p>
+    <p>{profile.why}</p>
+    <p>
+      I build full-stack TypeScript products. My own include Hop, the planning app I use every day,
+      and career-copilot, an open-source set of Claude Code skills for a job search. I use AI tools
+      every day: I write the specs, direct the work, and review and test every change.
+    </p>
+    <p>TO CONFIRM: one or two lines on what I want to learn next, from the LinkedIn About.</p>
+  </div>
+
+  <section aria-labelledby="experience" class="mt-14">
+    <h2 id="experience" class="text-xl">
+      Experience
+    </h2>
+    <ol class="mt-5 space-y-8">
+      {experience.map((e) => (
+        <li>
+          <h3 class="text-base">
+            {e.title} · {e.org}
+          </h3>
+          <p class="text-[0.9rem] text-muted">
+            {e.start} – {e.end} · {e.terms}
+          </p>
+          <ul class="mt-2 max-w-[68ch] list-disc space-y-1 pl-5 marker:text-muted">
+            {e.lines.map((l) => (
+              <li>{l}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section aria-labelledby="education" class="mt-14">
+    <h2 id="education" class="text-xl">
+      Education
+    </h2>
+    <ol class="mt-5 space-y-6">
+      {education.map((e) => (
+        <li>
+          <h3 class="text-base">{e.degree}</h3>
+          <p>{e.school}</p>
+          <p class="text-[0.9rem] text-muted">
+            {e.start} – {e.end} · {e.line}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section aria-labelledby="languages" class="mt-14">
+    <h2 id="languages" class="text-xl">
+      Languages
+    </h2>
+    <ul class="mt-4 space-y-1">
+      {languages.map((l) => (
+        <li>
+          <span class="font-medium">{l.name}</span>
+          <span class="text-muted"> · {l.level}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="skills" class="mt-14">
+    <h2 id="skills" class="text-xl">
+      Skills, with where I used them
+    </h2>
+    <div class="mt-5">
+      <SkillList />
+    </div>
+  </section>
+
+  <section aria-labelledby="contact" class="mt-14 rounded-lg bg-surface p-6">
+    <h2 id="contact" class="text-xl">
+      Contact
+    </h2>
+    <p class="mt-2 max-w-[62ch]">{profile.openTo}</p>
+    <p class="mt-2">
+      <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <Button href={profile.cv} download>
+        Download CV (PDF)
+      </Button>
+      <Button href={profile.links.linkedin} variant="ghost">
+        LinkedIn
+      </Button>
+      <Button href={profile.links.github} variant="ghost">
+        GitHub
+      </Button>
+    </div>
+  </section>
+</Base>

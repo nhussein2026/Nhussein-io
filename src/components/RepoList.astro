@@ -1,0 +1,45 @@
+---
+import type { Repo } from "../data/site";
+
+interface Props {
+  repos: Repo[];
+}
+const { repos } = Astro.props;
+
+// Grouping by GitHub topic (plan section 5). Until the topics are set on GitHub,
+// every repository falls into one list sorted by year.
+const groups = [
+  { topic: "university-project", label: "University projects" },
+  { topic: "hackathon", label: "Hackathons" },
+  { topic: "learning", label: "Learning" },
+  { topic: "experiment", label: "Experiments" },
+];
+const grouped = groups
+  .map((g) => ({ ...g, items: repos.filter((r) => r.topics.includes(g.topic)) }))
+  .filter((g) => g.items.length > 0);
+const rest = repos.filter((r) => !groups.some((g) => r.topics.includes(g.topic)));
+const sections = grouped.length
+  ? [...grouped, ...(rest.length ? [{ topic: "other", label: "Other", items: rest }] : [])]
+  : [{ topic: "all", label: "", items: repos }];
+---
+
+{sections.map((s) => (
+  <section class="mt-6" aria-label={s.label || undefined}>
+    {s.label && <h3 class="mb-2 text-base">{s.label}</h3>}
+    <ul class="divide-y divide-line border-y border-line">
+      {s.items.map((r) => (
+        <li class="py-3">
+          <p class="flex flex-wrap items-baseline justify-between gap-x-4">
+            <a href={r.url} class="font-medium">
+              {r.name}
+            </a>
+            <span class="text-[0.85rem] text-muted">
+              {[r.language, r.year, r.archived ? "archived" : null].filter(Boolean).join(" · ")}
+            </span>
+          </p>
+          {r.description && <p class="mt-0.5 text-[0.95rem] text-muted">{r.description}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+))}
