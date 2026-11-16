@@ -1,0 +1,21 @@
+name: Release
+
+# From launch on: release-please reads Conventional Commits on main and keeps a release
+# pull request open. Merging it bumps package.json, writes CHANGELOG.md, creates the
+# vX.Y.Z tag and publishes the GitHub Release. See doc/2026-11-16-portfolio-rebuild-plan.md, 8a.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v5
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json

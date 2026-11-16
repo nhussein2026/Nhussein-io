@@ -1,0 +1,32 @@
+name: CI
+
+# Checks every push to v2 and every pull request: version, types, build, links, content.
+on:
+  push:
+    branches: [v2]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Version is SemVer
+        run: npm run check:version
+      - name: Types and content schema
+        run: npm run check
+      - name: Build
+        run: npm run build
+      - name: Links in the built site
+        run: npm run check:links
+      - name: Open TO CONFIRM markers
+        # Warns on v2; the deploy workflow fails on them, so nothing unconfirmed goes live.
+        run: npm run check:content -- --warn
