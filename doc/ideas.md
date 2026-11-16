@@ -1,0 +1,2 @@
+- fix versioning to be as best practices in this portfolio and that also must work with github releases.
+- my github heatmap is an instance for my commitment.

@@ -64,6 +64,16 @@ const Footer = () => {
         </div>
         {error && <div className={styles.error}>Unable to load repo stats</div>}
       </a>
+      <p className={styles.credit}>
+        Design based on{" "}
+        <a
+          href="https://brittanychiang.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Brittany Chiang's v4
+        </a>
+      </p>
     </footer>
   );
 };
