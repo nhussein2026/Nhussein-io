@@ -100,7 +100,7 @@ Done: status first in the metadata line; the "How AI was used" box removed from 
 | J3 | **What I would change.** My earlier draft: "I would design for two devices from day one. Hop started as a single SQLite file on one machine, and using it from my phone came later." True, or what is? |
 | J4 | **Code link.** Hop is private. Add "Code: private for now; a public copy is planned"? Only if a public copy really is planned. |
 | J5 | **Offline sync.** How do you handle the phone and laptop both changing data offline (last write wins, the server decides, merge, or the phone is read-only offline)? One sentence on this turns the PWA line into a decision. |
-| J6 | **AI notes on other stories.** Eskici still shows "How AI was used: Built by hand, before AI coding tools." Keep it, move it into "My part", or remove the box everywhere? |
+| J6 | ~~**AI notes on other stories.**~~ **Answered 17 Nov:** removed everywhere. The box read as forced; where AI matters (Hop), "My part" already says how it was used. |
 
 ## H. Changes from the written plan
 

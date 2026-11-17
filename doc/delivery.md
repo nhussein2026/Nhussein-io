@@ -16,6 +16,12 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-17 (night) · story pages, `v2-design` (PR #3)
+
+**Updated**
+- The "How AI was used" box is gone from every story, with its `aiNote` field: on Eskici it read as forced. Where AI matters (Hop), "My part" says how it was used, in plain words. Answers J6.
+- About intro rewritten for the website: four short paragraphs (who I am, work and study, my own tools, languages) instead of the LinkedIn text, which repeated the Experience, Languages and Contact sections below it. Same facts as LinkedIn, different wording.
+
 ## 2026-11-17 (late) · ink and mint, new icon, `v2-design` (PR #3)
 
 The blue looked like every other website. Chosen from side-by-side previews in Chrome: ink for buttons and links, and one calm mint as the only colour, a nod to the first site.

@@ -10,7 +10,6 @@ stack: [MongoDB, Express, React, Node.js, Tailwind CSS]
 code: https://github.com/3skici
 featured: true
 order: 2
-aiNote: Built by hand, before AI coding tools.
 ---
 
 ## The problem

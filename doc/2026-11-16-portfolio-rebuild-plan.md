@@ -206,7 +206,7 @@ A short "page not found" message with links to Home, Work and Journey.
 
 | File or folder | Holds | Fields |
 | --- | --- | --- |
-| `src/content/projects/*.md` | One file per story | `title`, `summary`, `role`, `team`, `start`, `end`, `status`, `stack`, `repo`, `live`, `cover`, `featured`, `order`, `aiNote`; body = the five parts |
+| `src/content/projects/*.md` | One file per story | `title`, `summary`, `role`, `team`, `start`, `end`, `status`, `stack`, `repo`, `live`, `cover`, `featured`, `order`; body = the five parts |
 | `src/content/journey/*.md` | Milestones | `date`, `title`, `kind` (study, work, project, community), `line`, `link` |
 | `src/data/profile.ts` | Identity and facts | name, headline, second line, email, links, experience, education, languages |
 | `src/data/skills.ts` | Skills with proof (if D1 is yes) | `name`, `group`, `proof` (story pages or repository links) |

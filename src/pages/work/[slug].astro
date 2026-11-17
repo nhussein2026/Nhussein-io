@@ -77,13 +77,6 @@ const dates = d.end ? `${d.start} – ${d.end}` : `${d.start} – now`;
     <div class="story mt-10">
       <Content />
     </div>
-
-    {d.aiNote && (
-      <p class="mt-8 max-w-measure border-l-2 border-line-strong pl-4 text-muted">
-        <span class="font-medium text-text">How AI was used: </span>
-        {d.aiNote}
-      </p>
-    )}
   </article>
 
   <nav aria-label="More work" class="mt-14 max-w-measure border-t border-line pt-6">
