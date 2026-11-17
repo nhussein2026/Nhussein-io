@@ -3,13 +3,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="../src/styles/tokens.css" />
     <style>
       html,
       body {
         margin: 0;
         width: 100vw;
         height: 100vh;
-        background: #1f5bc4;
+        background: var(--accent);
       }
       svg {
         display: block;
@@ -20,8 +21,8 @@
   </head>
   <body>
     <svg viewBox="0 0 64 64" aria-hidden="true">
-      <path fill="#fbfbf9" d="M17 48V16h6.2l15.6 21.4V16H45v32h-6.2L23.2 26.6V48z" />
-      <circle fill="#fbfbf9" cx="52" cy="48" r="4" />
+      <path style="fill: var(--bg)" d="M17 48V16h6.2l15.6 21.4V16H45v32h-6.2L23.2 26.6V48z" />
+      <circle style="fill: var(--bg)" cx="52" cy="48" r="4" />
     </svg>
   </body>
 </html>

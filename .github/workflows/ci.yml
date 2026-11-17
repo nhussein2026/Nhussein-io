@@ -23,6 +23,8 @@ jobs:
       - run: bun install --frozen-lockfile
       - name: Version is SemVer
         run: bun run check:version
+      - name: Colour contrast (WCAG 2.2 AA, both themes)
+        run: bun run check:contrast
       - name: Types and content schema
         run: bun run check
       - name: Build
