@@ -15,6 +15,31 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-17 (evening) · design system, uncommitted
+
+Approved after a side-by-side preview in Chrome, with one direction from me: human, professional and simple, nothing that looks generated.
+
+**Delivered**
+- `src/styles/tokens.css`: every colour as an OKLCH token with light and dark values. Base, one accent blue (hue 261), status (success, warning, danger; info uses the accent), focus and selection, six colour-blind-safe chart colours, a 5-step sequential and a 7-step diverging scale, graph and chart chrome, AI demo surfaces, and the Shiki code theme.
+- `scripts/check-contrast.mjs` (`bun run check:contrast`): 104 checks, every pair in both themes; also checks the hex copies in `favicon.svg` and the `theme-color` meta tags. Added to CI and the deploy workflow. Colour maths shared with the style guide in `src/lib/color.ts`.
+- Type scale: seven sizes, ratio 1.2 on 17px; every loose size replaced.
+- `/styleguide`: tokens with both hex values and contrast, type scale, links and buttons, project list, status messages, code, charts, AI demo. `noindex`, kept out of the sitemap and the nav.
+- Story pages: one metadata line (role · team · dates · status), "Built with …" as text, "Next: …" and a contact line at the end.
+- Home: Experience strip after Selected work (three lines from `profile.ts`, "Full history" to `/about/#experience`), from the review's content-hierarchy point.
+
+**Updated**
+- Project cards became plain rows with hairlines; Hop leads on Home and gets its screenshot once one exists. Pill tags (`Tag.astro`) removed.
+- Timeline: a date column beside the text instead of dots on a rail. Skill groups in sentence case.
+- Heatmap uses the sequential tokens and fits the desktop column without scrolling.
+- Header links 44px tall; current page underlined through `aria-current`. Standalone link lists at least 24px tall.
+- `Figure` renders nothing until an image exists.
+- Favicon, preview image and icons re-rendered from the tokens; `og-image.html` and `icon.html` read `tokens.css`.
+- Light background moved from warm `#fbfbf9` to `#f9fafc`, tinted toward the accent.
+
+**Notes**
+- `bun run check`, build, link check and contrast check pass. No horizontal scroll at 360, 768 or 1280 px; one `h1` per page; standalone links at least 24 px.
+- Lighthouse (phone): accessibility, best practices, SEO 100 on every page. Performance 75–98 locally, all from total blocking time on a slow CPU (Lighthouse warns about it); 100 with no CPU slowdown.
+
 ## 2026-11-17 (afternoon) · `v2-answers-1`, uncommitted
 
 Fixes from the Claude in Chrome review of the alpha. Open points from the review are in `doc/questions.md` section I and plan section 14.

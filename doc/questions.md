@@ -51,9 +51,9 @@ Change any of these and I will follow it.
 
 | # | Used | Where to change |
 | --- | --- | --- |
-| D2 | Light and dark, following the device; no toggle | `src/styles/global.css` |
-| D3 | Accent blue `#1f5bc4` (light) / `#84aefc` (dark), WCAG AA checked. **Is there a specific blue from your LinkedIn cover?** Send the hex. | `global.css`, `public/favicon.svg`, `scripts/og-image.html`, `scripts/icon.html` |
-| D4 | Inter + JetBrains Mono, self-hosted | `global.css` |
+| D2 | Light and dark, following the device; no toggle | `src/styles/tokens.css` |
+| D3 | Accent blue `#205bc4` (light) / `#82affc` (dark), now OKLCH tokens in `src/styles/tokens.css`, approved 17 Nov. **Is there a specific blue from your LinkedIn cover?** Send the hex. | `src/styles/tokens.css` (then `public/favicon.svg`, `src/layouts/Base.astro`; `bun run check:contrast` says if they drift) |
+| D4 | Inter + JetBrains Mono, self-hosted | `src/styles/global.css` |
 | D5 | "Build. Learn. Grow." is **not** used anywhere | — |
 | D10 | Heatmap kept, drawn at build time on Journey | `src/components/Heatmap.astro` |
 | — | **Route art**: one draft (a dotted route with four stops and a blue destination) on Home and the preview image. Tell me what the route should represent and I will draw 2–3 alternatives. | `src/components/RouteArt.astro` |

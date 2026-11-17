@@ -154,6 +154,7 @@ Left out of this version: blog, Lab page (opens in April once two machine learni
 | Why | The "Why" sentence |
 | Now | The "Now" line |
 | Selected work | Three cards: Hop, Eskici, and the third slot (career-copilot until the volunteer platform is live) |
+| Experience | Added 17 Nov: three lines (role · company, dates), from `profile.ts`, linking to the full history on About. Veribir is paid production work with code review, the strongest signal for a recruiter scanning the page |
 | Open to | The "Open to" sentence, with an email button |
 | Links | GitHub, LinkedIn, CV |
 
@@ -436,7 +437,7 @@ The site launches only when every line is ticked.
 
 The one place to see what is done and what remains. Updated at the end of every work session; what was delivered in each session is logged in `doc/delivery.md`, and answers I still owe are in `doc/questions.md`.
 
-Last updated: **17 Nov 2026, after the site review** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
+Last updated: **17 Nov 2026, after the design system** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
 
 Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claude)* Claude builds it.
 
@@ -492,6 +493,12 @@ Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claud
 - [x] Theme, accent, fonts (D2–D4); "Build. Learn. Grow." not used (D5)
 - [x] Heatmap at build time (D10)
 - [x] Favicon and preview image
+- [x] Design system approved (17 Nov): OKLCH colour tokens in `src/styles/tokens.css` (base, one accent, status, charts, AI demo, code), type scale 1.2 on 17px, editorial layout with no boxed cards, pill tags or status dots
+- [x] `bun run check:contrast`: every text and UI pair passes WCAG 2.2 AA in both themes; runs in CI and before deploy
+- [x] `/styleguide` (noindex, not in the sitemap or the nav)
+- [x] Story pages end with "Next: …" and "Questions about this project? Email me."
+- [x] Home: a three-line Experience strip after Selected work, linking to About (17 Nov, changes section 5)
+- [x] Lighthouse, phone setting: accessibility, best practices and SEO 100 on every page (404 SEO 63, by design: `noindex`). Performance 75–98 on this laptop because of a slow-CPU warning; 100 with no CPU slowdown. Recheck with PageSpeed Insights after launch
 - [ ] Accent blue from the LinkedIn cover, if there is one (D3) *(me)*
 - [ ] Route art: what it represents, then 2–3 versions to pick from *(me, then Claude)*
 
@@ -525,7 +532,7 @@ Open, see `doc/questions.md` section I:
 
 ### Release candidate (`v2.0.0-rc.1`)
 
-- [ ] Lighthouse on every page, phone setting, 95+ in all four *(Claude, after approval)*
+- [ ] Lighthouse on the live site (PageSpeed Insights), 95+ in all four *(Claude, after launch)*
 - [ ] Accessibility pass: keyboard, focus, contrast, alt text, one `h1` per page *(Claude)*
 - [ ] 360 px check on every page *(Claude)*
 - [ ] Shared link preview on LinkedIn *(me, block 7)*
