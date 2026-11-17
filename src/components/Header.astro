@@ -11,22 +11,19 @@ const isCurrent = (href: string) => path === strip(href) || path.startsWith(href
 <header class="border-b border-line">
   <nav
     aria-label="Main"
-    class="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-2 sm:px-6"
+    class="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-x-6 px-4 sm:px-6"
   >
-    <!-- py-2.5 keeps every link at least 24px tall (WCAG 2.2, 2.5.8 target size). -->
-    <a href="/" class="inline-block py-2.5 font-semibold text-text no-underline hover:text-accent">
+    <!-- py-3 makes each link at least 44px tall: well over the 24px of WCAG 2.2, 2.5.8. -->
+    <a href="/" class="inline-block py-3 font-semibold text-text no-underline hover:text-accent">
       {profile.name}
     </a>
-    <ul class="flex gap-5 text-[0.95rem]">
+    <ul class="flex gap-5">
       {nav.map((item) => (
         <li>
           <a
             href={item.href}
             aria-current={isCurrent(item.href) ? "page" : undefined}
-            class:list={[
-              "inline-block py-2.5 no-underline hover:underline",
-              isCurrent(item.href) ? "text-text font-medium underline" : "text-muted",
-            ]}
+            class="inline-block py-3 text-muted no-underline decoration-2 underline-offset-[0.35em] hover:text-text hover:underline aria-[current=page]:text-text aria-[current=page]:underline"
           >
             {item.label}
           </a>

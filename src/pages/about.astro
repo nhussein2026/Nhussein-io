@@ -10,7 +10,7 @@ import { profile, experience, education, languages } from "../data/profile";
   description="About Nasser Hussein: software engineer at Veribir and Computer Engineering M.Sc. student at İTÜ, in Istanbul. Experience, education, languages, skills and contact."
   person
 >
-  <h1 class="text-3xl">About</h1>
+  <h1 class="text-2xl">About</h1>
 
   <div class="prose mt-6">
     <!-- Matches the LinkedIn About word for word. Change both together. -->
@@ -49,10 +49,10 @@ import { profile, experience, education, languages } from "../data/profile";
     <ol class="mt-5 space-y-8">
       {experience.map((e) => (
         <li>
-          <h3 class="text-base">
+          <h3 class="text-base font-semibold">
             {e.title} · {e.org}
           </h3>
-          <p class="text-[0.9rem] text-muted">
+          <p class="tabular text-sm text-muted">
             {e.start} – {e.end} · {e.terms}
           </p>
           <ul class="mt-2 max-w-measure list-disc space-y-1 pl-5 marker:text-muted">
@@ -72,9 +72,9 @@ import { profile, experience, education, languages } from "../data/profile";
     <ol class="mt-5 space-y-6">
       {education.map((e) => (
         <li>
-          <h3 class="text-base">{e.degree}</h3>
+          <h3 class="text-base font-semibold">{e.degree}</h3>
           <p>{e.school}</p>
-          <p class="text-[0.9rem] text-muted">
+          <p class="tabular text-sm text-muted">
             {e.start} – {e.end} · {e.line}
           </p>
         </li>
@@ -105,7 +105,7 @@ import { profile, experience, education, languages } from "../data/profile";
     </div>
   </section>
 
-  <section aria-labelledby="contact" class="mt-14 rounded-lg bg-surface p-6">
+  <section aria-labelledby="contact" class="mt-14 border-t border-line pt-10">
     <h2 id="contact" class="text-xl">
       Contact
     </h2>
@@ -117,10 +117,10 @@ import { profile, experience, education, languages } from "../data/profile";
       <Button href={profile.cv} download>
         Download CV (PDF)
       </Button>
-      <Button href={profile.links.linkedin} variant="ghost">
+      <Button href={profile.links.linkedin} variant="plain">
         LinkedIn
       </Button>
-      <Button href={profile.links.github} variant="ghost">
+      <Button href={profile.links.github} variant="plain">
         GitHub
       </Button>
     </div>

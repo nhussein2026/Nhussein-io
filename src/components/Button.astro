@@ -1,20 +1,21 @@
 ---
 interface Props {
   href: string;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "plain";
   download?: boolean;
 }
 const { href, variant = "primary", download = false } = Astro.props;
 ---
 
+<!-- min-h-11 = 44px tap target. "plain" has a 3:1 border so it reads as a control. -->
 <a
   href={href}
   download={download || undefined}
   class:list={[
-    "inline-flex min-h-11 items-center gap-2 rounded-md px-4 py-2 font-medium no-underline",
+    "inline-flex min-h-11 items-center rounded px-4 font-medium no-underline",
     variant === "primary"
-      ? "bg-accent text-bg hover:opacity-90"
-      : "border border-line text-text hover:border-accent hover:text-accent",
+      ? "bg-accent text-bg hover:bg-accent-hover hover:text-bg"
+      : "border border-line-strong text-text hover:border-accent hover:text-accent",
   ]}
 >
   <slot />

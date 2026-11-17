@@ -7,7 +7,7 @@ const groups = [...new Set(skills.map((s) => s.group))];
 <div class="grid gap-6 sm:grid-cols-2">
   {groups.map((group) => (
     <section>
-      <h3 class="mb-2 text-[0.85rem] font-medium tracking-wide text-muted uppercase">{group}</h3>
+      <h3 class="mb-2 text-base font-semibold">{group}</h3>
       <ul class="space-y-2">
         {skills
           .filter((s) => s.group === group)

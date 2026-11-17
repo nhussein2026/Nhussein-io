@@ -4,7 +4,7 @@ import Base from "../layouts/Base.astro";
 import RouteArt from "../components/RouteArt.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Button from "../components/Button.astro";
-import { profile } from "../data/profile";
+import { profile, experience } from "../data/profile";
 
 // Three home cards: Hop, Eskici, and the third slot (career-copilot until the
 // volunteer platform is live and cleared).
@@ -19,14 +19,14 @@ const featured = (await getCollection("projects", ({ data }) => data.featured))
   person
 >
   <section aria-labelledby="intro">
-    <h1 id="intro" class="text-[2.1rem] sm:text-[2.6rem]">
+    <h1 id="intro" class="text-3xl sm:text-4xl">
       {profile.name}
     </h1>
-    <p class="mt-2 text-lg font-medium sm:text-xl">{profile.headline}</p>
-    <p class="mt-1 text-lg text-muted sm:text-xl">{profile.secondLine}</p>
+    <p class="mt-3 text-lg font-medium">{profile.headline}</p>
+    <p class="mt-1 text-lg text-muted">{profile.secondLine}</p>
     <RouteArt class="mt-8 mb-8 max-w-xl" />
     <p class="max-w-measure">{profile.why}</p>
-    <p class="mt-4 text-[0.95rem] text-muted">{profile.now}</p>
+    <p class="mt-4 text-muted">{profile.now}</p>
   </section>
 
   <section aria-labelledby="work" class="mt-16">
@@ -34,31 +34,55 @@ const featured = (await getCollection("projects", ({ data }) => data.featured))
       <h2 id="work" class="text-xl">
         Selected work
       </h2>
-      <a href="/work/" class="text-[0.95rem]">
-        All work
-      </a>
+      <a href="/work/">All work</a>
     </div>
-    <div class="mt-5 grid gap-4">
-      {featured.map((p) => (
-        <ProjectCard project={p} />
+    <div class="mt-2 divide-y divide-line border-b border-line">
+      {featured.map((p, i) => (
+        <ProjectCard project={p} lead={i === 0} />
       ))}
     </div>
   </section>
 
-  <section aria-labelledby="open" class="mt-16 rounded-lg bg-surface p-6">
+  <!-- Experience in three lines; the full history, word for word as on LinkedIn, is on About. -->
+  <section aria-labelledby="experience" class="mt-16">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 id="experience" class="text-xl">
+        Experience
+      </h2>
+      <a href="/about/#experience">Full history</a>
+    </div>
+    <ul class="mt-4 divide-y divide-line border-y border-line">
+      {experience.map((e) => (
+        <li class="flex flex-wrap items-baseline justify-between gap-x-6 py-3">
+          <p>
+            <span class="font-medium">{e.title}</span>
+            <span class="text-muted"> · {e.org}</span>
+          </p>
+          <p class="text-sm text-muted">
+            <span class="tabular">
+              {e.start} – {e.end}
+            </span>
+            <span> · {e.terms}</span>
+          </p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="open" class="mt-16">
     <h2 id="open" class="text-xl">
       Open to
     </h2>
     <p class="mt-2 max-w-measure">{profile.openTo}</p>
     <div class="mt-5 flex flex-wrap gap-3">
       <Button href={`mailto:${profile.email}`}>Email me</Button>
-      <Button href={profile.cv} variant="ghost">
+      <Button href={profile.cv} variant="plain">
         Download CV (PDF)
       </Button>
     </div>
   </section>
 
-  <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2" aria-label="Elsewhere">
+  <ul class="link-list mt-10 flex flex-wrap gap-x-6" aria-label="Elsewhere">
     <li>
       <a href={profile.links.github}>GitHub</a>
     </li>
