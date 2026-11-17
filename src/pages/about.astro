@@ -13,18 +13,33 @@ import { profile, experience, education, languages } from "../data/profile";
   <h1 class="text-3xl">About</h1>
 
   <div class="prose mt-6">
+    <!-- Matches the LinkedIn About word for word. Change both together. -->
     <p>
-      I am a software engineer in Istanbul. I work part-time and remotely at Veribir, where I build
-      multilingual websites for industrial manufacturers, from the interface to the backend. I am
-      also starting an M.Sc. in Computer Engineering at İTÜ.
+      I'm a software engineer. I care about understanding how things work and building them
+      properly, so they keep working long after launch.
     </p>
-    <p>{profile.why}</p>
     <p>
-      I build full-stack TypeScript products. My own include Hop, the planning app I use every day,
-      and career-copilot, an open-source set of Claude Code skills for a job search. I use AI tools
-      every day: I write the specs, direct the work, and review and test every change.
+      At Veribir I'm part of a team that puts industrial manufacturers' product data online,
+      straight from their existing databases. We build every website on one standard CMS structure
+      and a clean stack. My part runs from the interface to the backend. We use MCP, Claude and
+      Claude Code skills in our daily work.
     </p>
-    <p>TO CONFIRM: one or two lines on what I want to learn next, from the LinkedIn About.</p>
+    <p>
+      Outside work I build my own tools, mostly in TypeScript with React, Astro and Node.js. Hop,
+      the planning app I use every day, is one of them: I designed it, wrote the specs and release
+      rules, and built it with Claude Code, reviewing and testing every change. That is how I like
+      to use AI, as part of careful engineering.
+    </p>
+    <p>
+      I'm an M.Sc. student in Computer Engineering at İTÜ, going deeper into the foundations and
+      into machine learning. I'm from Yemen, live in Istanbul, and work in Arabic and English while
+      I learn Turkish.
+    </p>
+    <p>
+      I'm open to part-time roles, internships, remote work and research projects at İTÜ, anywhere I
+      can take real responsibility and keep learning. You can see my work at{" "}
+      <a href={profile.links.github}>github.com/nhussein2026</a>, and I'm always glad to talk.
+    </p>
   </div>
 
   <section aria-labelledby="experience" class="mt-14">
