@@ -1,0 +1,381 @@
+---
+// Every token and building block in one place, for me. Not in the nav, not in the sitemap,
+// and search engines are asked to skip it.
+import { getCollection } from "astro:content";
+import { Code } from "astro:components";
+import Base from "../layouts/Base.astro";
+import Button from "../components/Button.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import tokensCss from "../styles/tokens.css?raw";
+import { parseTokens, toHex, contrast, type Oklch } from "../lib/color";
+
+const { light, dark } = parseTokens(tokensCss);
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+
+// Which background each token is read against, for the ratio column.
+const against = (name: string): string | undefined => {
+  if (/^(bg|surface|surface-raised|border|accent-soft|.*-soft|seq-0|div-0|disabled)$/.test(name))
+    return undefined;
+  if (name.endsWith("-text") && name !== "accent-text") return name.replace("-text", "-soft");
+  if (name === "accent-text") return "accent-soft";
+  return "bg";
+};
+const fmt = (c: Oklch) => `oklch(${c[0]} ${c[1]} ${c[2]})`;
+const ratio = (t: typeof light, name: string) => {
+  const bg = against(name);
+  return bg ? `${contrast(t[name]!, t[bg]!).toFixed(1)}:1` : "—";
+};
+
+const groups: [string, string[]][] = [
+  [
+    "Base",
+    [
+      "bg",
+      "surface",
+      "surface-raised",
+      "text",
+      "text-muted",
+      "text-subtle",
+      "border",
+      "border-strong",
+    ],
+  ],
+  ["Accent", ["accent", "accent-hover", "accent-soft", "accent-text"]],
+  [
+    "Status",
+    [
+      "success",
+      "success-soft",
+      "success-text",
+      "warning",
+      "warning-soft",
+      "warning-text",
+      "danger",
+      "danger-soft",
+      "danger-text",
+      "disabled",
+    ],
+  ],
+  ["Charts: categorical", ["cat-1", "cat-2", "cat-3", "cat-4", "cat-5", "cat-6"]],
+  ["Charts: sequential", ["seq-0", "seq-1", "seq-2", "seq-3", "seq-4"]],
+  ["Charts: diverging", ["div-n3", "div-n2", "div-n1", "div-0", "div-p1", "div-p2", "div-p3"]],
+];
+
+const scale = [
+  ["text-4xl", "Name on Home, wider screens"],
+  ["text-3xl", "Name on Home, phones"],
+  ["text-2xl", "Page title"],
+  ["text-xl", "Section heading"],
+  ["text-lg", "Summary under a title"],
+  ["text-base", "Body text, about seventy characters to a line."],
+  ["text-sm", "Dates, captions and other metadata"],
+];
+
+const bars = [
+  ["Hop", 92],
+  ["Eskici", 64],
+  ["career-copilot", 48],
+  ["Safha", 36],
+  ["Learning", 28],
+  ["Other", 18],
+] as const;
+const divergingSteps = ["n3", "n2", "n1", "0", "p1", "p2", "p3"];
+const sample = `// Repositories are fetched at build time, so no visitor calls GitHub.
+const repos = await fetchRepos("nhussein2026", { limit: 100 });
+const shown = repos.filter((r) => !r.fork && r.description !== "");`;
+---
+
+<Base title="Style guide" description="Design tokens and building blocks of nhussein.io." noindex>
+  <h1 class="text-2xl">Style guide</h1>
+  <p class="mt-3 max-w-measure text-muted">
+    Every colour, size and building block the site uses. Colours live in
+    <code>src/styles/tokens.css</code>; <code>bun run check:contrast</code> checks them. This page
+    follows your device's theme; the table lists both.
+  </p>
+
+  <section aria-labelledby="colour" class="mt-12">
+    <h2 id="colour" class="text-xl">
+      Colour
+    </h2>
+    {groups.map(([group, names]) => (
+      <>
+        <h3 class="mt-8 mb-2 text-base font-semibold">{group}</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="text-left text-muted">
+              <tr class="border-b border-line">
+                <th class="py-2 pr-4 font-normal">Token</th>
+                <th class="py-2 pr-4 font-normal">Light</th>
+                <th class="py-2 font-normal">Dark</th>
+              </tr>
+            </thead>
+            <tbody class="tabular">
+              {names.map((n) => (
+                <tr class="border-b border-line align-middle">
+                  <td class="py-2 pr-4 whitespace-nowrap">
+                    <code>--{n}</code>
+                  </td>
+                  {[light, dark].map((t) => (
+                    <td class="py-2 pr-4 whitespace-nowrap">
+                      <span
+                        class="mr-2 inline-block h-5 w-8 rounded-sm border border-line align-middle"
+                        style={`background: ${toHex(t[n]!)}`}
+                      />
+                      <code>{toHex(t[n]!)}</code>
+                      <span class="ml-2 text-muted">{ratio(t, n)}</span>
+                      <span class="block text-subtle">{fmt(t[n]!)}</span>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
+    ))}
+    <p class="mt-3 max-w-measure text-sm text-muted">
+      Ratios are against the page background, or against the matching soft colour for
+      <code>-text</code> tokens. Text needs 4.5:1; controls and chart marks need 3:1.
+    </p>
+  </section>
+
+  <section aria-labelledby="type" class="mt-16">
+    <h2 id="type" class="text-xl">
+      Type
+    </h2>
+    <p class="mt-2 max-w-measure text-muted">
+      One scale, each step 1.2 times the one below, on a 17px base. Inter for text, JetBrains Mono
+      for code.
+    </p>
+    <ul class="mt-6 space-y-4">
+      {scale.map(([cls, text]) => (
+        <li>
+          <p class="text-sm text-subtle">
+            <code>{cls}</code>
+          </p>
+          <p class={`${cls} font-semibold`}>{text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="controls" class="mt-16">
+    <h2 id="controls" class="text-xl">
+      Links and buttons
+    </h2>
+    <p class="mt-3 max-w-measure">
+      A sentence with <a href="#controls">a link in it</a>. Tab to it to see the focus ring.
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <Button href="#controls">Primary</Button>
+      <Button href="#controls" variant="plain">
+        Plain
+      </Button>
+      <span
+        aria-disabled="true"
+        class="inline-flex min-h-11 cursor-not-allowed items-center rounded bg-surface px-4 font-medium text-disabled"
+      >
+        Disabled
+      </span>
+    </div>
+  </section>
+
+  <section aria-labelledby="projects" class="mt-16">
+    <h2 id="projects" class="text-xl">
+      Project list
+    </h2>
+    <div class="mt-2 divide-y divide-line border-b border-line">
+      {projects.slice(0, 2).map((p, i) => (
+        <ProjectCard project={p} lead={i === 0} />
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="status" class="mt-16">
+    <h2 id="status" class="text-xl">
+      Status messages
+    </h2>
+    <div class="mt-4 space-y-2">
+      <p class="rounded bg-success-soft px-4 py-2 text-success-text">Saved. The page is live.</p>
+      <p class="rounded bg-accent-soft px-4 py-2 text-accent-text">
+        The list refreshes every week.
+      </p>
+      <p class="rounded bg-warning-soft px-4 py-2 text-warning-text">
+        Too many requests. Try again in a minute.
+      </p>
+      <p class="rounded bg-danger-soft px-4 py-2 text-danger-text">The request failed.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="code" class="prose mt-16">
+    <h2 id="code" class="text-xl">
+      Code
+    </h2>
+    <Code code={sample} lang="ts" theme="css-variables" />
+  </section>
+
+  <section aria-labelledby="charts" class="mt-16">
+    <h2 id="charts" class="text-xl">
+      Charts
+    </h2>
+    <p class="mt-2 max-w-measure text-muted">
+      Colour is never the only signal: every series is labelled where it is drawn.
+    </p>
+
+    <h3 class="mt-8 text-base font-semibold">Categorical</h3>
+    <svg
+      viewBox="0 0 640 220"
+      class="mt-3 h-auto w-full max-w-2xl"
+      role="img"
+      aria-label="Sample bar chart with six labelled series"
+    >
+      {[0, 25, 50, 75, 100].map((v) => (
+        <line
+          x1="120"
+          x2="630"
+          y1={200 - v * 1.8}
+          y2={200 - v * 1.8}
+          style="stroke: var(--gridline)"
+        />
+      ))}
+      <line x1="120" x2="120" y1="10" y2="200" style="stroke: var(--axis)" />
+      {bars.map(([label, v], i) => (
+        <g>
+          <text
+            x="112"
+            y={22 + i * 31}
+            text-anchor="end"
+            font-size="13"
+            style="fill: var(--axis-label)"
+          >
+            {label}
+          </text>
+          <rect
+            x="121"
+            y={10 + i * 31}
+            width={v * 5}
+            height="18"
+            style={`fill: var(--cat-${i + 1})`}
+          />
+          <text
+            x={127 + v * 5}
+            y={24 + i * 31}
+            font-size="13"
+            class="tabular"
+            style="fill: var(--text)"
+          >
+            {v}
+          </text>
+        </g>
+      ))}
+    </svg>
+
+    <h3 class="mt-8 text-base font-semibold">Sequential</h3>
+    <div class="mt-3 flex max-w-md gap-1">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <div class="flex-1 text-center text-sm text-muted">
+          <div class="h-8 rounded-sm border border-line" style={`background: var(--seq-${i})`} />
+          <span class="tabular">{i === 0 ? "none" : i}</span>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="mt-8 text-base font-semibold">Diverging</h3>
+    <div class="mt-3 flex max-w-md gap-1">
+      {divergingSteps.map((k, i) => (
+        <div class="flex-1 text-center text-sm text-muted">
+          <div class="h-8 rounded-sm" style={`background: var(--div-${k})`} />
+          <span class="tabular">{i - 3 > 0 ? `+${i - 3}` : i - 3}</span>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="mt-8 text-base font-semibold">Graph</h3>
+    <svg
+      viewBox="0 0 420 150"
+      class="mt-3 h-auto w-full max-w-md"
+      role="img"
+      aria-label="Sample graph: four nodes, Hop selected"
+    >
+      <g stroke-width="1.5" style="stroke: var(--edge)">
+        <line x1="60" y1="80" x2="200" y2="40" />
+        <line x1="200" y1="40" x2="350" y2="85" />
+      </g>
+      <g stroke-width="1" style="stroke: var(--edge-muted)">
+        <line x1="60" y1="80" x2="190" y2="125" />
+        <line x1="190" y1="125" x2="350" y2="85" />
+      </g>
+      <circle cx="60" cy="80" r="8" style="fill: var(--node)" />
+      <circle cx="190" cy="125" r="6" style="fill: var(--node-muted)" />
+      <circle cx="350" cy="85" r="8" style="fill: var(--node)" />
+      <circle cx="200" cy="40" r="9" style="fill: var(--highlight)" />
+      <circle
+        cx="200"
+        cy="40"
+        r="14"
+        fill="none"
+        stroke-width="2"
+        style="stroke: var(--highlight)"
+      />
+      <text x="222" y="36" font-size="13" style="fill: var(--text)">
+        Hop (selected)
+      </text>
+      <text x="40" y="106" font-size="13" style="fill: var(--axis-label)">
+        Astro
+      </text>
+      <text x="330" y="112" font-size="13" style="fill: var(--axis-label)">
+        React
+      </text>
+    </svg>
+    <p class="mt-2">
+      <span
+        class="inline-block rounded px-2 py-1 text-sm"
+        style="background: var(--tooltip-bg); color: var(--tooltip-text)"
+      >
+        Tooltip: 12 contributions on 3 Nov 2026
+      </span>
+    </p>
+  </section>
+
+  <section aria-labelledby="demo" class="mt-16">
+    <h2 id="demo" class="text-xl">
+      AI demo
+    </h2>
+    <p class="mt-2 max-w-measure text-muted">
+      For future live demos. Plain turns with a label, not chat bubbles.
+    </p>
+    <div class="mt-5 max-w-measure space-y-3">
+      <p class="font-mono text-sm" style="color: var(--demo-meta)">
+        claude-opus-5-5 · 1.2 s
+      </p>
+      <div class="rounded px-4 py-3" style="background: var(--demo-user-bg)">
+        <p class="text-sm text-muted">You</p>
+        <p>What did you build Hop with?</p>
+      </div>
+      <div
+        class="rounded border border-line px-4 py-3"
+        style="background: var(--demo-assistant-bg)"
+      >
+        <p class="text-sm text-muted">Assistant</p>
+        <p>
+          Astro, React and SQLite, built with Claude Code from my own specs.
+          <span aria-hidden="true" style="color: var(--demo-indicator)">
+            ▍
+          </span>
+        </p>
+      </div>
+      <p class="font-mono text-sm" style="color: var(--demo-meta)" role="status">
+        Writing…
+      </p>
+      <p class="rounded bg-warning-soft px-4 py-2 text-warning-text">
+        The demo is busy. Try again in a minute.
+      </p>
+      <p class="rounded bg-danger-soft px-4 py-2 text-danger-text">
+        The answer could not be loaded.
+      </p>
+      <p class="rounded border border-line px-4 py-6 text-center text-muted">
+        Nothing yet. Ask about one of the projects.
+      </p>
+    </div>
+  </section>
+</Base>
