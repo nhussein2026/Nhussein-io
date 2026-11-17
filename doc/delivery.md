@@ -15,6 +15,22 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-17 (afternoon) · `v2-answers-1`, uncommitted
+
+Fixes from the Claude in Chrome review of the alpha. Open points from the review are in `doc/questions.md` section I and plan section 14.
+
+**Updated**
+- `robots.txt` names `/sitemap-index.xml`.
+- `trailingSlash: "always"`; every internal link and redirect target ends in `/`. Canonicals now match the served address.
+- 404 page has `noindex` and no canonical (new `noindex` prop on `Base.astro`).
+- Heatmap: fixed weekday column outside the scroll area; scroll starts at the newest weeks through `flex-row-reverse`, no JavaScript.
+- Header links have 24 px+ tap targets.
+- Reading width: `--container-measure: 60ch` (`max-w-measure`), about 70 characters a line, replaces the 62ch and 68ch values.
+- Skills: Ghiras removed as proof.
+
+**Notes**
+- `bun run check`, build and link check pass. Checked at 360 and 1280 px in headless Chrome.
+
 ## 2026-11-17 · `v2-answers-1` → `v2` (PR #2, open)
 
 **Delivered**

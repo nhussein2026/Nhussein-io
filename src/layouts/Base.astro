@@ -11,9 +11,17 @@ interface Props {
   person?: boolean;
   /** Absolute or root-relative path to the preview image. */
   image?: string;
+  /** For the not-found page: no canonical link, and search engines skip it. */
+  noindex?: boolean;
 }
 
-const { title, description, person = false, image = "/og-image.png" } = Astro.props;
+const {
+  title,
+  description,
+  person = false,
+  image = "/og-image.png",
+  noindex = false,
+} = Astro.props;
 const fullTitle =
   title === profile.name ? `${profile.name} · Software Engineer` : `${title} · ${profile.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -43,7 +51,7 @@ const personLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

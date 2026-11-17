@@ -11,9 +11,9 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.order -
   description="Products Nasser Hussein designed and built: what each one does, his part in it, the key decisions and the result."
 >
   <h1 class="text-3xl">Work</h1>
-  <p class="mt-3 max-w-[62ch] text-muted">
+  <p class="mt-3 max-w-measure text-muted">
     Each story says what the product does, what I built myself, the decisions that shaped it and
-    where it stands now. Earlier and smaller work is on <a href="/journey">Journey</a>.
+    where it stands now. Earlier and smaller work is on <a href="/journey/">Journey</a>.
   </p>
   <div class="mt-8 grid gap-4">
     {projects.map((p) => (

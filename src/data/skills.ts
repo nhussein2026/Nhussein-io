@@ -10,37 +10,34 @@ export const skills: Skill[] = [
   {
     name: "TypeScript",
     group: "Languages",
-    proof: [
-      { label: "Hop", href: "/work/hop" },
-      { label: "Ghiras", href: gh("Ghiras") },
-    ],
+    proof: [{ label: "Hop", href: "/work/hop/" }],
   },
   {
     name: "JavaScript",
     group: "Languages",
     proof: [
-      { label: "Eskici", href: "/work/eskici" },
+      { label: "Eskici", href: "/work/eskici/" },
       { label: "DevLab", href: gh("DevLab") },
     ],
   },
   {
     name: "Python",
     group: "Languages",
-    proof: [{ label: "career-copilot", href: "/work/career-copilot" }],
+    proof: [{ label: "career-copilot", href: "/work/career-copilot/" }],
   },
   {
     name: "React",
     group: "Frontend",
     proof: [
-      { label: "Hop", href: "/work/hop" },
-      { label: "Eskici", href: "/work/eskici" },
+      { label: "Hop", href: "/work/hop/" },
+      { label: "Eskici", href: "/work/eskici/" },
     ],
   },
   {
     name: "Astro",
     group: "Frontend",
     proof: [
-      { label: "Safha", href: "/work/safha" },
+      { label: "Safha", href: "/work/safha/" },
       { label: "learn-turkish", href: gh("learn-turkish") },
       { label: "This site", href: gh("Nhussein-io") },
     ],
@@ -49,36 +46,33 @@ export const skills: Skill[] = [
     name: "Node.js and Express",
     group: "Backend",
     proof: [
-      { label: "Hop", href: "/work/hop" },
-      { label: "Eskici", href: "/work/eskici" },
+      { label: "Hop", href: "/work/hop/" },
+      { label: "Eskici", href: "/work/eskici/" },
     ],
   },
   {
     name: "SQL databases",
     group: "Backend",
-    proof: [
-      { label: "Hop (SQLite)", href: "/work/hop" },
-      { label: "Ghiras (PostgreSQL)", href: gh("Ghiras") },
-    ],
+    proof: [{ label: "Hop (SQLite)", href: "/work/hop/" }],
   },
   {
     name: "MongoDB",
     group: "Backend",
-    proof: [{ label: "Eskici", href: "/work/eskici" }],
+    proof: [{ label: "Eskici", href: "/work/eskici/" }],
   },
   {
     name: "AI-assisted engineering",
     group: "Practice",
     proof: [
-      { label: "Hop", href: "/work/hop" },
-      { label: "career-copilot", href: "/work/career-copilot" },
+      { label: "Hop", href: "/work/hop/" },
+      { label: "career-copilot", href: "/work/career-copilot/" },
     ],
   },
   {
     name: "GitHub Actions CI",
     group: "Practice",
     proof: [
-      { label: "career-copilot", href: "/work/career-copilot" },
+      { label: "career-copilot", href: "/work/career-copilot/" },
       { label: "This site", href: gh("Nhussein-io") },
     ],
   },

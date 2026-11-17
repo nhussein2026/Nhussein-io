@@ -73,6 +73,22 @@ Change any of these and I will follow it.
 - **Tooling**: on the latest stable versions. Node 26 LTS (`.nvmrc`, and installed locally under `~/.local/share/node`), Bun 1.4.4, Astro 7.4.12. TypeScript stays on 6.0.3 because `@astrojs/check` does not support TypeScript 7 yet.
 - **Package manager**: Bun (see the switch commit).
 
+## I. From the site review (17 Nov)
+
+Fixes already made are ticked in plan section 14. These need you:
+
+| # | Question |
+| --- | --- |
+| I1 | About says "going deeper into the foundations and into machine learning". The claim ladder allows "studying machine learning" only from Mar 2027. Because About is LinkedIn word for word (A4), change both, for example to "statistics and Python now, machine learning next". Your wording? |
+| I2 | About ends with "You can see my work at github.com/nhussein2026". On the site, link to `/work/`? Same LinkedIn question as I1. |
+| I3 | Safha has three start dates: site Dec 2023, LinkedIn Jul 2024, CV Feb 2025. Which one, everywhere? Then it gets a Journey line. |
+| I4 | Eskici's code link goes to `github.com/3skici`, the name the plan dropped. Rename the GitHub organisation, or keep the URL with the neutral label "Code on GitHub"? |
+| I5 | TOEFL is shown without a score. Add the score, or leave it as is? |
+| I6 | Heatmap: keep it knowingly (it reads an undocumented GitHub page that may change, and it shows quiet months up close) or drop it? |
+| I7 | Until the 27 Nov GitHub cleanup, hide repositories with no description from Journey? |
+| I8 | Ghiras is no longer used as proof in skills. Clean up its README and description and add it back, or leave it out? |
+| I9 | The review notes the plan reserves November for LinkedIn, the CV, GitHub and Gate 2, with site work from 8 Jan. Keep site work paused until then, apart from answers here? |
+
 ## H. Changes from the written plan
 
 - Journey milestones are **one YAML file** (`src/content/journey.yaml`) instead of one Markdown file each: 14 short entries are easier to correct in one place.

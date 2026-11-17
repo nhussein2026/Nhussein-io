@@ -436,7 +436,7 @@ The site launches only when every line is ticked.
 
 The one place to see what is done and what remains. Updated at the end of every work session; what was delivered in each session is logged in `doc/delivery.md`, and answers I still owe are in `doc/questions.md`.
 
-Last updated: **17 Nov 2026** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
+Last updated: **17 Nov 2026, after the site review** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
 
 Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claude)* Claude builds it.
 
@@ -494,6 +494,34 @@ Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claud
 - [x] Favicon and preview image
 - [ ] Accent blue from the LinkedIn cover, if there is one (D3) *(me)*
 - [ ] Route art: what it represents, then 2–3 versions to pick from *(me, then Claude)*
+
+### Site review, 17 Nov (Claude in Chrome review of the alpha)
+
+Fixed (not yet committed):
+
+- [x] `robots.txt` points to `/sitemap-index.xml`, the file Astro actually builds
+- [x] Trailing slashes: `trailingSlash: "always"` and every internal link ends in `/`, so no click goes through a 301 and canonicals point at the final address
+- [x] 404 page: no canonical; `noindex` instead
+- [x] Heatmap: weekday labels sit in their own column and no longer get cut off; the scroll starts at the newest weeks, without JavaScript
+- [x] Header links at least 24 px tall (WCAG 2.2, 2.5.8)
+- [x] Reading width: one `max-w-measure` token (60ch, about 70 characters a line) for all running text
+- [x] Skills: Ghiras removed as proof for TypeScript and SQL; Hop alone until Ghiras is cleaned up
+- [x] Favicon: already blue in every file (svg, ico, png); no change needed
+
+Open, see `doc/questions.md` section I:
+
+- [ ] About: "going deeper … into machine learning" breaks the claim ladder until Mar 2027; change it on LinkedIn and the site together *(me)*
+- [ ] About: last line links to GitHub; link to `/work/` instead *(me, same reason)*
+- [ ] Safha: one start date used everywhere (site Dec 2023, LinkedIn Jul 2024, CV Feb 2025) *(me)*
+- [ ] Safha: a Journey milestone, once the date is settled *(me, then Claude)*
+- [ ] Eskici: the code link goes to `github.com/3skici`; rename the organisation or relabel the link *(me)*
+- [ ] TOEFL: add the score or leave it as is *(me)*
+- [ ] Heatmap: keep it knowingly (it reads an undocumented GitHub page, and shows quiet months) or drop it *(me)*
+- [ ] Journey: hide repositories with no description until the GitHub cleanup *(me: yes or no)*
+- [ ] GitHub cleanup (27 Nov block): descriptions, typos, topics; this fixes the Journey list *(me)*
+- [ ] Ghiras: improve its README and description, or keep it out of skills *(me)*
+- [ ] "What I would change" lines and screenshots (already listed under Content)
+- [ ] Design choices due 27 Dec were made by Claude's defaults: confirm they are yours (section E of questions) *(me)*
 
 ### Release candidate (`v2.0.0-rc.1`)
 

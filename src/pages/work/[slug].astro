@@ -35,7 +35,7 @@ const facts = [
 <Base title={d.title} description={`${d.title}: ${d.summary}. ${d.status}.`}>
   <article>
     <p class="text-[0.95rem]">
-      <a href="/work">← Work</a>
+      <a href="/work/">← Work</a>
     </p>
     <header class="mt-4">
       <h1 class="text-3xl">{d.title}</h1>
@@ -82,7 +82,7 @@ const facts = [
     </div>
 
     {d.aiNote && (
-      <p class="mt-8 max-w-[68ch] border-l-2 border-accent pl-4 text-[0.95rem] text-muted">
+      <p class="mt-8 max-w-measure border-l-2 border-accent pl-4 text-[0.95rem] text-muted">
         <span class="font-medium text-text">How AI was used: </span>
         {d.aiNote}
       </p>

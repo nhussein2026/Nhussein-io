@@ -43,6 +43,9 @@
 
 /* Not inline: these must exist as CSS variables for the base styles below. */
 @theme {
+  /* Reading width (plan rule 1: lines of about 70 characters). Inter's "0" is wider than
+     an average letter, so 60ch comes out at roughly 70 characters per line. */
+  --container-measure: 60ch;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -109,7 +112,7 @@
 /* Long-form text inside story pages. */
 @layer components {
   .prose {
-    max-width: 68ch;
+    max-width: var(--container-measure);
   }
   .prose h2 {
     font-size: 1.25rem;

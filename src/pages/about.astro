@@ -55,7 +55,7 @@ import { profile, experience, education, languages } from "../data/profile";
           <p class="text-[0.9rem] text-muted">
             {e.start} – {e.end} · {e.terms}
           </p>
-          <ul class="mt-2 max-w-[68ch] list-disc space-y-1 pl-5 marker:text-muted">
+          <ul class="mt-2 max-w-measure list-disc space-y-1 pl-5 marker:text-muted">
             {e.lines.map((l) => (
               <li>{l}</li>
             ))}
@@ -109,7 +109,7 @@ import { profile, experience, education, languages } from "../data/profile";
     <h2 id="contact" class="text-xl">
       Contact
     </h2>
-    <p class="mt-2 max-w-[62ch]">{profile.openTo}</p>
+    <p class="mt-2 max-w-measure">{profile.openTo}</p>
     <p class="mt-2">
       <a href={`mailto:${profile.email}`}>{profile.email}</a>
     </p>

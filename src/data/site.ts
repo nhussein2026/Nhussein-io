@@ -24,7 +24,7 @@ export function publicRepoUrl(name?: string): string | undefined {
 }
 
 export const nav = [
-  { href: "/work", label: "Work" },
-  { href: "/journey", label: "Journey" },
-  { href: "/about", label: "About" },
+  { href: "/work/", label: "Work" },
+  { href: "/journey/", label: "Journey" },
+  { href: "/about/", label: "About" },
 ];
