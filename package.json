@@ -17,20 +17,21 @@
     "nasser-hussein",
     "software-engineer"
   ],
+  "packageManager": "bun@1.4.2",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
-    "fetch-data": "node scripts/fetch-repos.mjs && node scripts/fetch-contributions.mjs",
-    "prebuild": "npm run fetch-data",
+    "fetch-data": "bun scripts/fetch-repos.mjs && bun scripts/fetch-contributions.mjs",
+    "prebuild": "bun run fetch-data",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
     "check:links": "linkinator dist --recurse --skip \"^(https?:|mailto:)(?!//(localhost|127\\.0\\.0\\.1))\"",
-    "check:version": "node scripts/check-version.mjs",
+    "check:version": "bun scripts/check-version.mjs",
     "format": "prettier --write .",
-    "check:content": "node scripts/check-content.mjs"
+    "check:content": "bun scripts/check-content.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

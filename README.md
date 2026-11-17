@@ -6,22 +6,22 @@ Built with [Astro](https://astro.build) as a static site, styled with Tailwind C
 
 ## Run it
 
-Needs Node.js 22.22 or newer (CI uses the version in `.nvmrc`).
+Needs [Bun](https://bun.sh) 1.4 or newer (the version is pinned in `package.json` under `packageManager`) and Node.js 22.22 or newer, which Astro runs on (CI uses the version in `.nvmrc`).
 
 ```sh
-npm ci
-npm run dev        # http://localhost:4321
-npm run build      # fetches GitHub data, then builds into dist/
-npm run preview    # serves dist/
+bun install
+bun run dev        # http://localhost:4321
+bun run build      # fetches GitHub data, then builds into dist/
+bun run preview    # serves dist/
 ```
 
 Checks, as CI runs them:
 
 ```sh
-npm run check:version   # package.json version is SemVer (and matches the tag, on a release)
-npm run check           # TypeScript and content schemas
-npm run check:links     # every internal link in dist/ resolves
-npm run check:content   # no "TO CONFIRM" left in the content (fails the deploy)
+bun run check:version   # package.json version is SemVer (and matches the tag, on a release)
+bun run check           # TypeScript and content schemas
+bun run check:links     # every internal link in dist/ resolves
+bun run check:content   # no "TO CONFIRM" left in the content (fails the deploy)
 ```
 
 ## Where things live

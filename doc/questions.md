@@ -1,6 +1,6 @@
 # Open questions for the v2 rebuild
 
-Written 17 Nov 2026 on the `v2` branch. Answer under each item (or just edit the file it names). Items marked **blocks launch** must be settled before v2 goes live; the deploy workflow refuses to publish while any `TO CONFIRM` is left in `src/` (`npm run check:content` lists them).
+Written 17 Nov 2026 on the `v2` branch. Answer under each item (or just edit the file it names). Items marked **blocks launch** must be settled before v2 goes live; the deploy workflow refuses to publish while any `TO CONFIRM` is left in `src/` (`bun run check:content` lists them).
 
 ---
 
@@ -62,7 +62,7 @@ Change any of these and I will follow it.
 
 ## G. Things to run or approve
 
-- **Lighthouse**: I could not run it (the permission check blocked downloading it with `npx -y`). Run `npx lighthouse@13.6.0 http://localhost:4321 --view` after `npm run build && npm run preview`, or allow it and I will run it on every page.
+- **Lighthouse**: I could not run it (the permission check blocked downloading it with `npx -y`). Run `bunx lighthouse@13.6.0 http://localhost:4321 --view` after `bun run build && bun run preview`, or allow it and I will run it on every page.
 - **Pre-release `v2.0.0-alpha.1`**: the version is set and the changelog written, but I have **not** tagged or published it. Say so and I will tag the `v2` branch and create the GitHub pre-release.
 - **Launch-day settings** (plan step 8): Settings → Pages → Source → "GitHub Actions". Also the `main` branch rule needs one approving review, which you cannot give your own PR; decide: admin merge, or lower it to 0.
 - **Node**: this machine has Node 22.22.1, so Astro is pinned to 7.4.1 (7.4.2+ needs Node 22.23.4). CI uses Node 24. Upgrading local Node lets us move to the current Astro as a patch release.
