@@ -17,34 +17,35 @@
     "nasser-hussein",
     "software-engineer"
   ],
+  "packageManager": "bun@1.4.4",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.23.4"
   },
   "scripts": {
     "dev": "astro dev",
-    "fetch-data": "node scripts/fetch-repos.mjs && node scripts/fetch-contributions.mjs",
-    "prebuild": "npm run fetch-data",
+    "fetch-data": "bun scripts/fetch-repos.mjs && bun scripts/fetch-contributions.mjs",
+    "prebuild": "bun run fetch-data",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
     "check:links": "linkinator dist --recurse --skip \"^(https?:|mailto:)(?!//(localhost|127\\.0\\.0\\.1))\"",
-    "check:version": "node scripts/check-version.mjs",
+    "check:version": "bun scripts/check-version.mjs",
     "format": "prettier --write .",
-    "check:content": "node scripts/check-content.mjs"
+    "check:content": "bun scripts/check-content.mjs"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/sitemap": "3.7.5",
     "@fontsource-variable/inter": "5.3.0",
     "@fontsource/jetbrains-mono": "5.3.0",
-    "@tailwindcss/vite": "4.3.4",
-    "astro": "7.4.1",
-    "tailwindcss": "4.3.4"
+    "@tailwindcss/vite": "4.3.5",
+    "astro": "7.4.12",
+    "tailwindcss": "4.3.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
     "linkinator": "8.1.0",
-    "prettier": "3.9.10",
+    "prettier": "3.10.1",
     "prettier-plugin-astro": "1.1.2",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   }
 }

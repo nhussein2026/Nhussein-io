@@ -27,13 +27,15 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+      - run: bun install --frozen-lockfile
       - name: No open TO CONFIRM markers
-        run: npm run check:content
-      - run: npm run check
-      - run: npm run build
-      - run: npm run check:links
+        run: bun run check:content
+      - run: bun run check
+      - run: bun run build
+      - run: bun run check:links
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

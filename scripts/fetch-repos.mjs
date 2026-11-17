@@ -5,6 +5,17 @@ import { writeFile } from "node:fs/promises";
 const USER = "nhussein2026";
 const OUT = new URL("../src/data/repos.json", import.meta.url);
 
+// Public repositories kept off the site until I have reviewed them
+// (doc/questions.md, D-b and D-c). Remove a name to show it again.
+const HIDDEN = new Set([
+  "non-profit-association-backend",
+  "non-profit-association-frontend",
+  "ai-bootcamp-assignment-1",
+  "ai-local-agent-assignment-2",
+  "Assignment--3---AI-Agent-with-Tools",
+  "brewhaus-practicum-learning-travel-agency",
+]);
+
 async function main() {
   const res = await fetch(
     `https://api.github.com/users/${USER}/repos?per_page=100&type=owner&sort=created`,
@@ -18,6 +29,7 @@ async function main() {
     .filter((r) => !r.fork && !r.private)
     // The profile README repository is not a project.
     .filter((r) => r.name.toLowerCase() !== USER.toLowerCase())
+    .filter((r) => !HIDDEN.has(r.name))
     .map((r) => ({
       name: r.name,
       description: r.description ?? "",

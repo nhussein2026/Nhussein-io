@@ -3,8 +3,8 @@ title: Eskici
 summary: A second-hand marketplace in three languages
 role: Team lead and main developer
 team: Three people
-start: TO CONFIRM
-end: TO CONFIRM
+start: Nov 2024
+end: Jul 2025
 status: Graduation project; ran live for about a year; offline now
 stack: [MongoDB, Express, React, Node.js, Tailwind CSS]
 code: https://github.com/3skici
