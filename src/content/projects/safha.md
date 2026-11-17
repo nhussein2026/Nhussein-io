@@ -1,9 +1,9 @@
 ---
 title: Safha
 summary: Tutorials for Arabic-speaking developers
-role: TO CONFIRM
-team: TO CONFIRM
-start: TO CONFIRM
+role: Creator and sole developer
+team: Solo
+start: Dec 2023
 status: Live at safha.dev
 stack: [Astro, MDX, Tailwind CSS]
 live: https://safha.dev
@@ -16,7 +16,7 @@ Most programming tutorials are written in English. Safha publishes tutorials and
 
 ## My part
 
-TO CONFIRM: what I designed and built myself.
+Safha is my own developer blog. I started it on WordPress with a custom theme, then moved it to Astro, which it runs on today.
 
 ## Key decisions
 

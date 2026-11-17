@@ -3,7 +3,7 @@ title: Hop
 summary: A self-hosted planning app for goals, habits and study
 role: Designer and sole developer
 team: Solo
-start: TO CONFIRM
+start: Sep 2026
 end: Oct 2026 (v1)
 status: In daily use
 stack: [TypeScript, React, Node.js, SQLite]

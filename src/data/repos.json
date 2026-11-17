@@ -1,51 +1,11 @@
 [
   {
-    "name": "ai-bootcamp-assignment-1",
-    "description": "",
-    "topics": [],
-    "language": "Python",
-    "year": 2026,
-    "url": "https://github.com/nhussein2026/ai-bootcamp-assignment-1",
-    "homepage": null,
-    "archived": false
-  },
-  {
-    "name": "ai-local-agent-assignment-2",
-    "description": "",
-    "topics": [],
-    "language": "Jupyter Notebook",
-    "year": 2026,
-    "url": "https://github.com/nhussein2026/ai-local-agent-assignment-2",
-    "homepage": null,
-    "archived": false
-  },
-  {
-    "name": "Assignment--3---AI-Agent-with-Tools",
-    "description": "",
-    "topics": [],
-    "language": "Jupyter Notebook",
-    "year": 2026,
-    "url": "https://github.com/nhussein2026/Assignment--3---AI-Agent-with-Tools",
-    "homepage": null,
-    "archived": false
-  },
-  {
     "name": "breva",
     "description": "",
     "topics": [],
     "language": "Astro",
     "year": 2026,
     "url": "https://github.com/nhussein2026/breva",
-    "homepage": null,
-    "archived": false
-  },
-  {
-    "name": "brewhaus-practicum-learning-travel-agency",
-    "description": "",
-    "topics": [],
-    "language": "JavaScript",
-    "year": 2026,
-    "url": "https://github.com/nhussein2026/brewhaus-practicum-learning-travel-agency",
     "homepage": null,
     "archived": false
   },
@@ -175,26 +135,6 @@
     "year": 2025,
     "url": "https://github.com/nhussein2026/Isnnad-frontend",
     "homepage": "https://isnnad.vercel.app",
-    "archived": false
-  },
-  {
-    "name": "non-profit-association-backend",
-    "description": "",
-    "topics": [],
-    "language": "JavaScript",
-    "year": 2025,
-    "url": "https://github.com/nhussein2026/non-profit-association-backend",
-    "homepage": null,
-    "archived": false
-  },
-  {
-    "name": "non-profit-association-frontend",
-    "description": "",
-    "topics": [],
-    "language": "JavaScript",
-    "year": 2025,
-    "url": "https://github.com/nhussein2026/non-profit-association-frontend",
-    "homepage": null,
     "archived": false
   },
   {
