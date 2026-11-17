@@ -9,13 +9,14 @@ How this file fits with the others:
 | `doc/2026-11-16-portfolio-rebuild-plan.md` | What we intend to build. Section 14 is the **progress tracker**: what is done and what remains. |
 | `doc/delivery.md` (this file) | What was actually delivered, session by session, with the branch, PR and tag. |
 | `doc/questions.md` | What is waiting on an answer from me. |
+| `doc/backlog.md` | Ideas parked for later, with the decision behind each and what done means. |
 | `CHANGELOG.md` | What changed per released version, for visitors and GitHub Releases. |
 
 Each entry: date, version or branch, then **Delivered**, **Updated** (changes to existing work), and **Notes** (decisions, follow-ups) where needed.
 
 ---
 
-## 2026-11-17 (evening) · design system, uncommitted
+## 2026-11-17 (evening) · design system, `v2-design` → `v2` (PR #3)
 
 Approved after a side-by-side preview in Chrome, with one direction from me: human, professional and simple, nothing that looks generated.
 
@@ -35,6 +36,8 @@ Approved after a side-by-side preview in Chrome, with one direction from me: hum
 - `Figure` renders nothing until an image exists.
 - Favicon, preview image and icons re-rendered from the tokens; `og-image.html` and `icon.html` read `tokens.css`.
 - Light background moved from warm `#fbfbf9` to `#f9fafc`, tinted toward the accent.
+- `trailingSlash` back to `"ignore"`: with `"always"`, the local dev and preview servers showed Astro's default 404 for any address without a slash. The canonical URL now always ends in `/` (`Base.astro`), so search engines still see one address per page.
+- 404 page redesigned: centred between header and footer, a small "404", a larger title, and Home as the main button with Work and Journey beside it. Same wording.
 
 **Notes**
 - `bun run check`, build, link check and contrast check pass. No horizontal scroll at 360, 768 or 1280 px; one `h1` per page; standalone links at least 24 px.

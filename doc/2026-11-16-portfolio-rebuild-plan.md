@@ -546,3 +546,8 @@ Open, see `doc/questions.md` section I:
 - [ ] Release `v2.0.0`
 - [ ] Sun 7 Feb: LinkedIn website, Featured and About; GitHub profile README; CV header link; backlinks from Safha, DevLab, learn-turkish; LinkedIn cover; one post
 - [ ] Delete `gh-pages` one month after launch
+
+### Backlog (parked, see `doc/backlog.md`)
+
+- [ ] B1 Part 1: skills with typed proof and a derived label (Professional / Shipped / Learning), enforced by `check:content` *(after launch, one block)*
+- [ ] B1 Part 2: AI profile explorer as a separate Lab project, judged by a 30-question evaluation *(Apr 2027 or later)*
