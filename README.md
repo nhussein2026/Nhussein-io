@@ -6,7 +6,7 @@ Built with [Astro](https://astro.build) as a static site, styled with Tailwind C
 
 ## Run it
 
-Needs [Bun](https://bun.sh) 1.4 or newer (the version is pinned in `package.json` under `packageManager`) and Node.js 22.22 or newer, which Astro runs on (CI uses the version in `.nvmrc`).
+Needs [Bun](https://bun.sh) (the version is pinned in `package.json` under `packageManager`) and Node.js, which Astro runs on: 26 LTS, as in `.nvmrc` and CI.
 
 ```sh
 bun install
