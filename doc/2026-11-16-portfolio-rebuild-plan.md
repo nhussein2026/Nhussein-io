@@ -429,3 +429,85 @@ The site launches only when every line is ticked.
 | GitHub does not answer during a build | The saved `repos.json` is used |
 | The domain breaks on launch day | Switch the Pages source back to `gh-pages` |
 | Repository topics are not set by 22 Jan | Journey shows one flat list by year; grouping follows when the topics exist |
+
+---
+
+## 14. Progress tracker
+
+The one place to see what is done and what remains. Updated at the end of every work session; what was delivered in each session is logged in `doc/delivery.md`, and answers I still owe are in `doc/questions.md`.
+
+Last updated: **17 Nov 2026** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
+
+Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claude)* Claude builds it.
+
+### Version 1 (old site)
+
+- [x] Tag `v1.0.0` and publish the GitHub Release (16 Nov)
+- [x] Stop-gap: design credit line in the footer (17 Nov, `v1.0.1`)
+- [x] Stop-gap: new public CV without phone, same address (17 Nov, `v1.0.1`)
+- [x] Deploy `v1.0.1` to `gh-pages`
+
+### Setup (plan section 8, steps 1–7)
+
+- [x] Branch `v2`; old React site, `docs/`, `.env.example` removed
+- [x] Astro, Tailwind, strict TypeScript, self-hosted fonts
+- [x] Content collections, `profile.ts`, `skills.ts`, fetch scripts with saved fallback
+- [x] Workflows: checks, Pages deploy, release-please, weekly rebuild
+- [x] README and `CHANGELOG.md`; `package.json` description, author, keywords
+- [x] Bun, Node 26 LTS, Astro 7.4.12
+- [x] Pre-release `v2.0.0-alpha.1`
+- [ ] Merge PR #2 (`v2-answers-1` → `v2`) *(me)*
+
+### Pages
+
+- [x] Home: top, why, now, three cards, open to, links
+- [x] Work page and story pages
+- [x] Journey: milestones, heatmap, repository list
+- [x] About: LinkedIn About, experience, education, languages, skills, CV, contact
+- [x] 404 page
+- [x] Redirects for `/resources` and `/github-profile`
+- [ ] Approve the 404 page *(me, block 7)*
+
+### Content
+
+- [x] Hop, Eskici, career-copilot, Safha stories drafted
+- [x] Story dates for Hop, Eskici, Safha (A1–A3)
+- [x] About text from LinkedIn (A4)
+- [ ] Safha wording checked against safha.dev (B6) *(me)*
+- [ ] Journey milestones checked against each repository (B8) *(me)*
+- [ ] "What I would change" lines approved for each story (C) *(me)*
+- [ ] Skills with proof: final yes or no (D1) *(me)*
+- [ ] Screenshots, 2–4 per story *(me; Claude for Hop)*
+- [ ] Eskici demo or walkthrough link (D8) *(me)*
+- [ ] Volunteer platform story: only after its launch
+
+### Visibility and GitHub
+
+- [ ] Repository review: decide D-a to D-e, then update the `HIDDEN` list *(me)*
+- [ ] Hop repository public, or remove the link from the CV (D-a) *(me)*
+- [ ] Repository descriptions and topics set on GitHub, so Journey can group by topic *(me)*
+
+### Design
+
+- [x] Theme, accent, fonts (D2–D4); "Build. Learn. Grow." not used (D5)
+- [x] Heatmap at build time (D10)
+- [x] Favicon and preview image
+- [ ] Accent blue from the LinkedIn cover, if there is one (D3) *(me)*
+- [ ] Route art: what it represents, then 2–3 versions to pick from *(me, then Claude)*
+
+### Release candidate (`v2.0.0-rc.1`)
+
+- [ ] Lighthouse on every page, phone setting, 95+ in all four *(Claude, after approval)*
+- [ ] Accessibility pass: keyboard, focus, contrast, alt text, one `h1` per page *(Claude)*
+- [ ] 360 px check on every page *(Claude)*
+- [ ] Shared link preview on LinkedIn *(me, block 7)*
+- [ ] Read the whole site aloud on the phone; list the fixes *(me, block 8)*
+- [ ] Definition of done (section 11): every line ticked
+
+### Launch (Fri 5 Feb 2027) and after
+
+- [ ] Merge `v2` into `main` by PR; switch Pages source to GitHub Actions *(me)*
+- [ ] Private-window test: five direct links and the CV
+- [ ] Release `v2.0.0`
+- [ ] Sun 7 Feb: LinkedIn website, Featured and About; GitHub profile README; CV header link; backlinks from Safha, DevLab, learn-turkish; LinkedIn cover; one post
+- [ ] Delete `gh-pages` one month after launch

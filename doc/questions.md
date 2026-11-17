@@ -1,6 +1,6 @@
 # Open questions for the v2 rebuild
 
-Written 17 Nov 2026 on the `v2` branch; first round of answers applied the same day. Answer under each item (or just edit the file it names). The deploy workflow refuses to publish while any `TO CONFIRM` is left in `src/` (`bun run check:content` lists them); none are left now.
+Written 17 Nov 2026 on the `v2` branch; first round of answers applied the same day. Answer under each item (or just edit the file it names). The deploy workflow refuses to publish while any `TO CONFIRM` is left in `src/` (`bun run check:content` lists them); none are left now. Overall progress is tracked in section 14 of the plan; deliveries are logged in `doc/delivery.md`.
 
 ---
 
