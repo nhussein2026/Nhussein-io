@@ -56,7 +56,7 @@ Change any of these and I will follow it.
 | D4 | Inter + JetBrains Mono, self-hosted | `src/styles/global.css` |
 | D5 | "Build. Learn. Grow." is **not** used anywhere | — |
 | D10 | Heatmap kept, drawn at build time on Journey | `src/components/Heatmap.astro` |
-| — | **Route art**: one draft (a dotted route with four stops and a blue destination) on Home and the preview image. Tell me what the route should represent and I will draw 2–3 alternatives. | `src/components/RouteArt.astro` |
+| — | **Route art**: phases, decided 17 Nov: stop 1 passed (B.Sc. and first work); now on the way to stop 2 (İTÜ M.Sc. and a full-time job), which fills in only when I decide the phase is complete. Steps to move it are in the component comment. | `src/components/RouteArt.astro`, `scripts/og-image.html` |
 | — | **Favicon**: an "N." monogram in the accent colour. | `public/favicon.svg` |
 
 ## F. Assets (later)

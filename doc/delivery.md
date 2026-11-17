@@ -38,6 +38,8 @@ Approved after a side-by-side preview in Chrome, with one direction from me: hum
 - Light background moved from warm `#fbfbf9` to `#f9fafc`, tinted toward the accent.
 - `trailingSlash` back to `"ignore"`: with `"always"`, the local dev and preview servers showed Astro's default 404 for any address without a slash. The canonical URL now always ends in `/` (`Base.astro`), so search engines still see one address per page.
 - 404 page redesigned: centred between header and footer, a small "404", a larger title, and Home as the main button with Work and Journey beside it. Same wording.
+- GitHub and LinkedIn links (Home, footer, About) open in a new tab, with `rel="me noopener"` and a screen-reader note.
+- Route art redrawn to show progress, by my own phases: stop 1 passed (B.Sc. and first work), "now" partway toward stop 2 (İTÜ M.Sc. and a full-time job; it fills in when I decide the phase is complete, not when it starts), three stops ahead. Preview image re-rendered to match.
 
 **Notes**
 - `bun run check`, build, link check and contrast check pass. No horizontal scroll at 360, 768 or 1280 px; one `h1` per page; standalone links at least 24 px.

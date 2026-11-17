@@ -500,7 +500,7 @@ Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claud
 - [x] Home: a three-line Experience strip after Selected work, linking to About (17 Nov, changes section 5)
 - [x] Lighthouse, phone setting: accessibility, best practices and SEO 100 on every page (404 SEO 63, by design: `noindex`). Performance 75–98 on this laptop because of a slow-CPU warning; 100 with no CPU slowdown. Recheck with PageSpeed Insights after launch
 - [ ] Accent blue from the LinkedIn cover, if there is one (D3) *(me)*
-- [ ] Route art: what it represents, then 2–3 versions to pick from *(me, then Claude)*
+- [x] Route art shows progress (17 Nov): stop 1 passed (B.Sc. and first work), now on the way to stop 2 (İTÜ M.Sc. and a full-time job)
 
 ### Site review, 17 Nov (Claude in Chrome review of the alpha)
 

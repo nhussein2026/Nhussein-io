@@ -1,41 +1,75 @@
 ---
-// The site's one decoration (design rule 3): a quiet route with stops, read left to right
-// as the path from study to work. Draft version A; see doc/questions.md.
+// The site's one decoration (design rule 3): a route read left to right.
+//
+//   Stop 1 (passed):        B.Sc. and first work.
+//   Now:                    on the way to stop 2, part of the way along the line.
+//   Stop 2 (current goal):  İTÜ M.Sc. and a full-time job. Filled only when I decide this
+//                           phase is complete, not when it starts.
+//   Stops 3–5:              ahead.
+//
+// When stop 2 is complete: fill it, and move "now" onto the next segment
+// (and update scripts/og-image.html the same way).
 interface Props {
   class?: string;
 }
 const { class: className } = Astro.props;
-const stops = [
-  [24, 52],
-  [148, 30],
+
+// The first curve, split at t = 0.6 (de Casteljau), so the solid line ends at "now".
+const now = [96.86, 37.74] as const;
+const travelled = "M24 52 C 51.6 52, 73.44 44.08, 96.86 37.74";
+const ahead =
+  "M96.86 37.74 C 112.48 33.52, 128.8 30, 148 30 C 196 30, 230 58, 276 58 C 322 58, 356 26, 404 26 C 452 26, 500 44, 536 44";
+const goal = [148, 30] as const;
+const later = [
   [276, 58],
   [404, 26],
   [536, 44],
-];
+] as const;
 ---
 
 <svg
   viewBox="0 0 560 80"
-  class:list={["h-auto w-full text-line", className]}
+  class:list={["h-auto w-full", className]}
   aria-hidden="true"
   focusable="false"
 >
   <path
-    d="M24 52 C 70 52, 100 30, 148 30 S 230 58, 276 58 S 356 26, 404 26 S 500 44, 536 44"
+    d={ahead}
     fill="none"
-    stroke="currentColor"
     stroke-width="2"
     stroke-linecap="round"
     stroke-dasharray="1 7"
+    style="stroke: var(--border-strong)"
   ></path>
-  {stops.map(([x, y], i) => (
+  <path
+    d={travelled}
+    fill="none"
+    stroke-width="2"
+    stroke-linecap="round"
+    style="stroke: var(--accent)"
+  ></path>
+
+  <!-- Stop 1: passed -->
+  <circle cx="24" cy="52" r="5" style="fill: var(--accent)" />
+  <!-- Stop 2: the current goal, open until the phase is complete -->
+  <circle
+    cx={goal[0]}
+    cy={goal[1]}
+    r="5"
+    stroke-width="2"
+    style="fill: var(--bg); stroke: var(--accent)"
+  />
+  <!-- Ahead -->
+  {later.map(([x, y]) => (
     <circle
       cx={x}
       cy={y}
-      r={i === stops.length - 1 ? 6 : 4}
-      fill={i === stops.length - 1 ? "var(--accent)" : "var(--bg)"}
-      stroke={i === stops.length - 1 ? "var(--accent)" : "currentColor"}
+      r="4"
       stroke-width="2"
+      style="fill: var(--bg); stroke: var(--border-strong)"
     />
   ))}
+  <!-- Now -->
+  <circle cx={now[0]} cy={now[1]} r="11" style="fill: var(--accent-soft)" />
+  <circle cx={now[0]} cy={now[1]} r="5.5" style="fill: var(--accent)" />
 </svg>

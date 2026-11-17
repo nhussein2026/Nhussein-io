@@ -78,22 +78,38 @@
       <p>I build full-stack TypeScript products.</p>
     </div>
     <div class="foot">
+      <!-- Same route as src/components/RouteArt.astro: stop 1 passed, now on the way to stop 2. -->
       <svg viewBox="0 0 560 80" aria-hidden="true">
         <path
-          d="M24 52 C 70 52, 100 30, 148 30 S 230 58, 276 58 S 356 26, 404 26 S 500 44, 536 44"
+          d="M96.86 37.74 C 112.48 33.52, 128.8 30, 148 30 C 196 30, 230 58, 276 58 C 322 58, 356 26, 404 26 C 452 26, 500 44, 536 44"
           fill="none"
-          stroke="currentColor"
           stroke-width="3"
           stroke-linecap="round"
           stroke-dasharray="1 9"
+          style="stroke: var(--border-strong)"
         />
-        <g style="fill: var(--bg)" stroke="currentColor" stroke-width="3">
-          <circle cx="24" cy="52" r="5" />
-          <circle cx="148" cy="30" r="5" />
+        <path
+          d="M24 52 C 51.6 52, 73.44 44.08, 96.86 37.74"
+          fill="none"
+          stroke-width="3"
+          stroke-linecap="round"
+          style="stroke: var(--accent)"
+        />
+        <circle cx="24" cy="52" r="6" style="fill: var(--accent)" />
+        <circle
+          cx="148"
+          cy="30"
+          r="6"
+          stroke-width="3"
+          style="fill: var(--bg); stroke: var(--accent)"
+        />
+        <g stroke-width="3" style="fill: var(--bg); stroke: var(--border-strong)">
           <circle cx="276" cy="58" r="5" />
           <circle cx="404" cy="26" r="5" />
+          <circle cx="536" cy="44" r="5" />
         </g>
-        <circle cx="536" cy="44" r="8" style="fill: var(--accent)" />
+        <circle cx="96.86" cy="37.74" r="13" style="fill: var(--accent-soft)" />
+        <circle cx="96.86" cy="37.74" r="7" style="fill: var(--accent)" />
       </svg>
       <span>nhussein.io</span>
     </div>
