@@ -24,7 +24,9 @@ const {
 } = Astro.props;
 const fullTitle =
   title === profile.name ? `${profile.name} · Software Engineer` : `${title} · ${profile.name}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+// One address per page: always with the trailing slash, as the site is built and linked.
+const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(path, Astro.site);
 const imageUrl = new URL(image, Astro.site);
 
 const personLd = {
