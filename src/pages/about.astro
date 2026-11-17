@@ -38,7 +38,10 @@ import { profile, experience, education, languages } from "../data/profile";
     <p>
       I'm open to part-time roles, internships, remote work and research projects at İTÜ, anywhere I
       can take real responsibility and keep learning. You can see my work at{" "}
-      <a href={profile.links.github}>github.com/nhussein2026</a>, and I'm always glad to talk.
+      <a href={profile.links.github} target="_blank" rel="me noopener">
+        github.com/nhussein2026<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+      , and I'm always glad to talk.
     </p>
   </div>
 
@@ -117,10 +120,10 @@ import { profile, experience, education, languages } from "../data/profile";
       <Button href={profile.cv} download>
         Download CV (PDF)
       </Button>
-      <Button href={profile.links.linkedin} variant="plain">
+      <Button href={profile.links.linkedin} variant="plain" newTab>
         LinkedIn
       </Button>
-      <Button href={profile.links.github} variant="plain">
+      <Button href={profile.links.github} variant="plain" newTab>
         GitHub
       </Button>
     </div>

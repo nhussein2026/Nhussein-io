@@ -3,14 +3,18 @@ interface Props {
   href: string;
   variant?: "primary" | "plain";
   download?: boolean;
+  /** Opens in a new tab; for your own profiles elsewhere (GitHub, LinkedIn). */
+  newTab?: boolean;
 }
-const { href, variant = "primary", download = false } = Astro.props;
+const { href, variant = "primary", download = false, newTab = false } = Astro.props;
 ---
 
 <!-- min-h-11 = 44px tap target. "plain" has a 3:1 border so it reads as a control. -->
 <a
   href={href}
   download={download || undefined}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "me noopener" : undefined}
   class:list={[
     "inline-flex min-h-11 items-center rounded px-4 font-medium no-underline",
     variant === "primary"
@@ -19,4 +23,5 @@ const { href, variant = "primary", download = false } = Astro.props;
   ]}
 >
   <slot />
+  {newTab && <span class="sr-only"> (opens in a new tab)</span>}
 </a>

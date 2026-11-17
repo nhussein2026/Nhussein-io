@@ -11,10 +11,14 @@ import { version, releaseUrl } from "../data/site";
         <a href={`mailto:${profile.email}`}>Email</a>
       </li>
       <li>
-        <a href={profile.links.github}>GitHub</a>
+        <a href={profile.links.github} target="_blank" rel="me noopener">
+          GitHub<span class="sr-only"> (opens in a new tab)</span>
+        </a>
       </li>
       <li>
-        <a href={profile.links.linkedin}>LinkedIn</a>
+        <a href={profile.links.linkedin} target="_blank" rel="me noopener">
+          LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+        </a>
       </li>
       <li>
         <a href={profile.links.source}>Source</a>

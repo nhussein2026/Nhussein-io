@@ -84,10 +84,14 @@ const featured = (await getCollection("projects", ({ data }) => data.featured))
 
   <ul class="link-list mt-10 flex flex-wrap gap-x-6" aria-label="Elsewhere">
     <li>
-      <a href={profile.links.github}>GitHub</a>
+      <a href={profile.links.github} target="_blank" rel="me noopener">
+        GitHub<span class="sr-only"> (opens in a new tab)</span>
+      </a>
     </li>
     <li>
-      <a href={profile.links.linkedin}>LinkedIn</a>
+      <a href={profile.links.linkedin} target="_blank" rel="me noopener">
+        LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+      </a>
     </li>
     <li>
       <a href={profile.cv}>CV</a>
