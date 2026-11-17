@@ -39,6 +39,8 @@ Approved after a side-by-side preview in Chrome, with one direction from me: hum
 - `trailingSlash` back to `"ignore"`: with `"always"`, the local dev and preview servers showed Astro's default 404 for any address without a slash. The canonical URL now always ends in `/` (`Base.astro`), so search engines still see one address per page.
 - 404 page redesigned: centred between header and footer, a small "404", a larger title, and Home as the main button with Work and Journey beside it. Same wording.
 - GitHub and LinkedIn links (Home, footer, About) open in a new tab, with `rel="me noopener"` and a screen-reader note.
+- Story pages laid out as a case study instead of a chat answer: section names are quiet labels (a left column from 640 px), and each key decision is a title line with its sentence below, without bullets. Decision titles lose their full stop; Eskici's three decisions rephrased into the same title-then-sentence shape, same meaning.
+- Hop story: status first in the metadata line; "How AI was used" box removed from Hop ("My part" already says it); divider above "Next" as wide as the text. Open points in `doc/questions.md` section J.
 - Route art redrawn to show progress, by my own phases: stop 1 passed (B.Sc. and first work), "now" partway toward stop 2 (İTÜ M.Sc. and a full-time job; it fills in when I decide the phase is complete, not when it starts), three stops ahead. Preview image re-rendered to match.
 
 **Notes**

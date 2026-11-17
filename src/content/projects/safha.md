@@ -20,8 +20,8 @@ Safha is my own developer blog. I started it on WordPress with a custom theme, t
 
 ## Key decisions
 
-- **Reading first, right to left.** The layout is built for Arabic technical text, with code blocks that stay left to right.
-- **Code you can run.** Tutorials include code-display sections and a live example editor.
+- **Reading first, right to left** The layout is built for Arabic technical text, with code blocks that stay left to right.
+- **Code you can run** Tutorials include code-display sections and a live example editor.
 
 ## The result
 

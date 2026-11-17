@@ -89,6 +89,19 @@ Fixes already made are ticked in plan section 14. These need you:
 | I8 | Ghiras is no longer used as proof in skills. Clean up its README and description and add it back, or leave it out? |
 | I9 | The review notes the plan reserves November for LinkedIn, the CV, GitHub and Gate 2, with site work from 8 Jan. Keep site work paused until then, apart from answers here? |
 
+## J. Hop story review (17 Nov)
+
+Done: status first in the metadata line; the "How AI was used" box removed from Hop ("My part" already says it in my own words); the divider above "Next" as wide as the text; "← Work" is 30px tall. Not done on purpose: a mono metadata line and a green status dot (both read as template UI; see the design direction).
+
+| # | Question |
+| --- | --- |
+| J1 | **Screenshot.** One of the Today view with test data, 1600 × 900, under the header; later the phone PWA view. I can make it from Hop's test data if you give me access, or you take it. |
+| J2 | **The result.** Proposed: a fact line "6 releases · 40 test files · in daily use since Oct 2026", then one sentence such as "I've used it every day since v1; it holds my study, habit and career plans." Is that true as written? |
+| J3 | **What I would change.** My earlier draft: "I would design for two devices from day one. Hop started as a single SQLite file on one machine, and using it from my phone came later." True, or what is? |
+| J4 | **Code link.** Hop is private. Add "Code: private for now; a public copy is planned"? Only if a public copy really is planned. |
+| J5 | **Offline sync.** How do you handle the phone and laptop both changing data offline (last write wins, the server decides, merge, or the phone is read-only offline)? One sentence on this turns the PWA line into a decision. |
+| J6 | **AI notes on other stories.** Eskici still shows "How AI was used: Built by hand, before AI coding tools." Keep it, move it into "My part", or remove the box everywhere? |
+
 ## H. Changes from the written plan
 
 - Journey milestones are **one YAML file** (`src/content/journey.yaml`) instead of one Markdown file each: 14 short entries are easier to correct in one place.

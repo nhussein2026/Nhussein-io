@@ -133,6 +133,67 @@
   }
 }
 
+/*
+  Story pages, laid out like a case study rather than a chat answer:
+  section names are quiet labels (a column on the left from 640px), and
+  decisions are a short title line with the explanation below, without bullets.
+  Works on the plain Markdown (h2, p, ul) without changing it.
+*/
+@layer components {
+  .story h2 {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    margin-top: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .story p,
+  .story ul,
+  .story ol {
+    max-width: var(--container-measure);
+  }
+  .story p + p {
+    margin-top: 1rem;
+  }
+  .story ul {
+    list-style: none;
+    padding: 0;
+  }
+  .story li + li {
+    margin-top: 1rem;
+  }
+  .story li > strong:first-child {
+    display: block;
+    font-weight: 600;
+  }
+
+  @media (min-width: 640px) {
+    /* Auto-placement keeps each label on the row of the text that follows it. */
+    .story {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      column-gap: 2rem;
+    }
+    .story > * {
+      grid-column: 2;
+    }
+    .story > h2 {
+      grid-column: 1;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0.1rem;
+    }
+    .story > :not(h2) {
+      margin-bottom: 2.25rem;
+    }
+    .story > :not(h2) + :not(h2) {
+      margin-top: -1.25rem;
+    }
+  }
+}
+
 /* Lists of standalone links (footer, "Elsewhere", story links): each at least 24px tall (WCAG 2.5.8). */
 @layer components {
   .link-list a {

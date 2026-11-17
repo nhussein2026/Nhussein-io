@@ -43,13 +43,13 @@ const dates = d.end ? `${d.start} – ${d.end}` : `${d.start} – now`;
       <h1 class="text-2xl">{d.title}</h1>
       <p class="mt-2 max-w-measure text-lg text-muted">{d.summary}</p>
       <p class="mt-5 text-sm text-muted">
-        <span>{d.role}</span>
-        <span aria-hidden="true"> · </span>
-        <span>{d.team}</span>
+        <span class="text-text">{d.status}</span>
         <span aria-hidden="true"> · </span>
         <time class="tabular">{dates}</time>
         <span aria-hidden="true"> · </span>
-        <span>{d.status}</span>
+        <span>{d.team}</span>
+        <span aria-hidden="true"> · </span>
+        <span>{d.role}</span>
       </p>
       <p class="mt-1 text-sm text-muted">Built with {d.stack.join(", ")}</p>
       {links.length > 0 && (
@@ -74,7 +74,7 @@ const dates = d.end ? `${d.start} – ${d.end}` : `${d.start} – now`;
       />
     )}
 
-    <div class="prose mt-4">
+    <div class="story mt-10">
       <Content />
     </div>
 
@@ -86,7 +86,7 @@ const dates = d.end ? `${d.start} – ${d.end}` : `${d.start} – now`;
     )}
   </article>
 
-  <nav aria-label="More work" class="mt-14 border-t border-line pt-6">
+  <nav aria-label="More work" class="mt-14 max-w-measure border-t border-line pt-6">
     <p>
       <span class="text-muted">Next: </span>
       <a href={`/work/${next.id}/`}>{next.data.title} →</a>

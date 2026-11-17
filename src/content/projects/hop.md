@@ -10,7 +10,6 @@ stack: [TypeScript, React, Node.js, SQLite]
 repo: hop
 featured: true
 order: 1
-aiNote: Built with Claude Code from my specs; I reviewed and tested every change.
 ---
 
 ## The problem
@@ -23,9 +22,9 @@ I designed Hop and wrote its specs, decision records and release rules. I built 
 
 ## Key decisions
 
-- **One TypeScript monorepo.** The React web app, the Node.js API and the shared domain and validation packages live together, so the app and the API use one definition of the data.
-- **SQLite with migrations.** Hop has one user and runs on my own machine. A single database file is simple to run and to back up, and migrations keep every change to it on record.
-- **An installable PWA that works offline.** I use it on my phone, often without a connection.
+- **One TypeScript monorepo** The React web app, the Node.js API and the shared domain and validation packages live together, so the app and the API use one definition of the data.
+- **SQLite with migrations** Hop has one user and runs on my own machine. A single database file is simple to run and to back up, and migrations keep every change to it on record.
+- **An installable PWA that works offline** I use it on my phone, often without a connection.
 
 ## The result
 
