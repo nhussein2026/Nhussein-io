@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <style>
-    .bg { fill: #205bc4; }
-    .fg { fill: #f9fafc; }
-    @media (prefers-color-scheme: dark) { .bg { fill: #82affc; } .fg { fill: #111419; } }
-  </style>
-  <rect class="bg" width="64" height="64" rx="14"/>
-  <path class="fg" d="M17 48V16h6.2l15.6 21.4V16H45v32h-6.2L23.2 26.6V48z"/>
-  <circle class="fg" cx="52" cy="48" r="4"/>
+  <!-- Ink tile, calm mint N. (tokens --logo-bg, --logo-fg); the same in both themes. -->
+  <rect fill="#15181e" width="64" height="64" rx="14"/>
+  <path fill="#7ed1b7" d="M17 48V16h6.2l15.6 21.4V16H45v32h-6.2L23.2 26.6V48z"/>
+  <circle fill="#7ed1b7" cx="52" cy="48" r="4.5"/>
 </svg>

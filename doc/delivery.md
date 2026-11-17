@@ -16,6 +16,19 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-17 (late) · ink and mint, new icon, `v2-design` (PR #3)
+
+The blue looked like every other website. Chosen from side-by-side previews in Chrome: ink for buttons and links, and one calm mint as the only colour, a nod to the first site.
+
+**Updated**
+- `tokens.css`: the accent is a calm mint (hue 172): `#7ed1b7` on dark, `#2f9379` on light (`#207963` for mint text). `accent-hover` removed; `logo-bg` and `logo-fg` added. The heatmap ramp is mint too.
+- Buttons are ink (primary) or outlined (plain), not coloured. Links are ink with a mint underline and turn mint on hover. The focus ring is ink.
+- Icon: a mint "N." on the site's ink tile, the same in both themes. The dot matches the "now" dot on the route. `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` and `og-image.png` re-rendered.
+- `check:contrast`: 98 pairs, all pass; checks the favicon against the logo tokens.
+
+**Notes**
+- The first site's exact `#64ffda` on navy `#0a192f` was tried and dropped: it is the palette of a widely copied portfolio template, and its glow read as "techy", against the plan's identity. The mint here is softer and sits on our own ink.
+
 ## 2026-11-17 (evening) · design system, `v2-design` → `v2` (PR #3)
 
 Approved after a side-by-side preview in Chrome, with one direction from me: human, professional and simple, nothing that looks generated.

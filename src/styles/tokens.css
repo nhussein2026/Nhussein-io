@@ -6,7 +6,9 @@
   The hex in each comment is the sRGB value the browser shows; scripts/check-contrast.mjs
   checks every text/background and UI/background pair in both themes.
 
-  Hue 261 is the accent blue; neutrals carry a trace of it (chroma under 0.02).
+  Neutrals are a cool ink (hue 261, chroma under 0.02). Buttons and links are ink, not colour.
+  The one colour is a calm mint (hue 172), a nod to the first version of the site: it marks
+  the route, link underlines and the logo, and nothing else competes with it.
   Light is the default; dark follows the device (prefers-color-scheme).
 */
 
@@ -23,11 +25,14 @@
   --border: oklch(0.9 0.008 261); /* #dbdee3: hairlines, decorative */
   --border-strong: oklch(0.62 0.014 261); /* #81868f: control borders, 3:1 */
 
-  /* Accent: one blue */
-  --accent: oklch(0.497 0.176 261); /* #205bc4 */
-  --accent-hover: oklch(0.43 0.16 261); /* #1448a5 */
-  --accent-soft: oklch(0.945 0.025 261); /* #e4edfe: backgrounds */
-  --accent-text: oklch(0.4 0.15 261); /* #104197: text on accent-soft */
+  /* Accent: one mint. accent is for graphics and underlines (3:1), never for text. */
+  --accent: oklch(0.6 0.1 172); /* #2f9379 */
+  --accent-soft: oklch(0.955 0.03 172); /* #ddf7ee: backgrounds */
+  --accent-text: oklch(0.52 0.09 172); /* #207963: mint text, link hover */
+
+  /* Logo: the site's ink with the dark-theme mint, the same in both themes. */
+  --logo-bg: oklch(0.21 0.012 261); /* #15181e */
+  --logo-fg: oklch(0.8 0.09 172); /* #7ed1b7 */
 
   /* Status: calm, for project status and demo states. Info uses the accent. */
   --success: oklch(0.56 0.11 150); /* #3e8651 */
@@ -51,10 +56,10 @@
 
   /* Charts, sequential (less → more). seq-0 means none. */
   --seq-0: oklch(0.962 0.006 261); /* #f0f3f7 */
-  --seq-1: oklch(0.86 0.05 261); /* #bfd2f3 */
-  --seq-2: oklch(0.73 0.1 261); /* #84a8e7 */
-  --seq-3: oklch(0.6 0.14 261); /* #4e7ed3 */
-  --seq-4: oklch(0.45 0.16 261); /* #1a4fac */
+  --seq-1: oklch(0.9 0.05 172); /* #bde9da */
+  --seq-2: oklch(0.8 0.09 172); /* #7ed1b7 */
+  --seq-3: oklch(0.68 0.115 172); /* #37af90 */
+  --seq-4: oklch(0.56 0.105 172); /* #11886d */
 
   /* Charts, diverging (orange ← neutral → blue). */
   --div-n3: oklch(0.45 0.12 50); /* #883c00 */
@@ -77,10 +82,11 @@
     --border: oklch(0.32 0.016 261); /* #2e333b */
     --border-strong: oklch(0.55 0.018 261); /* #6c727c */
 
-    --accent: oklch(0.752 0.122 261); /* #82affc */
-    --accent-hover: oklch(0.82 0.085 261); /* #a5c5fc */
-    --accent-soft: oklch(0.29 0.05 261); /* #1d2b44 */
-    --accent-text: oklch(0.86 0.06 261); /* #bbd2f9 */
+    --accent: oklch(0.8 0.09 172); /* #7ed1b7: calm, no glow */
+    --accent-soft: oklch(0.3 0.04 172); /* #16342b */
+    --accent-text: oklch(0.8 0.09 172); /* #7ed1b7 */
+    --logo-bg: oklch(0.21 0.012 261); /* #15181e: unchanged, listed so both themes are checked */
+    --logo-fg: oklch(0.8 0.09 172);
 
     --success: oklch(0.74 0.12 150); /* #6fc082 */
     --success-soft: oklch(0.28 0.04 150); /* #1a2e1e */
@@ -101,10 +107,10 @@
     --cat-6: oklch(0.62 0.12 293); /* #8977c8 */
 
     --seq-0: oklch(0.225 0.014 261); /* #181c22 */
-    --seq-1: oklch(0.35 0.06 261); /* #283a5a */
-    --seq-2: oklch(0.5 0.1 261); /* #42629c */
-    --seq-3: oklch(0.65 0.12 261); /* #658fd8 */
-    --seq-4: oklch(0.82 0.09 261); /* #a3c5ff */
+    --seq-1: oklch(0.36 0.05 172); /* #1e463a */
+    --seq-2: oklch(0.5 0.08 172); /* #28725e */
+    --seq-3: oklch(0.68 0.11 172); /* #3fae90 */
+    --seq-4: oklch(0.8 0.09 172); /* #7ed1b7 */
 
     --div-n3: oklch(0.82 0.1 55); /* #f7b385 */
     --div-n2: oklch(0.67 0.11 52); /* #ca8153 */
@@ -119,10 +125,11 @@
 /* Roles built from the tokens above: no new colours. */
 :root {
   /* Interaction */
-  --focus-ring: var(--accent);
+  --focus-ring: var(--text);
   --selection: var(--accent-soft);
-  --link: var(--accent);
-  --link-hover: var(--accent-hover);
+  --link: var(--text);
+  --link-underline: var(--accent);
+  --link-hover: var(--accent-text);
 
   /* Graphs and networks: neutral by default; the accent marks the one selected item. */
   --node: var(--text-muted);

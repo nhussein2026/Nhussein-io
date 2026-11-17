@@ -63,18 +63,21 @@ export function contrastPairs(): [string, string, number, string][] {
   const pairs: [string, string, number, string][] = [];
   for (const bg of ["bg", "surface", "surface-raised"]) {
     pairs.push(["text", bg, TEXT, "body text"], ["text-muted", bg, TEXT, "secondary text"]);
-    pairs.push(["accent", bg, TEXT, "links"], ["accent-hover", bg, TEXT, "links on hover"]);
-    pairs.push(["border-strong", bg, UI, "control borders"], ["accent", bg, UI, "focus ring"]);
+    pairs.push(
+      ["accent-text", bg, TEXT, "links on hover"],
+      ["accent", bg, UI, "route, underlines"],
+    );
+    pairs.push(["border-strong", bg, UI, "control borders"]);
   }
   pairs.push(
     ["text-subtle", "bg", TEXT, "metadata"],
     ["text-subtle", "surface", TEXT, "metadata, code comments"],
-    ["bg", "accent", TEXT, "primary button label"],
-    ["bg", "accent-hover", TEXT, "primary button, hover"],
+    ["bg", "text", TEXT, "primary button label, tooltip"],
+    ["bg", "text-muted", TEXT, "primary button, hover"],
+    ["logo-fg", "logo-bg", UI, "logo"],
     ["text", "accent-soft", TEXT, "text on accent-soft (demo user turn)"],
     ["accent-text", "accent-soft", TEXT, "info text"],
     ["accent-text", "surface", TEXT, "code keywords"],
-    ["bg", "text", TEXT, "tooltip"],
   );
   for (const s of ["success", "warning", "danger"]) {
     pairs.push(

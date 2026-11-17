@@ -33,8 +33,7 @@ for (const [name, t] of Object.entries(themes)) {
 }
 
 const hexChecks = [
-  ["public/favicon.svg", "light", ["accent", "bg"]],
-  ["public/favicon.svg", "dark", ["accent", "bg"]],
+  ["public/favicon.svg", "light", ["logo-bg", "logo-fg"]],
   ["src/layouts/Base.astro", "light", ["bg"]],
   ["src/layouts/Base.astro", "dark", ["bg"]],
 ];

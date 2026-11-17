@@ -9,7 +9,7 @@ interface Props {
 const { href, variant = "primary", download = false, newTab = false } = Astro.props;
 ---
 
-<!-- min-h-11 = 44px tap target. "plain" has a 3:1 border so it reads as a control. -->
+<!-- min-h-11 = 44px tap target. Primary is ink, not colour. "plain" has a 3:1 border so it reads as a control. -->
 <a
   href={href}
   download={download || undefined}
@@ -18,8 +18,8 @@ const { href, variant = "primary", download = false, newTab = false } = Astro.pr
   class:list={[
     "inline-flex min-h-11 items-center rounded px-4 font-medium no-underline",
     variant === "primary"
-      ? "bg-accent text-bg hover:bg-accent-hover hover:text-bg"
-      : "border border-line-strong text-text hover:border-accent hover:text-accent",
+      ? "bg-text text-bg hover:bg-muted hover:text-bg"
+      : "border border-line-strong text-text hover:border-accent hover:text-text",
   ]}
 >
   <slot />
