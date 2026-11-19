@@ -16,7 +16,7 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
-## 2026-11-19 · DevLab repository review (pushed)
+## 2026-11-19 · DevLab repository review (done)
 
 First repository in the GitHub repository review.
 
@@ -30,10 +30,11 @@ First repository in the GitHub repository review.
 **Delivered** (this repository)
 - `doc/readme-standard.md`: the site will read Project Journey and Project Status from each repository's README at build time (my idea; the loader is not built yet).
 
+- `README.md` rewritten to the README Standard v1.1: version stamp, Project Journey and Facts, status **Active**, technologies, limitations, credits.
 - `doc/github-readme-standard.md`: README Standard v1.1, from my v1.0 draft and Claude's review: version stamp, fixed headings, Project Facts, status definitions, one Learning section, Credits, No Real Data, GitHub settings.
 
 **Notes**
-- Still to do: set DevLab's description and `university-project` topic, open issues for the planned tools.
+- Deferred, not blocking (DevLab counts as done): set DevLab's description and `university-project` topic, open issues for the planned tools.
 - Old commits can still be opened by their ID through pull requests #1–#4 and the contributor's fork. Ask GitHub Support to purge them ("Remove sensitive data" request).
 - Old commits in DevLab still carry my old email as author; rewriting authors was not part of this change.
 

@@ -487,10 +487,10 @@ Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claud
 - [ ] Repository review: decide D-a to D-e, then update the `HIDDEN` list *(me)*
 - [ ] Repository review, one repository at a time:
   - [x] DevLab: data removed from history, dead tools removed, README to the README Standard v1.1, MIT licence, PR template, Snippets formatting fixed *(pushed 19 Nov)*
-  - [ ] DevLab: description, website and `university-project` topic; 3 good-first-issues; GitHub Support purge of old PR commits *(me)*
+  - [x] **DevLab review: done (19 Nov).** Deferred, not blocking: description, website and `university-project` topic; 3 good-first-issues; GitHub Support purge of old PR commits; AI-use and Learning lines in its README *(me, later)*
 - [ ] READMEs as the source (`doc/readme-standard.md`): `fetch-repos.mjs` reads Project Journey and Project Status from each public README; Journey shows them
 - [x] README Standard v1.1 (`doc/github-readme-standard.md`): format contract, Project Facts, status definitions, Learning, Credits, No Real Data
-- [ ] Apply the README Standard to each repository (DevLab first: done in the prepared push)
+- [ ] Apply the README Standard to each repository (DevLab and this repository done)
 - [ ] Hop repository public, or remove the link from the CV (D-a) *(me)*
 - [ ] Repository descriptions and topics set on GitHub, so Journey can group by topic *(me)*
 
