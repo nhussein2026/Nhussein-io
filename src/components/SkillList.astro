@@ -2,25 +2,39 @@
 import { skills } from "../data/skills";
 
 const groups = [...new Set(skills.map((s) => s.group))];
+const external = (href: string) => /^https?:/.test(href);
 ---
 
-<div class="grid gap-6 sm:grid-cols-2">
+<div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
   {groups.map((group) => (
     <section>
-      <h3 class="mb-2 text-base font-semibold">{group}</h3>
-      <ul class="space-y-2">
+      <h3 class="mb-3 text-sm font-semibold text-muted">{group}</h3>
+      <ul class="space-y-4">
         {skills
           .filter((s) => s.group === group)
           .map((s) => (
             <li>
-              <span class="font-medium">{s.name}</span>
-              <span class="text-muted"> · used in </span>
-              {s.proof.map((p, i) => (
-                <>
-                  {i > 0 && <span class="text-muted">, </span>}
-                  <a href={p.href}>{p.label}</a>
-                </>
-              ))}
+              <p class="font-medium">{s.name}</p>
+              <p class="text-sm text-muted">
+                Used in{" "}
+                {s.proof.map((p, i) => (
+                  <>
+                    {i > 0 && (i === s.proof.length - 1 ? " and " : ", ")}
+                    {external(p.href) ? (
+                      <a href={p.href} target="_blank" rel="noopener" class="whitespace-nowrap text-text">
+                        {p.label}
+                        <span aria-hidden="true">&nbsp;↗</span>
+                        <span class="sr-only"> (GitHub, opens in a new tab)</span>
+                      </a>
+                    ) : (
+                      <a href={p.href} class="whitespace-nowrap text-text">
+                        {p.label}
+                      </a>
+                    )}
+                    {p.what && <> ({p.what})</>}
+                  </>
+                ))}
+              </p>
             </li>
           ))}
       </ul>

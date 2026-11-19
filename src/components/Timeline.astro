@@ -26,7 +26,13 @@ const kindLabel = { study: "Study", work: "Work", project: "Project", community:
       </p>
       <div>
         <h3 class="text-base font-semibold">
-          {data.link ? <a href={data.link}>{data.title}</a> : data.title}
+          {data.link ? (
+            <a href={data.link} {...(/^https?:/.test(data.link) ? { target: "_blank", rel: "noopener" } : {})}>
+              {data.title}
+            </a>
+          ) : (
+            data.title
+          )}
         </h3>
         <p class="max-w-measure text-muted">{data.line}</p>
       </div>

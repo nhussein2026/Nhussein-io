@@ -12,3 +12,6 @@
 # logs and system files
 npm-debug.log*
 .DS_Store
+
+# private notes (never commit)
+/doc/private/
