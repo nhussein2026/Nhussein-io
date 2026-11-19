@@ -16,6 +16,27 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-19 · DevLab repository review (pushed)
+
+First repository in the GitHub repository review.
+
+**Delivered** (DevLab `main`, force-pushed as `f70270a`; GitHub Pages rebuilt, the removed files return 404)
+- Real third-party data that came in through outside pull requests removed from the files **and from all of history**: 86 commits rewritten, nothing found by a search of every commit afterwards. The original is kept as a local backup bundle.
+- Pages that only showed placeholder or fake results removed: version control, performance analysis, debugging, resume, portfolio and link-tree builders. The broken visitor-count workflow removed. Snippets loaded Prettier from a URL that 404s; fixed to Prettier 2.4.1's browser build (not run in a browser yet).
+- CodeMirror loaded from cdnjs (5.65.16) instead of a full copy of its source: about 600 files fewer.
+- `flexGeneratore` and `recommandedTools` renamed, with redirect pages at the old names. The About page's Doc link fixed (it was a 404).
+- README rewritten to my README Standard v1.1: 14 working tools, journey, status, technologies, verified limitations. MIT `LICENSE` (the licence CONTRIBUTING already named), a PR template and a "sample data only" rule in CONTRIBUTING. The contact email there changed to the public one.
+
+**Delivered** (this repository)
+- `doc/readme-standard.md`: the site will read Project Journey and Project Status from each repository's README at build time (my idea; the loader is not built yet).
+
+- `doc/github-readme-standard.md`: README Standard v1.1, from my v1.0 draft and Claude's review: version stamp, fixed headings, Project Facts, status definitions, one Learning section, Credits, No Real Data, GitHub settings.
+
+**Notes**
+- Still to do: set DevLab's description and `university-project` topic, open issues for the planned tools.
+- Old commits can still be opened by their ID through pull requests #1–#4 and the contributor's fork. Ask GitHub Support to purge them ("Remove sensitive data" request).
+- Old commits in DevLab still carry my old email as author; rewriting authors was not part of this change.
+
 ## 2026-11-17 (night) · story pages, `v2-design` (PR #3)
 
 **Updated**

@@ -437,7 +437,7 @@ The site launches only when every line is ticked.
 
 The one place to see what is done and what remains. Updated at the end of every work session; what was delivered in each session is logged in `doc/delivery.md`, and answers I still owe are in `doc/questions.md`.
 
-Last updated: **17 Nov 2026, after the design system** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
+Last updated: **19 Nov 2026, DevLab repository review** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
 
 Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claude)* Claude builds it.
 
@@ -485,6 +485,12 @@ Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claud
 ### Visibility and GitHub
 
 - [ ] Repository review: decide D-a to D-e, then update the `HIDDEN` list *(me)*
+- [ ] Repository review, one repository at a time:
+  - [x] DevLab: data removed from history, dead tools removed, README to the README Standard v1.1, MIT licence, PR template, Snippets formatting fixed *(pushed 19 Nov)*
+  - [ ] DevLab: description, website and `university-project` topic; 3 good-first-issues; GitHub Support purge of old PR commits *(me)*
+- [ ] READMEs as the source (`doc/readme-standard.md`): `fetch-repos.mjs` reads Project Journey and Project Status from each public README; Journey shows them
+- [x] README Standard v1.1 (`doc/github-readme-standard.md`): format contract, Project Facts, status definitions, Learning, Credits, No Real Data
+- [ ] Apply the README Standard to each repository (DevLab first: done in the prepared push)
 - [ ] Hop repository public, or remove the link from the CV (D-a) *(me)*
 - [ ] Repository descriptions and topics set on GitHub, so Journey can group by topic *(me)*
 
