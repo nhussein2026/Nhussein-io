@@ -21,9 +21,9 @@ I wrote an open-source set of 16 Claude Code skills that cover the search from t
 
 ## Key decisions
 
-- **Grounding rules.** Every claim a skill writes must trace back to a source the user gave it.
-- **Skills that work as a set.** They share references and pass results to each other, so they install together as one plugin.
-- **A validator in CI.** A Python script checks every skill before a release.
+- **Grounding rules** Every claim a skill writes must trace back to a source the user gave it.
+- **Skills that work as a set** They share references and pass results to each other, so they install together as one plugin.
+- **A validator in CI** A Python script checks every skill before a release.
 
 ## The result
 

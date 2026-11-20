@@ -1,29 +1,38 @@
 ---
+// One project in a list: title, what it does, where it stands. The whole row is one link.
+// Lists put a hairline between rows (divide-y on the parent).
 import type { CollectionEntry } from "astro:content";
-import Tag from "./Tag.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   project: CollectionEntry<"projects">;
   headingLevel?: "h2" | "h3";
+  /** The lead project on Home: larger title, and its screenshot once one exists. */
+  lead?: boolean;
 }
-const { project, headingLevel = "h3" } = Astro.props;
-const { title, summary, status, stack } = project.data;
+const { project, headingLevel = "h3", lead = false } = Astro.props;
+const { title, summary, status, cover, coverAlt } = project.data;
 const Heading = headingLevel;
 ---
 
-<article class="group relative rounded-lg border border-line p-5 transition-colors hover:border-accent focus-within:border-accent">
-  <Heading class="text-lg">
-    <a href={`/work/${project.id}`} class="text-text no-underline after:absolute after:inset-0">
+<article class="group relative py-6">
+  {lead && cover && (
+    <Image
+      src={cover}
+      alt={coverAlt ?? ""}
+      widths={[640, 960, 1600]}
+      sizes="(min-width: 768px) 720px, 100vw"
+      class="mb-5 h-auto w-full rounded border border-line"
+    />
+  )}
+  <Heading class:list={[lead ? "text-xl" : "text-lg"]}>
+    <a
+      href={`/work/${project.id}/`}
+      class="text-text no-underline group-hover:underline after:absolute after:inset-0"
+    >
       {title}
     </a>
   </Heading>
-  <p class="mt-1">{summary}</p>
-  <p class="mt-3 text-[0.9rem] text-muted">{status}</p>
-  <ul class="mt-3 flex flex-wrap gap-1.5" aria-label="Built with">
-    {stack.map((s) => (
-      <li>
-        <Tag>{s}</Tag>
-      </li>
-    ))}
-  </ul>
+  <p class="mt-1 max-w-measure">{summary}</p>
+  <p class="mt-1 text-sm text-muted">{status}</p>
 </article>

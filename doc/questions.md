@@ -1,6 +1,6 @@
 # Open questions for the v2 rebuild
 
-Written 17 Nov 2026 on the `v2` branch; first round of answers applied the same day. Answer under each item (or just edit the file it names). The deploy workflow refuses to publish while any `TO CONFIRM` is left in `src/` (`bun run check:content` lists them); none are left now.
+Written 17 Nov 2026 on the `v2` branch; first round of answers applied the same day. Answer under each item (or just edit the file it names). The deploy workflow refuses to publish while any `TO CONFIRM` is left in `src/` (`bun run check:content` lists them); none are left now. Overall progress is tracked in section 14 of the plan; deliveries are logged in `doc/delivery.md`.
 
 ---
 
@@ -35,7 +35,7 @@ You asked for ideas. These are **my drafts**. Each one is only worth using if it
 
 ## D. Visibility and privacy: all open, until the GitHub repository review
 
-To keep the site minimal until then, the repositories in D-b and D-c are **hidden from Journey** (the `HIDDEN` list in `scripts/fetch-repos.mjs`; remove a name to show it again). Journey now lists 27 repositories instead of 33.
+Since 20 Nov, Journey lists only reviewed repositories (the `SHOWN` list in `scripts/fetch-repos.mjs`), so everything in D-b and D-c stays off the site until it is reviewed. These questions no longer block the launch.
 
 | # | Question |
 | --- | --- |
@@ -51,12 +51,12 @@ Change any of these and I will follow it.
 
 | # | Used | Where to change |
 | --- | --- | --- |
-| D2 | Light and dark, following the device; no toggle | `src/styles/global.css` |
-| D3 | Accent blue `#1f5bc4` (light) / `#84aefc` (dark), WCAG AA checked. **Is there a specific blue from your LinkedIn cover?** Send the hex. | `global.css`, `public/favicon.svg`, `scripts/og-image.html`, `scripts/icon.html` |
-| D4 | Inter + JetBrains Mono, self-hosted | `global.css` |
+| D2 | Light and dark, following the device; no toggle | `src/styles/tokens.css` |
+| D3 | Accent blue `#205bc4` (light) / `#82affc` (dark), now OKLCH tokens in `src/styles/tokens.css`, approved 17 Nov. **Is there a specific blue from your LinkedIn cover?** Send the hex. | `src/styles/tokens.css` (then `public/favicon.svg`, `src/layouts/Base.astro`; `bun run check:contrast` says if they drift) |
+| D4 | Inter + JetBrains Mono, self-hosted | `src/styles/global.css` |
 | D5 | "Build. Learn. Grow." is **not** used anywhere | — |
 | D10 | Heatmap kept, drawn at build time on Journey | `src/components/Heatmap.astro` |
-| — | **Route art**: one draft (a dotted route with four stops and a blue destination) on Home and the preview image. Tell me what the route should represent and I will draw 2–3 alternatives. | `src/components/RouteArt.astro` |
+| — | **Route art**: phases, decided 17 Nov: stop 1 passed (B.Sc. and first work); now on the way to stop 2 (İTÜ M.Sc. and a full-time job), which fills in only when I decide the phase is complete. Steps to move it are in the component comment. | `src/components/RouteArt.astro`, `scripts/og-image.html` |
 | — | **Favicon**: an "N." monogram in the accent colour. | `public/favicon.svg` |
 
 ## F. Assets (later)
@@ -72,6 +72,35 @@ Change any of these and I will follow it.
 - **`main` branch rule**: you merge launch PRs as the owner, with admin bypass. The one-approval rule stays.
 - **Tooling**: on the latest stable versions. Node 26 LTS (`.nvmrc`, and installed locally under `~/.local/share/node`), Bun 1.4.4, Astro 7.4.12. TypeScript stays on 6.0.3 because `@astrojs/check` does not support TypeScript 7 yet.
 - **Package manager**: Bun (see the switch commit).
+
+## I. From the site review (17 Nov)
+
+Fixes already made are ticked in plan section 14. These need you:
+
+| # | Question |
+| --- | --- |
+| I1 | About says "going deeper into the foundations and into machine learning". The claim ladder allows "studying machine learning" only from Mar 2027. Because About is LinkedIn word for word (A4), change both, for example to "statistics and Python now, machine learning next". Your wording? |
+| I2 | About ends with "You can see my work at github.com/nhussein2026". On the site, link to `/work/`? Same LinkedIn question as I1. |
+| I3 | Safha has three start dates: site Dec 2023, LinkedIn Jul 2024, CV Feb 2025. Which one, everywhere? Then it gets a Journey line. |
+| I4 | Eskici's code link goes to `github.com/3skici`, the name the plan dropped. Rename the GitHub organisation, or keep the URL with the neutral label "Code on GitHub"? |
+| I5 | TOEFL is shown without a score. Add the score, or leave it as is? |
+| I6 | Heatmap: keep it knowingly (it reads an undocumented GitHub page that may change, and it shows quiet months up close) or drop it? |
+| I7 | Until the 27 Nov GitHub cleanup, hide repositories with no description from Journey? |
+| I8 | Ghiras is no longer used as proof in skills. Clean up its README and description and add it back, or leave it out? |
+| I9 | The review notes the plan reserves November for LinkedIn, the CV, GitHub and Gate 2, with site work from 8 Jan. Keep site work paused until then, apart from answers here? |
+
+## J. Hop story review (17 Nov)
+
+Done: status first in the metadata line; the "How AI was used" box removed from Hop ("My part" already says it in my own words); the divider above "Next" as wide as the text; "← Work" is 30px tall. Not done on purpose: a mono metadata line and a green status dot (both read as template UI; see the design direction).
+
+| # | Question |
+| --- | --- |
+| J1 | **Screenshot.** One of the Today view with test data, 1600 × 900, under the header; later the phone PWA view. I can make it from Hop's test data if you give me access, or you take it. |
+| J2 | **The result.** Proposed: a fact line "6 releases · 40 test files · in daily use since Oct 2026", then one sentence such as "I've used it every day since v1; it holds my study, habit and career plans." Is that true as written? |
+| J3 | **What I would change.** My earlier draft: "I would design for two devices from day one. Hop started as a single SQLite file on one machine, and using it from my phone came later." True, or what is? |
+| J4 | **Code link.** Hop is private. Add "Code: private for now; a public copy is planned"? Only if a public copy really is planned. |
+| J5 | **Offline sync.** How do you handle the phone and laptop both changing data offline (last write wins, the server decides, merge, or the phone is read-only offline)? One sentence on this turns the PWA line into a decision. |
+| J6 | ~~**AI notes on other stories.**~~ **Answered 17 Nov:** removed everywhere. The box read as forced; where AI matters (Hop), "My part" already says how it was used. |
 
 ## H. Changes from the written plan
 

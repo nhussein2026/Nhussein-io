@@ -2,18 +2,23 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import Base from "../../layouts/Base.astro";
-import Tag from "../../components/Tag.astro";
+import { profile } from "../../data/profile";
 import { publicRepoUrl } from "../../data/site";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
-  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+  const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+  // Each story links to the next one; the last links back to the first.
+  return projects.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, next: projects[(i + 1) % projects.length]! },
+  }));
 }
 
 interface Props {
   project: CollectionEntry<"projects">;
+  next: CollectionEntry<"projects">;
 }
-const { project } = Astro.props;
+const { project, next } = Astro.props;
 const d = project.data;
 const { Content } = await render(project);
 
@@ -24,39 +29,31 @@ const links = [
   !repoUrl && d.code && { href: d.code, label: "Code on GitHub" },
 ].filter(Boolean) as { href: string; label: string }[];
 
-const facts = [
-  { term: "Role", value: d.role },
-  { term: "Team", value: d.team },
-  { term: "Dates", value: d.end ? `${d.start} – ${d.end}` : d.start },
-  { term: "Status", value: d.status },
-];
+const dates = d.end ? `${d.start} – ${d.end}` : `${d.start} – now`;
 ---
 
 <Base title={d.title} description={`${d.title}: ${d.summary}. ${d.status}.`}>
   <article>
-    <p class="text-[0.95rem]">
-      <a href="/work">← Work</a>
+    <p class="text-sm">
+      <a href="/work/" class="inline-block py-1">
+        ← Work
+      </a>
     </p>
     <header class="mt-4">
-      <h1 class="text-3xl">{d.title}</h1>
-      <p class="mt-2 text-lg text-muted">{d.summary}</p>
-      <dl class="mt-6 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-[0.95rem]">
-        {facts.map((f) => (
-          <>
-            <dt class="text-muted">{f.term}</dt>
-            <dd>{f.value}</dd>
-          </>
-        ))}
-      </dl>
-      <ul class="mt-4 flex flex-wrap gap-1.5" aria-label="Built with">
-        {d.stack.map((s) => (
-          <li>
-            <Tag>{s}</Tag>
-          </li>
-        ))}
-      </ul>
+      <h1 class="text-2xl">{d.title}</h1>
+      <p class="mt-2 max-w-measure text-lg text-muted">{d.summary}</p>
+      <p class="mt-5 text-sm text-muted">
+        <span class="text-text">{d.status}</span>
+        <span aria-hidden="true"> · </span>
+        <time class="tabular">{dates}</time>
+        <span aria-hidden="true"> · </span>
+        <span>{d.team}</span>
+        <span aria-hidden="true"> · </span>
+        <span>{d.role}</span>
+      </p>
+      <p class="mt-1 text-sm text-muted">Built with {d.stack.join(", ")}</p>
       {links.length > 0 && (
-        <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-1">
+        <ul class="link-list mt-2 flex flex-wrap gap-x-6">
           {links.map((l) => (
             <li>
               <a href={l.href}>{l.label}</a>
@@ -72,20 +69,23 @@ const facts = [
         alt={d.coverAlt ?? ""}
         widths={[640, 960, 1600]}
         sizes="(min-width: 768px) 720px, 100vw"
-        class="mt-8 h-auto w-full rounded-md border border-line"
+        class="mt-8 h-auto w-full rounded border border-line"
         loading="eager"
       />
     )}
 
-    <div class="prose mt-4">
+    <div class="story mt-10">
       <Content />
     </div>
-
-    {d.aiNote && (
-      <p class="mt-8 max-w-[68ch] border-l-2 border-accent pl-4 text-[0.95rem] text-muted">
-        <span class="font-medium text-text">How AI was used: </span>
-        {d.aiNote}
-      </p>
-    )}
   </article>
+
+  <nav aria-label="More work" class="mt-14 max-w-measure border-t border-line pt-6">
+    <p>
+      <span class="text-muted">Next: </span>
+      <a href={`/work/${next.id}/`}>{next.data.title} →</a>
+    </p>
+    <p class="mt-2 text-muted">
+      Questions about this project? <a href={`mailto:${profile.email}`}>Email me</a>.
+    </p>
+  </nav>
 </Base>

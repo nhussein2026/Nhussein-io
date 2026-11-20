@@ -10,36 +10,27 @@ import { profile, experience, education, languages } from "../data/profile";
   description="About Nasser Hussein: software engineer at Veribir and Computer Engineering M.Sc. student at İTÜ, in Istanbul. Experience, education, languages, skills and contact."
   person
 >
-  <h1 class="text-3xl">About</h1>
+  <h1 class="text-2xl">About</h1>
 
   <div class="prose mt-6">
-    <!-- Matches the LinkedIn About word for word. Change both together. -->
+    <!-- Same facts as the LinkedIn About, written for this page: what the sections below
+         already say (experience, languages, contact) is not repeated here. -->
     <p>
-      I'm a software engineer. I care about understanding how things work and building them
-      properly, so they keep working long after launch.
+      I'm a software engineer in Istanbul. I care about understanding how things work and building
+      them properly, so they keep working long after launch.
     </p>
     <p>
-      At Veribir I'm part of a team that puts industrial manufacturers' product data online,
-      straight from their existing databases. We build every website on one standard CMS structure
-      and a clean stack. My part runs from the interface to the backend. We use MCP, Claude and
-      Claude Code skills in our daily work.
+      Right now my week is split between work and study. At Veribir I work part-time in a team that
+      puts industrial manufacturers' product data online, straight from their existing databases,
+      and my part runs from the interface to the backend. At İTÜ I'm doing an M.Sc. in Computer
+      Engineering, going deeper into the foundations and into machine learning.
     </p>
     <p>
-      Outside work I build my own tools, mostly in TypeScript with React, Astro and Node.js. Hop,
-      the planning app I use every day, is one of them: I designed it, wrote the specs and release
-      rules, and built it with Claude Code, reviewing and testing every change. That is how I like
-      to use AI, as part of careful engineering.
+      Outside work and study, I build my own tools. The one I use every day is Hop, a planning app I
+      designed, specified and built with Claude Code, reviewing and testing every change. That is
+      how I like to use AI: as part of careful engineering.
     </p>
-    <p>
-      I'm an M.Sc. student in Computer Engineering at İTÜ, going deeper into the foundations and
-      into machine learning. I'm from Yemen, live in Istanbul, and work in Arabic and English while
-      I learn Turkish.
-    </p>
-    <p>
-      I'm open to part-time roles, internships, remote work and research projects at İTÜ, anywhere I
-      can take real responsibility and keep learning. You can see my work at{" "}
-      <a href={profile.links.github}>github.com/nhussein2026</a>, and I'm always glad to talk.
-    </p>
+    <p>I'm from Yemen. I work in Arabic and English, and I'm learning Turkish.</p>
   </div>
 
   <section aria-labelledby="experience" class="mt-14">
@@ -49,13 +40,13 @@ import { profile, experience, education, languages } from "../data/profile";
     <ol class="mt-5 space-y-8">
       {experience.map((e) => (
         <li>
-          <h3 class="text-base">
+          <h3 class="text-base font-semibold">
             {e.title} · {e.org}
           </h3>
-          <p class="text-[0.9rem] text-muted">
+          <p class="tabular text-sm text-muted">
             {e.start} – {e.end} · {e.terms}
           </p>
-          <ul class="mt-2 max-w-[68ch] list-disc space-y-1 pl-5 marker:text-muted">
+          <ul class="mt-2 max-w-measure list-disc space-y-1 pl-5 marker:text-muted">
             {e.lines.map((l) => (
               <li>{l}</li>
             ))}
@@ -72,9 +63,9 @@ import { profile, experience, education, languages } from "../data/profile";
     <ol class="mt-5 space-y-6">
       {education.map((e) => (
         <li>
-          <h3 class="text-base">{e.degree}</h3>
+          <h3 class="text-base font-semibold">{e.degree}</h3>
           <p>{e.school}</p>
-          <p class="text-[0.9rem] text-muted">
+          <p class="tabular text-sm text-muted">
             {e.start} – {e.end} · {e.line}
           </p>
         </li>
@@ -98,18 +89,18 @@ import { profile, experience, education, languages } from "../data/profile";
 
   <section aria-labelledby="skills" class="mt-14">
     <h2 id="skills" class="text-xl">
-      Skills, with where I used them
+      Skills and where I used them
     </h2>
     <div class="mt-5">
       <SkillList />
     </div>
   </section>
 
-  <section aria-labelledby="contact" class="mt-14 rounded-lg bg-surface p-6">
+  <section aria-labelledby="contact" class="mt-14 border-t border-line pt-10">
     <h2 id="contact" class="text-xl">
       Contact
     </h2>
-    <p class="mt-2 max-w-[62ch]">{profile.openTo}</p>
+    <p class="mt-2 max-w-measure">{profile.openTo}</p>
     <p class="mt-2">
       <a href={`mailto:${profile.email}`}>{profile.email}</a>
     </p>
@@ -117,10 +108,10 @@ import { profile, experience, education, languages } from "../data/profile";
       <Button href={profile.cv} download>
         Download CV (PDF)
       </Button>
-      <Button href={profile.links.linkedin} variant="ghost">
+      <Button href={profile.links.linkedin} variant="plain" newTab>
         LinkedIn
       </Button>
-      <Button href={profile.links.github} variant="ghost">
+      <Button href={profile.links.github} variant="plain" newTab>
         GitHub
       </Button>
     </div>

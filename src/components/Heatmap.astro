@@ -3,20 +3,22 @@
 // No visitor's browser calls GitHub; the weekly build refreshes the data.
 import data from "../data/contributions.json";
 
-const CELL = 11;
-const GAP = 3;
+// 10px cells and a 2.5px gap: 54 weeks fit the 720px column on desktop without scrolling.
+const CELL = 10;
+const GAP = 2.5;
 const STEP = CELL + GAP;
 const TOP = 18;
-const LEFT = 28;
+const LEFT = 28; // width of the weekday column, which stays in place while the grid scrolls
+const PAD = 2; // keeps the first column's stroke inside the grid
 
 const days = data.days;
 const firstWeekday = new Date(`${days[0]!.date}T00:00:00Z`).getUTCDay();
 const cells = days.map((d, i) => {
   const slot = i + firstWeekday;
-  return { ...d, x: LEFT + Math.floor(slot / 7) * STEP, y: TOP + (slot % 7) * STEP };
+  return { ...d, x: PAD + Math.floor(slot / 7) * STEP, y: TOP + (slot % 7) * STEP };
 });
 const weeks = Math.ceil((days.length + firstWeekday) / 7);
-const width = LEFT + weeks * STEP;
+const width = PAD + weeks * STEP;
 const height = TOP + 7 * STEP;
 
 const monthNames = [
@@ -39,8 +41,8 @@ const months = cells
   // Skip a label that would overlap the next one.
   .filter((m, i, all) => !all[i + 1] || all[i + 1]!.x - m.x >= STEP * 3);
 
-const fill = ["var(--surface)", "var(--accent)", "var(--accent)", "var(--accent)", "var(--accent)"];
-const opacity = [1, 0.3, 0.5, 0.75, 1];
+// Sequential ramp from tokens.css: seq-0 is a day with no contributions.
+const fill = (level: number) => `var(--seq-${level})`;
 
 const activeDays = days.filter((d) => d.count > 0).length;
 const from = days[0]!.date;
@@ -56,29 +58,38 @@ const summary = `${data.total.toLocaleString("en-US")} contributions on GitHub o
 ---
 
 <figure>
-  <!-- dir="rtl" starts the scroll at the newest weeks on narrow screens; the inner div turns it back. -->
-  <div class="overflow-x-auto pb-2" dir="rtl">
-    <div dir="ltr" class="w-max">
+  <div class="flex">
+    <!-- Weekday labels: outside the scroll area, so they never scroll out of view. -->
+    <svg
+      viewBox={`0 0 ${LEFT} ${height}`}
+      width={LEFT}
+      height={height}
+      aria-hidden="true"
+      class="shrink-0 text-muted"
+    >
+      {[
+        [1, "Mon"],
+        [3, "Wed"],
+        [5, "Fri"],
+      ].map(([row, label]) => (
+        <text x="0" y={TOP + Number(row) * STEP + CELL - 1} font-size="10" fill="currentColor">
+          {label}
+        </text>
+      ))}
+    </svg>
+    <!-- row-reverse makes the scroll start at the newest weeks, with no JavaScript. -->
+    <div class="flex min-w-0 flex-row-reverse overflow-x-auto pb-2">
       <svg
         viewBox={`0 0 ${width} ${height}`}
         width={width}
         height={height}
         role="img"
         aria-label={summary}
-        class="max-w-none text-muted"
+        class="max-w-none shrink-0 text-muted"
       >
         {months.map((m) => (
           <text x={m.x} y="11" font-size="10" fill="currentColor">
             {m.label}
-          </text>
-        ))}
-        {[
-          [1, "Mon"],
-          [3, "Wed"],
-          [5, "Fri"],
-        ].map(([row, label]) => (
-          <text x="0" y={TOP + Number(row) * STEP + 9} font-size="10" fill="currentColor">
-            {label}
           </text>
         ))}
         {cells.map((c) => (
@@ -88,9 +99,7 @@ const summary = `${data.total.toLocaleString("en-US")} contributions on GitHub o
             width={CELL}
             height={CELL}
             rx="2"
-            fill={fill[c.level]}
-            fill-opacity={opacity[c.level]}
-            stroke={c.level === 0 ? "var(--line)" : "none"}
+            style={`fill: ${fill(c.level)}; stroke: ${c.level === 0 ? "var(--border)" : "none"}`}
             stroke-width="0.5"
           >
             <title>{`${c.count} on ${fmt(c.date)}`}</title>
@@ -99,5 +108,5 @@ const summary = `${data.total.toLocaleString("en-US")} contributions on GitHub o
       </svg>
     </div>
   </div>
-  <figcaption class="mt-2 text-[0.9rem] text-muted">{summary}</figcaption>
+  <figcaption class="mt-2 max-w-measure text-sm text-muted">{summary}</figcaption>
 </figure>

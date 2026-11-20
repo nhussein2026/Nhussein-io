@@ -11,12 +11,22 @@ interface Props {
   person?: boolean;
   /** Absolute or root-relative path to the preview image. */
   image?: string;
+  /** For the not-found page: no canonical link, and search engines skip it. */
+  noindex?: boolean;
 }
 
-const { title, description, person = false, image = "/og-image.png" } = Astro.props;
+const {
+  title,
+  description,
+  person = false,
+  image = "/og-image.png",
+  noindex = false,
+} = Astro.props;
 const fullTitle =
   title === profile.name ? `${profile.name} · Software Engineer` : `${title} · ${profile.name}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+// One address per page: always with the trailing slash, as the site is built and linked.
+const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(path, Astro.site);
 const imageUrl = new URL(image, Astro.site);
 
 const personLd = {
@@ -43,13 +53,13 @@ const personLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f9fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111419" media="(prefers-color-scheme: dark)" />
     <meta name="author" content={profile.name} />
 
     <meta property="og:type" content={person ? "profile" : "website"} />

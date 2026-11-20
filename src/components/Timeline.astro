@@ -14,20 +14,28 @@ const label = (d: string) => {
 const kindLabel = { study: "Study", work: "Work", project: "Project", community: "Community" };
 ---
 
-<ol class="border-l border-line">
+<!-- A date column beside the text, as on a CV. On phones the date sits above. -->
+<ol class="divide-y divide-line border-y border-line">
   {items.map(({ data }) => (
-    <li class="relative pb-7 pl-6 last:pb-0">
-      <span
-        class="absolute top-2.5 -left-[5px] size-[9px] rounded-full border-2 border-line bg-bg"
-        aria-hidden="true"
-      />
-      <p class="text-[0.85rem] text-muted">
-        <time datetime={data.date}>{label(data.date)}</time>
-        <span aria-hidden="true"> · </span>
-        <span>{kindLabel[data.kind]}</span>
+    <li class="grid gap-x-6 py-4 sm:grid-cols-[7.5rem_1fr]">
+      <p class="text-sm text-muted sm:pt-0.5">
+        <time datetime={data.date} class="tabular">
+          {label(data.date)}
+        </time>
+        <span class="sr-only">, {kindLabel[data.kind]}</span>
       </p>
-      <h3 class="text-base">{data.link ? <a href={data.link}>{data.title}</a> : data.title}</h3>
-      <p class="text-muted">{data.line}</p>
+      <div>
+        <h3 class="text-base font-semibold">
+          {data.link ? (
+            <a href={data.link} {...(/^https?:/.test(data.link) ? { target: "_blank", rel: "noopener" } : {})}>
+              {data.title}
+            </a>
+          ) : (
+            data.title
+          )}
+        </h3>
+        <p class="max-w-measure text-muted">{data.line}</p>
+      </div>
     </li>
   ))}
 </ol>

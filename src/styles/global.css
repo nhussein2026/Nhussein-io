@@ -1,48 +1,60 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
 @import "@fontsource/jetbrains-mono/400.css";
+@import "./tokens.css";
 
-/*
-  Colour tokens. One accent (D3), light by default, dark when the device asks (D2).
-  Contrast (WCAG AA needs 4.5:1), on --bg and on --surface:
-    light: text 17.1, muted 6.7 / 6.2, accent 6.0 / 5.6
-    dark:  text 15.2, muted 8.4 / 7.6, accent 8.3 / 7.5
-*/
-:root {
-  color-scheme: light dark;
-  --bg: #fbfbf9;
-  --surface: #f1f2ef;
-  --text: #16181d;
-  --muted: #545a66;
-  --line: #d9dbd6;
-  --accent: #1f5bc4;
-  --accent-soft: #e3ebfa;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #12141a;
-    --surface: #1b1e26;
-    --text: #e7e9ee;
-    --muted: #a9afbc;
-    --line: #2c303b;
-    --accent: #84aefc;
-    --accent-soft: #1d2a45;
-  }
-}
-
+/* Tailwind classes for the colour tokens in tokens.css (text-muted, border-line, bg-surface …). */
 @theme inline {
+  --color-*: initial;
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-raised: var(--surface-raised);
   --color-text: var(--text);
-  --color-muted: var(--muted);
-  --color-line: var(--line);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-accent-text: var(--accent-text);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-text: var(--success-text);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-text: var(--warning-text);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-text: var(--danger-text);
+  --color-disabled: var(--disabled);
+  --color-transparent: transparent;
+  --color-current: currentColor;
 }
 
-/* Not inline: these must exist as CSS variables for the base styles below. */
 @theme {
+  /*
+    Type scale: ratio 1.2 on a 17px base (html is 106.25%, so 1rem = 17px).
+    Each step is the one below × 1.2. Only these sizes exist.
+  */
+  --text-*: initial;
+  --text-sm: 0.833rem; /* 14.2px: dates, captions, metadata */
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem; /* 17px: body */
+  --text-base--line-height: 1.6;
+  --text-lg: 1.2rem; /* 20.4px: summaries, h3 */
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.44rem; /* 24.5px: h2 */
+  --text-xl--line-height: 1.3;
+  --text-2xl: 1.728rem; /* 29.4px: page titles */
+  --text-2xl--line-height: 1.2;
+  --text-3xl: 2.074rem; /* 35.3px: name on Home, phones */
+  --text-3xl--line-height: 1.15;
+  --text-4xl: 2.488rem; /* 42.3px: name on Home, wider screens */
+  --text-4xl--line-height: 1.1;
+
+  /* Reading width: Inter's "0" is wider than an average letter, so 60ch ≈ 70 characters. */
+  --container-measure: 60ch;
+
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -52,8 +64,8 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
-    font-size: 106.25%; /* 17px body text */
-    line-height: 1.65;
+    font-size: 106.25%;
+    line-height: 1.6;
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
   }
@@ -68,69 +80,172 @@
   h1,
   h2,
   h3 {
-    line-height: 1.25;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.012em;
     font-weight: 650;
     text-wrap: balance;
   }
 
   a {
-    color: var(--accent);
+    color: var(--link);
     text-underline-offset: 0.2em;
     text-decoration-thickness: 1px;
+    text-decoration-color: var(--link-underline);
   }
 
   a:hover {
-    text-decoration-thickness: 2px;
+    color: var(--link-hover);
   }
 
+  /* 2px ink ring with a 2px gap: the text colour, so it stands out in both themes. */
   :focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 3px;
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 
   ::selection {
-    background: var(--accent-soft);
+    background: var(--selection);
+    color: var(--text);
   }
 
-  code {
+  code,
+  kbd,
+  samp,
+  pre {
     font-family: var(--font-mono);
     font-size: 0.9em;
   }
 
+  time,
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The only motion: short colour changes, and none at all if the device asks. */
   @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
+    a,
+    button {
+      transition:
+        color 120ms ease,
+        background-color 120ms ease,
+        border-color 120ms ease;
     }
+  }
+}
+
+/*
+  Story pages, laid out like a case study rather than a chat answer:
+  section names are quiet labels (a column on the left from 640px), and
+  decisions are a short title line with the explanation below, without bullets.
+  Works on the plain Markdown (h2, p, ul) without changing it.
+*/
+@layer components {
+  .story h2 {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    margin-top: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .story p,
+  .story ul,
+  .story ol {
+    max-width: var(--container-measure);
+  }
+  .story p + p {
+    margin-top: 1rem;
+  }
+  .story ul {
+    list-style: none;
+    padding: 0;
+  }
+  .story li + li {
+    margin-top: 1rem;
+  }
+  .story li > strong:first-child {
+    display: block;
+    font-weight: 600;
+  }
+
+  @media (min-width: 640px) {
+    /* Auto-placement keeps each label on the row of the text that follows it. */
+    .story {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      column-gap: 2rem;
+    }
+    .story > * {
+      grid-column: 2;
+    }
+    .story > h2 {
+      grid-column: 1;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0.1rem;
+    }
+    .story > :not(h2) {
+      margin-bottom: 2.25rem;
+    }
+    .story > :not(h2) + :not(h2) {
+      margin-top: -1.25rem;
+    }
+  }
+}
+
+/* Lists of standalone links (footer, "Elsewhere", story links): each at least 24px tall (WCAG 2.5.8). */
+@layer components {
+  .link-list a {
+    display: inline-block;
+    padding-block: 0.25rem;
   }
 }
 
 /* Long-form text inside story pages. */
 @layer components {
   .prose {
-    max-width: 68ch;
+    max-width: var(--container-measure);
   }
   .prose h2 {
-    font-size: 1.25rem;
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
     margin-top: 2.25rem;
     margin-bottom: 0.5rem;
   }
   .prose p,
-  .prose ul {
+  .prose ul,
+  .prose ol,
+  .prose pre {
     margin-bottom: 1rem;
   }
   .prose ul {
     list-style: disc;
     padding-left: 1.25rem;
   }
+  .prose ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
   .prose li {
     margin-bottom: 0.5rem;
   }
   .prose li::marker {
-    color: var(--muted);
+    color: var(--text-muted);
   }
   .prose strong {
     font-weight: 600;
+  }
+  .prose pre {
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+  .prose :not(pre) > code {
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    background: var(--surface);
   }
 }

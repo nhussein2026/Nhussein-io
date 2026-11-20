@@ -10,7 +10,6 @@ stack: [MongoDB, Express, React, Node.js, Tailwind CSS]
 code: https://github.com/3skici
 featured: true
 order: 2
-aiNote: Built by hand, before AI coding tools.
 ---
 
 ## The problem
@@ -23,9 +22,9 @@ I led a team of three and wrote 90 of the project's 112 commits. I built the har
 
 ## Key decisions
 
-- **Three languages from the start**, including a right-to-left layout for Arabic.
-- **A reporting system** so that users could flag bad listings and the marketplace stayed trustworthy.
-- **REST APIs on Express and MongoDB**, the stack the whole team could work in.
+- **Three languages from the start** Arabic, English and Turkish, including a right-to-left layout for Arabic.
+- **A reporting system** Users could flag bad listings, so the marketplace stayed trustworthy.
+- **REST APIs on Express and MongoDB** The stack the whole team could work in.
 
 ## The result
 

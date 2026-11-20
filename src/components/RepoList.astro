@@ -25,19 +25,19 @@ const sections = grouped.length
 
 {sections.map((s) => (
   <section class="mt-6" aria-label={s.label || undefined}>
-    {s.label && <h3 class="mb-2 text-base">{s.label}</h3>}
+    {s.label && <h3 class="mb-2 text-base font-semibold">{s.label}</h3>}
     <ul class="divide-y divide-line border-y border-line">
       {s.items.map((r) => (
         <li class="py-3">
           <p class="flex flex-wrap items-baseline justify-between gap-x-4">
-            <a href={r.url} class="font-medium">
+            <a href={r.url} class="font-medium" target="_blank" rel="noopener">
               {r.name}
             </a>
-            <span class="text-[0.85rem] text-muted">
+            <span class="tabular text-sm text-muted">
               {[r.language, r.year, r.archived ? "archived" : null].filter(Boolean).join(" · ")}
             </span>
           </p>
-          {r.description && <p class="mt-0.5 text-[0.95rem] text-muted">{r.description}</p>}
+          {r.description && <p class="mt-0.5 max-w-measure text-muted">{r.description}</p>}
         </li>
       ))}
     </ul>

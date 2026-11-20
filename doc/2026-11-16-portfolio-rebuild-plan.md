@@ -154,6 +154,7 @@ Left out of this version: blog, Lab page (opens in April once two machine learni
 | Why | The "Why" sentence |
 | Now | The "Now" line |
 | Selected work | Three cards: Hop, Eskici, and the third slot (career-copilot until the volunteer platform is live) |
+| Experience | Added 17 Nov: three lines (role · company, dates), from `profile.ts`, linking to the full history on About. Veribir is paid production work with code review, the strongest signal for a recruiter scanning the page |
 | Open to | The "Open to" sentence, with an email button |
 | Links | GitHub, LinkedIn, CV |
 
@@ -205,7 +206,7 @@ A short "page not found" message with links to Home, Work and Journey.
 
 | File or folder | Holds | Fields |
 | --- | --- | --- |
-| `src/content/projects/*.md` | One file per story | `title`, `summary`, `role`, `team`, `start`, `end`, `status`, `stack`, `repo`, `live`, `cover`, `featured`, `order`, `aiNote`; body = the five parts |
+| `src/content/projects/*.md` | One file per story | `title`, `summary`, `role`, `team`, `start`, `end`, `status`, `stack`, `repo`, `live`, `cover`, `featured`, `order`; body = the five parts |
 | `src/content/journey/*.md` | Milestones | `date`, `title`, `kind` (study, work, project, community), `line`, `link` |
 | `src/data/profile.ts` | Identity and facts | name, headline, second line, email, links, experience, education, languages |
 | `src/data/skills.ts` | Skills with proof (if D1 is yes) | `name`, `group`, `proof` (story pages or repository links) |
@@ -429,3 +430,135 @@ The site launches only when every line is ticked.
 | GitHub does not answer during a build | The saved `repos.json` is used |
 | The domain breaks on launch day | Switch the Pages source back to `gh-pages` |
 | Repository topics are not set by 22 Jan | Journey shows one flat list by year; grouping follows when the topics exist |
+
+---
+
+## 14. Progress tracker
+
+The one place to see what is done and what remains. Updated at the end of every work session; what was delivered in each session is logged in `doc/delivery.md`, and answers I still owe are in `doc/questions.md`.
+
+Last updated: **20 Nov 2026, launch with reviewed repositories only** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
+
+Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claude)* Claude builds it.
+
+### Version 1 (old site)
+
+- [x] Tag `v1.0.0` and publish the GitHub Release (16 Nov)
+- [x] Stop-gap: design credit line in the footer (17 Nov, `v1.0.1`)
+- [x] Stop-gap: new public CV without phone, same address (17 Nov, `v1.0.1`)
+- [x] Deploy `v1.0.1` to `gh-pages`
+
+### Setup (plan section 8, steps 1–7)
+
+- [x] Branch `v2`; old React site, `docs/`, `.env.example` removed
+- [x] Astro, Tailwind, strict TypeScript, self-hosted fonts
+- [x] Content collections, `profile.ts`, `skills.ts`, fetch scripts with saved fallback
+- [x] Workflows: checks, Pages deploy, release-please, weekly rebuild
+- [x] README and `CHANGELOG.md`; `package.json` description, author, keywords
+- [x] Bun, Node 26 LTS, Astro 7.4.12
+- [x] Pre-release `v2.0.0-alpha.1`
+- [ ] Merge PR #2 (`v2-answers-1` → `v2`) *(me)*
+
+### Pages
+
+- [x] Home: top, why, now, three cards, open to, links
+- [x] Work page and story pages
+- [x] Journey: milestones, heatmap, repository list
+- [x] About: LinkedIn About, experience, education, languages, skills, CV, contact
+- [x] 404 page
+- [x] Redirects for `/resources` and `/github-profile`
+- [ ] Approve the 404 page *(me, block 7)*
+
+### Content
+
+- [x] Hop, Eskici, career-copilot, Safha stories drafted
+- [x] Story dates for Hop, Eskici, Safha (A1–A3)
+- [x] About text from LinkedIn (A4)
+- [ ] Safha wording checked against safha.dev (B6) *(me)*
+- [ ] Journey milestones checked against each repository (B8) *(me)*
+- [ ] "What I would change" lines approved for each story (C) *(me)*
+- [ ] Skills with proof: final yes or no (D1) *(me)*
+- [ ] Screenshots, 2–4 per story *(me; Claude for Hop)*
+- [ ] Eskici demo or walkthrough link (D8) *(me)*
+- [ ] Volunteer platform story: only after its launch
+
+### Visibility and GitHub
+
+- [x] **Launch approach (20 Nov):** the portfolio does not wait for all repositories. Journey lists only reviewed ones (`SHOWN` list in `scripts/fetch-repos.mjs`, replacing the `HIDDEN` list); each repository joins when its review is done. Milestones link to a repository of mine only once it is on the list.
+- [x] Launch set: DevLab, career-copilot. livecodes is a milestone (forks are never listed). Rafiq-ai and Ghiras stay off until reviewed.
+- [ ] Review standard for the remaining repositories, written together, following the plan *(me + Claude, next)*
+- [ ] Repository review: decide D-a to D-e *(me; no longer blocks launch, everything unreviewed is off the site)*
+- [ ] Repository review, one repository at a time, tracked in `doc/repo-checklist.md` (public, 3 of 43 done) and `doc/private/repo-checklist-private.md` (private, never committed):
+  - [x] DevLab: data removed from history, dead tools removed, README to the README Standard v1.1, MIT licence, PR template, Snippets formatting fixed *(pushed 19 Nov)*
+  - [x] **DevLab review: done (19 Nov).** Deferred, not blocking: description, website and `university-project` topic; 3 good-first-issues; GitHub Support purge of old PR commits; AI-use and Learning lines in its README *(me, later)*
+  - [x] livecodes: Journey milestone only, nothing to change (20 Nov)
+  - [x] career-copilot: history checked (no secrets, no real data, validator passes), README to the README Standard v1.1, description and `personal-project` topic set *(pushed 20 Nov, `1112633`)*
+- [ ] READMEs as the source (`doc/readme-standard.md`): `fetch-repos.mjs` reads Project Journey and Project Status from each public README; Journey shows them
+- [x] README Standard v1.1 (`doc/github-readme-standard.md`): format contract, Project Facts, status definitions, Learning, Credits, No Real Data
+- [ ] Apply the README Standard to each repository (DevLab and this repository done)
+- [ ] Hop repository public, or remove the link from the CV (D-a) *(me)*
+- [ ] Repository descriptions and topics set on GitHub, so Journey can group by topic *(me)*
+
+### Design
+
+- [x] Theme, accent, fonts (D2–D4); "Build. Learn. Grow." not used (D5)
+- [x] Heatmap at build time (D10)
+- [x] Favicon and preview image
+- [x] Design system approved (17 Nov): OKLCH colour tokens in `src/styles/tokens.css` (base, one accent, status, charts, AI demo, code), type scale 1.2 on 17px, editorial layout with no boxed cards, pill tags or status dots
+- [x] `bun run check:contrast`: every text and UI pair passes WCAG 2.2 AA in both themes; runs in CI and before deploy
+- [x] `/styleguide` (noindex, not in the sitemap or the nav)
+- [x] Story pages end with "Next: …" and "Questions about this project? Email me."
+- [x] Home: a three-line Experience strip after Selected work, linking to About (17 Nov, changes section 5)
+- [x] Lighthouse, phone setting: accessibility, best practices and SEO 100 on every page (404 SEO 63, by design: `noindex`). Performance 75–98 on this laptop because of a slow-CPU warning; 100 with no CPU slowdown. Recheck with PageSpeed Insights after launch
+- [ ] Accent blue from the LinkedIn cover, if there is one (D3) *(me)*
+- [x] Route art shows progress (17 Nov): stop 1 passed (B.Sc. and first work), now on the way to stop 2 (İTÜ M.Sc. and a full-time job)
+
+### Site review, 17 Nov (Claude in Chrome review of the alpha)
+
+Fixed (not yet committed):
+
+- [x] `robots.txt` points to `/sitemap-index.xml`, the file Astro actually builds
+- [x] Trailing slashes: `trailingSlash: "always"` and every internal link ends in `/`, so no click goes through a 301 and canonicals point at the final address
+- [x] 404 page: no canonical; `noindex` instead
+- [x] Heatmap: weekday labels sit in their own column and no longer get cut off; the scroll starts at the newest weeks, without JavaScript
+- [x] Header links at least 24 px tall (WCAG 2.2, 2.5.8)
+- [x] Reading width: one `max-w-measure` token (60ch, about 70 characters a line) for all running text
+- [x] Skills: Ghiras removed as proof for TypeScript and SQL; Hop alone until Ghiras is cleaned up
+- [x] Favicon: already blue in every file (svg, ico, png); no change needed
+
+Open, see `doc/questions.md` section I:
+
+- [ ] About: "going deeper … into machine learning" breaks the claim ladder until Mar 2027; change it on LinkedIn and the site together *(me)*
+- [ ] About: last line links to GitHub; link to `/work/` instead *(me, same reason)*
+- [ ] Safha: one start date used everywhere (site Dec 2023, LinkedIn Jul 2024, CV Feb 2025) *(me)*
+- [ ] Safha: a Journey milestone, once the date is settled *(me, then Claude)*
+- [ ] Eskici: the code link goes to `github.com/3skici`; rename the organisation or relabel the link *(me)*
+- [ ] TOEFL: add the score or leave it as is *(me)*
+- [ ] Heatmap: keep it knowingly (it reads an undocumented GitHub page, and shows quiet months) or drop it *(me)*
+- [ ] Journey: hide repositories with no description until the GitHub cleanup *(me: yes or no)*
+- [ ] GitHub cleanup (27 Nov block): descriptions, typos, topics; this fixes the Journey list *(me)*
+- [ ] Ghiras: improve its README and description, or keep it out of skills *(me)*
+- [ ] "What I would change" lines and screenshots (already listed under Content)
+- [ ] Design choices due 27 Dec were made by Claude's defaults: confirm they are yours (section E of questions) *(me)*
+
+### Release candidate (`v2.0.0-rc.1`)
+
+- [ ] Lighthouse on the live site (PageSpeed Insights), 95+ in all four *(Claude, after launch)*
+- [ ] Accessibility pass: keyboard, focus, contrast, alt text, one `h1` per page *(Claude)*
+- [ ] 360 px check on every page *(Claude)*
+- [ ] Shared link preview on LinkedIn *(me, block 7)*
+- [ ] Read the whole site aloud on the phone; list the fixes *(me, block 8)*
+- [ ] Definition of done (section 11): every line ticked
+
+### Launch (Fri 5 Feb 2027) and after
+
+- [ ] Merge `v2` into `main` by PR; switch Pages source to GitHub Actions *(me)*
+- [ ] Private-window test: five direct links and the CV
+- [ ] Release `v2.0.0`
+- [ ] Sun 7 Feb: LinkedIn website, Featured and About; GitHub profile README; CV header link; backlinks from Safha, DevLab, learn-turkish; LinkedIn cover; one post
+- [ ] Delete `gh-pages` one month after launch
+
+### Backlog (parked, see `doc/backlog.md`)
+
+- [ ] B1 Part 1: skills with typed proof and a derived label (Professional / Shipped / Learning), enforced by `check:content` *(after launch, one block)*
+- [ ] B1 Part 2: AI profile explorer as a separate Lab project, judged by a 30-question evaluation *(Apr 2027 or later)*

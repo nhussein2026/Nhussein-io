@@ -1,22 +1,27 @@
 ---
+// A screenshot with its caption. Renders nothing until an image exists: no empty boxes.
+// Width and height come from the image, so the page does not jump while it loads.
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 interface Props {
-  src: ImageMetadata;
+  src?: ImageMetadata;
   alt: string;
   caption: string;
 }
 const { src, alt, caption } = Astro.props;
 ---
 
-<figure class="my-8">
-  <Image
-    src={src}
-    alt={alt}
-    widths={[640, 960, 1600]}
-    sizes="(min-width: 768px) 720px, 100vw"
-    class="h-auto w-full rounded-md border border-line"
-  />
-  <figcaption class="mt-2 text-[0.9rem] text-muted">{caption}</figcaption>
-</figure>
+{src && (
+  <figure class="my-8">
+    <Image
+      src={src}
+      alt={alt}
+      widths={[640, 960, 1600]}
+      sizes="(min-width: 768px) 720px, 100vw"
+      loading="lazy"
+      class="h-auto w-full rounded border border-line"
+    />
+    <figcaption class="mt-2 max-w-measure text-sm text-muted">{caption}</figcaption>
+  </figure>
+)}

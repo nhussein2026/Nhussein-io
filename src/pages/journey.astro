@@ -15,8 +15,8 @@ const milestones = (await getCollection("journey")).sort((a, b) =>
   title="Journey"
   description="How Nasser Hussein got here: dated milestones from 2021, a year of GitHub activity and every public repository."
 >
-  <h1 class="text-3xl">Journey</h1>
-  <p class="mt-3 max-w-[62ch] text-muted">
+  <h1 class="text-2xl">Journey</h1>
+  <p class="mt-3 max-w-measure text-muted">
     The path so far, newest first. Early and unfinished work is listed as what it is.
   </p>
 
@@ -38,8 +38,8 @@ const milestones = (await getCollection("journey")).sort((a, b) =>
     <h2 id="repos" class="text-xl">
       Public repositories
     </h2>
-    <p class="mt-2 text-[0.95rem] text-muted">
-      {repos.length} repositories, refreshed every week. Forks are left out.
+    <p class="mt-2 text-muted">
+      {repos.length} reviewed repositories so far. More are added as each one is reviewed.
     </p>
     <RepoList repos={repos} />
   </section>

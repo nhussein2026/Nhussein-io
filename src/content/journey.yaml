@@ -1,5 +1,6 @@
 # Milestones on /journey. The page sorts them newest first.
 # date: YYYY or YYYY-MM. kind: study, work, project or community.
+# Link to a repository of mine only once it is on the SHOWN list in scripts/fetch-repos.mjs.
 - id: hop-v1
   date: "2026-10"
   title: Hop v1
@@ -10,7 +11,6 @@
   title: Hacktoberfest Hack Day Istanbul × Hadith Tech
   kind: community
   line: Team member on Rafiq, a one-day prototype.
-  link: https://github.com/nhussein2026/Rafiq-ai
 - id: itu
   date: "2026-09"
   title: M.Sc. at İTÜ
@@ -69,7 +69,6 @@
   title: First Java project
   kind: project
   line: A quiz management system, my first project outside coursework.
-  link: https://github.com/nhussein2026/quiz-management-system
 - id: bsc
   date: "2021-10"
   title: Started the B.Sc.

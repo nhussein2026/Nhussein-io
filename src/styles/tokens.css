@@ -1,0 +1,166 @@
+/*
+  Colour tokens for nhussein.io: the only place a colour is defined.
+
+  Authored in OKLCH: oklch(lightness chroma hue). Equal lightness looks equally light across
+  hues, so a status colour and the accent can be matched by number, not by eye.
+  The hex in each comment is the sRGB value the browser shows; scripts/check-contrast.mjs
+  checks every text/background and UI/background pair in both themes.
+
+  Neutrals are a cool ink (hue 261, chroma under 0.02). Buttons and links are ink, not colour.
+  The one colour is a calm mint (hue 172), a nod to the first version of the site: it marks
+  the route, link underlines and the logo, and nothing else competes with it.
+  Light is the default; dark follows the device (prefers-color-scheme).
+*/
+
+:root {
+  color-scheme: light dark;
+
+  /* Base */
+  --bg: oklch(0.985 0.003 261); /* #f9fafc */
+  --surface: oklch(0.962 0.006 261); /* #f0f3f7 */
+  --surface-raised: oklch(1 0 261); /* #ffffff */
+  --text: oklch(0.21 0.012 261); /* #15181e */
+  --text-muted: oklch(0.44 0.018 261); /* #4d535d */
+  --text-subtle: oklch(0.53 0.016 261); /* #676c75: metadata only, never running text */
+  --border: oklch(0.9 0.008 261); /* #dbdee3: hairlines, decorative */
+  --border-strong: oklch(0.62 0.014 261); /* #81868f: control borders, 3:1 */
+
+  /* Accent: one mint. accent is for graphics and underlines (3:1), never for text. */
+  --accent: oklch(0.6 0.1 172); /* #2f9379 */
+  --accent-soft: oklch(0.955 0.03 172); /* #ddf7ee: backgrounds */
+  --accent-text: oklch(0.52 0.09 172); /* #207963: mint text, link hover */
+
+  /* Logo: the site's ink with the dark-theme mint, the same in both themes. */
+  --logo-bg: oklch(0.21 0.012 261); /* #15181e */
+  --logo-fg: oklch(0.8 0.09 172); /* #7ed1b7 */
+
+  /* Status: calm, for project status and demo states. Info uses the accent. */
+  --success: oklch(0.56 0.11 150); /* #3e8651 */
+  --success-soft: oklch(0.955 0.03 150); /* #e3f6e6 */
+  --success-text: oklch(0.42 0.09 150); /* #225a31 */
+  --warning: oklch(0.62 0.12 70); /* #b47825 */
+  --warning-soft: oklch(0.96 0.035 80); /* #fef0d8 */
+  --warning-text: oklch(0.45 0.09 65); /* #774914 */
+  --danger: oklch(0.55 0.15 27); /* #b9463f */
+  --danger-soft: oklch(0.955 0.02 27); /* #fdebe9 */
+  --danger-text: oklch(0.45 0.14 27); /* #932b27 */
+  --disabled: oklch(0.7 0.008 261); /* #9c9ea3: inactive controls are exempt from contrast */
+
+  /* Charts, categorical: told apart under protan, deutan and tritan simulation (min ΔE 0.057). */
+  --cat-1: oklch(0.52 0.11 258); /* #3f69a7 blue */
+  --cat-2: oklch(0.5 0.11 52); /* #934e1e orange */
+  --cat-3: oklch(0.6 0.09 195); /* #2b9191 teal */
+  --cat-4: oklch(0.52 0.1 335); /* #8c5180 plum */
+  --cat-5: oklch(0.58 0.08 98); /* #877b40 olive */
+  --cat-6: oklch(0.6 0.1 293); /* #8374b7 violet */
+
+  /* Charts, sequential (less → more). seq-0 means none. */
+  --seq-0: oklch(0.962 0.006 261); /* #f0f3f7 */
+  --seq-1: oklch(0.9 0.05 172); /* #bde9da */
+  --seq-2: oklch(0.8 0.09 172); /* #7ed1b7 */
+  --seq-3: oklch(0.68 0.115 172); /* #37af90 */
+  --seq-4: oklch(0.56 0.105 172); /* #11886d */
+
+  /* Charts, diverging (orange ← neutral → blue). */
+  --div-n3: oklch(0.45 0.12 50); /* #883c00 */
+  --div-n2: oklch(0.6 0.11 52); /* #b36c3e */
+  --div-n1: oklch(0.78 0.06 55); /* #d6ae93 */
+  --div-0: oklch(0.93 0.005 261); /* #e6e8eb */
+  --div-p1: oklch(0.8 0.05 258); /* #aabfde */
+  --div-p2: oklch(0.62 0.11 258); /* #5b87c8 */
+  --div-p3: oklch(0.45 0.14 258); /* #1a52a1 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(0.19 0.012 261); /* #111419 */
+    --surface: oklch(0.225 0.014 261); /* #181c22 */
+    --surface-raised: oklch(0.26 0.016 261); /* #20242c */
+    --text: oklch(0.93 0.008 261); /* #e5e8ed */
+    --text-muted: oklch(0.78 0.014 261); /* #b2b8c1 */
+    --text-subtle: oklch(0.68 0.014 261); /* #9399a1 */
+    --border: oklch(0.32 0.016 261); /* #2e333b */
+    --border-strong: oklch(0.55 0.018 261); /* #6c727c */
+
+    --accent: oklch(0.8 0.09 172); /* #7ed1b7: calm, no glow */
+    --accent-soft: oklch(0.3 0.04 172); /* #16342b */
+    --accent-text: oklch(0.8 0.09 172); /* #7ed1b7 */
+    --logo-bg: oklch(0.21 0.012 261); /* #15181e: unchanged, listed so both themes are checked */
+    --logo-fg: oklch(0.8 0.09 172);
+
+    --success: oklch(0.74 0.12 150); /* #6fc082 */
+    --success-soft: oklch(0.28 0.04 150); /* #1a2e1e */
+    --success-text: oklch(0.85 0.08 150); /* #a9ddb2 */
+    --warning: oklch(0.8 0.12 80); /* #e6b55d */
+    --warning-soft: oklch(0.29 0.04 75); /* #372813 */
+    --warning-text: oklch(0.88 0.08 85); /* #f0d49b */
+    --danger: oklch(0.72 0.13 27); /* #eb8278 */
+    --danger-soft: oklch(0.29 0.05 27); /* #41211e */
+    --danger-text: oklch(0.85 0.07 27); /* #f8bdb5 */
+    --disabled: oklch(0.45 0.012 261); /* #52555c */
+
+    --cat-1: oklch(0.74 0.11 258); /* #7facf0 */
+    --cat-2: oklch(0.7 0.11 52); /* #d48a5c */
+    --cat-3: oklch(0.8 0.09 195); /* #72d0d0 */
+    --cat-4: oklch(0.72 0.1 335); /* #cc8dbe */
+    --cat-5: oklch(0.8 0.08 98); /* #cbbf83 */
+    --cat-6: oklch(0.62 0.12 293); /* #8977c8 */
+
+    --seq-0: oklch(0.225 0.014 261); /* #181c22 */
+    --seq-1: oklch(0.36 0.05 172); /* #1e463a */
+    --seq-2: oklch(0.5 0.08 172); /* #28725e */
+    --seq-3: oklch(0.68 0.11 172); /* #3fae90 */
+    --seq-4: oklch(0.8 0.09 172); /* #7ed1b7 */
+
+    --div-n3: oklch(0.82 0.1 55); /* #f7b385 */
+    --div-n2: oklch(0.67 0.11 52); /* #ca8153 */
+    --div-n1: oklch(0.48 0.07 50); /* #7e5239 */
+    --div-0: oklch(0.3 0.01 261); /* #2b2e33 */
+    --div-p1: oklch(0.48 0.07 258); /* #445f85 */
+    --div-p2: oklch(0.66 0.11 258); /* #6793d5 */
+    --div-p3: oklch(0.82 0.09 258); /* #a0c6ff */
+  }
+}
+
+/* Roles built from the tokens above: no new colours. */
+:root {
+  /* Interaction */
+  --focus-ring: var(--text);
+  --selection: var(--accent-soft);
+  --link: var(--text);
+  --link-underline: var(--accent);
+  --link-hover: var(--accent-text);
+
+  /* Graphs and networks: neutral by default; the accent marks the one selected item. */
+  --node: var(--text-muted);
+  --node-muted: var(--border-strong);
+  --edge: var(--border-strong);
+  --edge-muted: var(--border);
+  --highlight: var(--accent);
+
+  /* Chart chrome */
+  --gridline: var(--border);
+  --axis: var(--border-strong);
+  --axis-label: var(--text-muted);
+  --tooltip-bg: var(--text);
+  --tooltip-text: var(--bg);
+
+  /* AI demo surfaces */
+  --demo-user-bg: var(--accent-soft);
+  --demo-assistant-bg: var(--surface-raised);
+  --demo-meta: var(--text-subtle);
+  --demo-indicator: var(--accent);
+
+  /* Code: Shiki's css-variables theme (astro.config.mjs) reads these. */
+  --astro-code-foreground: var(--text);
+  --astro-code-background: var(--surface);
+  --astro-code-token-keyword: var(--accent-text);
+  --astro-code-token-string: var(--success-text);
+  --astro-code-token-string-expression: var(--success-text);
+  --astro-code-token-constant: var(--warning-text);
+  --astro-code-token-comment: var(--text-subtle);
+  --astro-code-token-function: var(--text);
+  --astro-code-token-parameter: var(--text-muted);
+  --astro-code-token-punctuation: var(--text-muted);
+  --astro-code-token-link: var(--accent);
+}

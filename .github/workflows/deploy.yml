@@ -33,6 +33,7 @@ jobs:
       - run: bun install --frozen-lockfile
       - name: No open TO CONFIRM markers
         run: bun run check:content
+      - run: bun run check:contrast
       - run: bun run check
       - run: bun run build
       - run: bun run check:links

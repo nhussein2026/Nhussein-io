@@ -31,7 +31,8 @@
     "check:links": "linkinator dist --recurse --skip \"^(https?:|mailto:)(?!//(localhost|127\\.0\\.0\\.1))\"",
     "check:version": "bun scripts/check-version.mjs",
     "format": "prettier --write .",
-    "check:content": "bun scripts/check-content.mjs"
+    "check:content": "bun scripts/check-content.mjs",
+    "check:contrast": "bun scripts/check-contrast.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.5",
