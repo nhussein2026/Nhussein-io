@@ -16,6 +16,28 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-20 · Launch with reviewed repositories only
+
+**Decision:** the portfolio launches without waiting for every repository review. Journey lists only reviewed repositories; each one joins as its review is done.
+
+**Updated** (this repository, `v2-design`, not committed)
+- `scripts/fetch-repos.mjs`: the `HIDDEN` list is replaced by a `SHOWN` list (DevLab, career-copilot). New or unreviewed public repositories no longer appear on Journey by themselves. `src/data/repos.json` refreshed: 2 repositories.
+- Journey's repository line now says how many are reviewed, instead of "refreshed every week".
+- `src/content/journey.yaml`: the Rafiq (Hack Day) and First Java milestones keep their text but lose their repository links until those repositories are reviewed.
+- `doc/repo-checklist.md`: *on site* marker; livecodes done (milestone only); Rafiq-ai and Ghiras off the site.
+
+**Delivered** (career-copilot `main`, pushed as `1112633`)
+- History checked: no secrets, `.env` files or real data; only example addresses in the skill files. `scripts/validate.py` passes (16 skills).
+- `README.md` rewritten to the README Standard v1.1: version stamp, Project Journey and Facts, status **Maintained**, technologies, how to run, structure, limitations from `Notes.md`, contributing, MIT licence. All existing install and usage docs kept.
+
+**Notes**
+- To confirm: the Project Journey reason (AI tools make up claims) comes from the story page; the AI-use line comes from the Claude co-author lines in the commits.
+- career-copilot GitHub settings set: one-sentence description matching the Overview; topics `personal-project`, `claude-code`, `claude-code-plugin`, `claude-skills`, `job-search`, `resume`. GitHub sorts topics alphabetically, so the category topic cannot be listed first.
+- Checked on a local production preview: Journey lists DevLab and career-copilot only; no links to unreviewed repositories except learn-turkish in Skills.
+- `src/data/skills.ts` still links the learn-turkish repository (Astro proof), which is not reviewed yet.
+
+---
+
 ## 2026-11-19 · DevLab repository review (done)
 
 First repository in the GitHub repository review.

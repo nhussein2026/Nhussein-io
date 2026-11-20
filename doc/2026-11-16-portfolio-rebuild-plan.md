@@ -437,7 +437,7 @@ The site launches only when every line is ticked.
 
 The one place to see what is done and what remains. Updated at the end of every work session; what was delivered in each session is logged in `doc/delivery.md`, and answers I still owe are in `doc/questions.md`.
 
-Last updated: **19 Nov 2026, DevLab repository review** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
+Last updated: **20 Nov 2026, launch with reviewed repositories only** · current version `2.0.0-alpha.1` · next release `v2.0.0-beta.1`
 
 Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claude)* Claude builds it.
 
@@ -484,10 +484,15 @@ Legend: `[x]` done · `[ ]` to do · *(me)* needs my answer or action · *(Claud
 
 ### Visibility and GitHub
 
-- [ ] Repository review: decide D-a to D-e, then update the `HIDDEN` list *(me)*
-- [ ] Repository review, one repository at a time:
+- [x] **Launch approach (20 Nov):** the portfolio does not wait for all repositories. Journey lists only reviewed ones (`SHOWN` list in `scripts/fetch-repos.mjs`, replacing the `HIDDEN` list); each repository joins when its review is done. Milestones link to a repository of mine only once it is on the list.
+- [x] Launch set: DevLab, career-copilot. livecodes is a milestone (forks are never listed). Rafiq-ai and Ghiras stay off until reviewed.
+- [ ] Review standard for the remaining repositories, written together, following the plan *(me + Claude, next)*
+- [ ] Repository review: decide D-a to D-e *(me; no longer blocks launch, everything unreviewed is off the site)*
+- [ ] Repository review, one repository at a time, tracked in `doc/repo-checklist.md` (public, 3 of 43 done) and `doc/private/repo-checklist-private.md` (private, never committed):
   - [x] DevLab: data removed from history, dead tools removed, README to the README Standard v1.1, MIT licence, PR template, Snippets formatting fixed *(pushed 19 Nov)*
   - [x] **DevLab review: done (19 Nov).** Deferred, not blocking: description, website and `university-project` topic; 3 good-first-issues; GitHub Support purge of old PR commits; AI-use and Learning lines in its README *(me, later)*
+  - [x] livecodes: Journey milestone only, nothing to change (20 Nov)
+  - [x] career-copilot: history checked (no secrets, no real data, validator passes), README to the README Standard v1.1, description and `personal-project` topic set *(pushed 20 Nov, `1112633`)*
 - [ ] READMEs as the source (`doc/readme-standard.md`): `fetch-repos.mjs` reads Project Journey and Project Status from each public README; Journey shows them
 - [x] README Standard v1.1 (`doc/github-readme-standard.md`): format contract, Project Facts, status definitions, Learning, Credits, No Real Data
 - [ ] Apply the README Standard to each repository (DevLab and this repository done)

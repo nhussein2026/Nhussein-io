@@ -35,7 +35,7 @@ You asked for ideas. These are **my drafts**. Each one is only worth using if it
 
 ## D. Visibility and privacy: all open, until the GitHub repository review
 
-To keep the site minimal until then, the repositories in D-b and D-c are **hidden from Journey** (the `HIDDEN` list in `scripts/fetch-repos.mjs`; remove a name to show it again). Journey now lists 27 repositories instead of 33.
+Since 20 Nov, Journey lists only reviewed repositories (the `SHOWN` list in `scripts/fetch-repos.mjs`), so everything in D-b and D-c stays off the site until it is reviewed. These questions no longer block the launch.
 
 | # | Question |
 | --- | --- |
