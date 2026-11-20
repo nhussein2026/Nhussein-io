@@ -5,15 +5,11 @@ import { writeFile } from "node:fs/promises";
 const USER = "nhussein2026";
 const OUT = new URL("../src/data/repos.json", import.meta.url);
 
-// Public repositories kept off the site until I have reviewed them
-// (doc/questions.md, D-b and D-c). Remove a name to show it again.
-const HIDDEN = new Set([
-  "non-profit-association-backend",
-  "non-profit-association-frontend",
-  "ai-bootcamp-assignment-1",
-  "ai-local-agent-assignment-2",
-  "Assignment--3---AI-Agent-with-Tools",
-  "brewhaus-practicum-learning-travel-agency",
+// Journey shows only repositories I have reviewed (doc/repo-checklist.md).
+// Add a name here when its review is done; everything else stays off the site.
+const SHOWN = new Set([
+  "DevLab",
+  "career-copilot",
 ]);
 
 async function main() {
@@ -27,9 +23,7 @@ async function main() {
   const repos = data
     // Forks are other people's code; my own contributions to them are shown as milestones.
     .filter((r) => !r.fork && !r.private)
-    // The profile README repository is not a project.
-    .filter((r) => r.name.toLowerCase() !== USER.toLowerCase())
-    .filter((r) => !HIDDEN.has(r.name))
+    .filter((r) => SHOWN.has(r.name))
     .map((r) => ({
       name: r.name,
       description: r.description ?? "",
