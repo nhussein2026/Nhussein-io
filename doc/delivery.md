@@ -16,6 +16,24 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-22 · Rafiq-ai review done
+
+**Delivered** (Rafiq-ai `main`, pushed as `ed9ae49`, repository archived)
+- History checked: no secrets, `.env` files or real data. The removed `image.png` is a screenshot with the API key masked. 32 tests pass; Ruff clean.
+- `README.md` rewritten to the README Standard v1.1: version stamp, Project Journey and Facts (built this version at Hack Day Istanbul; team unnamed; AI use: Claude Code), status **Archived**, technologies, how to run, structure, Learning from `docs/retrospective.md`, limitations. All existing docs kept and linked.
+- Third-party content note moved from `LICENSE` to a new `NOTICE` file, so GitHub can recognise the MIT licence.
+
+**Updated** (this repository, `v2-design`)
+- `scripts/fetch-repos.mjs`: Rafiq-ai added to `SHOWN`.
+- `src/content/journey.yaml`: the Hack Day milestone links the Rafiq-ai repository again.
+- `doc/repo-checklist.md`: Rafiq-ai done, *on site*; 4 of 43.
+
+**Notes**
+- GitHub settings set before archiving: one-sentence description; topics `hackathon`, `python`, `streamlit`, `gemini-api`, `llm`, `ai-safety`. GitHub now recognises the licence as MIT. Repository archived (read-only).
+- 11 commits carry my old email as author; not rewritten (same as DevLab).
+
+---
+
 ## 2026-11-20 · Launch with reviewed repositories only
 
 **Decision:** the portfolio launches without waiting for every repository review. Journey lists only reviewed repositories; each one joins as its review is done.
@@ -34,6 +52,7 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 - To confirm: the Project Journey reason (AI tools make up claims) comes from the story page; the AI-use line comes from the Claude co-author lines in the commits.
 - career-copilot GitHub settings set: one-sentence description matching the Overview; topics `personal-project`, `claude-code`, `claude-code-plugin`, `claude-skills`, `job-search`, `resume`. GitHub sorts topics alphabetically, so the category topic cannot be listed first.
 - Checked on a local production preview: Journey lists DevLab and career-copilot only; no links to unreviewed repositories except learn-turkish in Skills.
+- One private client repository reviewed (it stays private): README to the standard, renamed, settings set. Details only in `doc/private/repo-checklist-private.md`.
 - `src/data/skills.ts` still links the learn-turkish repository (Astro proof), which is not reviewed yet.
 
 ---

@@ -16,13 +16,13 @@ Private repositories are tracked in `doc/private/repo-checklist-private.md`, whi
 
 **On the site:** Journey lists only reviewed repositories (the `SHOWN` list in `scripts/fetch-repos.mjs`). The portfolio launches with the reviewed ones; each repository joins the list when its review is done, so the launch does not wait for all 43. Repositories marked *on site* are on the list.
 
-**Progress:** 3 of 43 done (34 own, 9 forks) · 2 on the site (DevLab, career-copilot).
+**Progress:** 4 of 43 done (34 own, 9 forks) · 3 on the site (DevLab, career-copilot, Rafiq-ai).
 
 ## Own repositories
 
 ### 2026
 
-- [ ] **Rafiq-ai** · 2026-10 · hackathon (Hack Day Istanbul); off the site until reviewed (milestone kept, repo link removed)
+- [x] ~~**Rafiq-ai**~~ · 2026-10 · hackathon (Hack Day Istanbul); archived · *on site* · done 22 Nov 2026
 - [ ] **brewhaus-practicum-learning-travel-agency** · 2026-10 · course assignment; hidden from Journey (D-c)
 - [x] ~~**career-copilot**~~ · 2026-07 · has a story page · *on site* · done 20 Nov 2026
 - [ ] **Software-Engineering-Resources** · 2026-05
