@@ -11,6 +11,7 @@ const SHOWN = new Set([
   "DevLab",
   "career-copilot",
   "Rafiq-ai",
+  "brewhaus-practicum-learning-travel-agency",
 ]);
 
 async function main() {

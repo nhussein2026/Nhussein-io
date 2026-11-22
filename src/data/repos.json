@@ -1,5 +1,23 @@
 [
   {
+    "name": "brewhaus-practicum-learning-travel-agency",
+    "description": "Bilingual (English/Turkish) tour booking site with React, Express, Postgres, auth and Stripe Checkout, built in the BrewHaus Practicum.",
+    "topics": [
+      "drizzle-orm",
+      "express",
+      "postgresql",
+      "react",
+      "stripe",
+      "tailwindcss",
+      "university-project"
+    ],
+    "language": "JavaScript",
+    "year": 2026,
+    "url": "https://github.com/nhussein2026/brewhaus-practicum-learning-travel-agency",
+    "homepage": null,
+    "archived": false
+  },
+  {
     "name": "career-copilot",
     "description": "A set of 16 Claude Code skills that guide a job search from start to finish, from the master profile and CV to interviews and offers.",
     "topics": [
@@ -15,6 +33,23 @@
     "url": "https://github.com/nhussein2026/career-copilot",
     "homepage": null,
     "archived": false
+  },
+  {
+    "name": "Rafiq-ai",
+    "description": "Prototype Arabic/English AI companion that shares Islamic guidance only from verified sources (Hacktoberfest Hack Day Istanbul 2026).",
+    "topics": [
+      "ai-safety",
+      "gemini-api",
+      "hackathon",
+      "llm",
+      "python",
+      "streamlit"
+    ],
+    "language": "Python",
+    "year": 2026,
+    "url": "https://github.com/nhussein2026/Rafiq-ai",
+    "homepage": "https://rafiq-ai-elpr2wxpebscy9wrsbywom.streamlit.app/",
+    "archived": true
   },
   {
     "name": "DevLab",

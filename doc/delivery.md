@@ -16,9 +16,29 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-22 · brewhaus-practicum-learning-travel-agency review done
+
+**Delivered** (brewhaus-practicum-learning-travel-agency `main`, pushed as `ca662c2`)
+- History checked (43 commits): no secrets or `.env` files (only placeholders in `server/.env.example`), no real data. Reviews are labelled samples; the 12 photos are Wikimedia Commons (CC0 / CC BY / CC BY-SA), credited on `/credits`. Week 1 only linked Unsplash images.
+- `README.md` rewritten to the README Standard v1.1: Project Journey and Facts (BrewHaus Practicum, Oct – Nov 2026, solo; AI use: bilingual demo with Claude Code), status **Completed** (not deployed yet), technologies, how to run, structure, Learning, limitations, credits, all rights reserved.
+- Schema, auth, payments, API, setup, deployment and the week-by-week story moved word for word into `docs/architecture.md`, `docs/running-and-deployment.md` and `docs/development-story.md`.
+- The "pitch to a real agency… negotiating" sentence softened to "to show a regional tour agency what a modern site could look like". The old claim that both parts are live was removed.
+- GitHub: description set, topics `university-project` + react, express, postgresql, stripe, tailwindcss, drizzle-orm; wiki off; no website yet.
+
+**Updated**
+- `scripts/fetch-repos.mjs`: brewhaus-practicum-learning-travel-agency added to `SHOWN`.
+- `doc/repo-checklist.md`: done, *on site*; 5 of 43.
+- `doc/questions.md`: D-c answered for this repository (shown); the other three assignments stay hidden.
+
+**Notes**
+- Commits carry my old email as author; not rewritten (same as DevLab).
+- Follow-up when deployed: replace the `YOUR-RAILWAY-APP` placeholder in `client/vercel.json` and set the GitHub website.
+
+---
+
 ## 2026-11-22 · Rafiq-ai review done
 
-**Delivered** (Rafiq-ai `main`, pushed as `ed9ae49`, repository archived)
+**Delivered** (Rafiq-ai `main`, pushed as `ed9ae49` and `a08d84e` (English-only title), repository archived)
 - History checked: no secrets, `.env` files or real data. The removed `image.png` is a screenshot with the API key masked. 32 tests pass; Ruff clean.
 - `README.md` rewritten to the README Standard v1.1: version stamp, Project Journey and Facts (built this version at Hack Day Istanbul; team unnamed; AI use: Claude Code), status **Archived**, technologies, how to run, structure, Learning from `docs/retrospective.md`, limitations. All existing docs kept and linked.
 - Third-party content note moved from `LICENSE` to a new `NOTICE` file, so GitHub can recognise the MIT licence.

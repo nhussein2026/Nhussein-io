@@ -41,7 +41,7 @@ Since 20 Nov, Journey lists only reviewed repositories (the `SHOWN` list in `scr
 | --- | --- |
 | D-a | The **Hop repository** is private. Its story links to GitHub automatically once it is public. The CV links `github.com/nhussein2026/hop`, which shows visitors a 404 until then. |
 | D-b | Is `non-profit-association-backend/-frontend` (Feb 2025) the volunteer project you are keeping private? *Hidden for now.* |
-| D-c | Should course-assignment repositories (`ai-bootcamp-assignment-1`, `ai-local-agent-assignment-2`, `Assignment--3---AI-Agent-with-Tools`, `brewhaus-practicum-learning-travel-agency`) show on Journey? *Hidden for now.* |
+| D-c | Should course-assignment repositories (`ai-bootcamp-assignment-1`, `ai-local-agent-assignment-2`, `Assignment--3---AI-Agent-with-Tools`) show on Journey? *Hidden for now.* **`brewhaus-practicum-learning-travel-agency`: answered 22 Nov, shown after its README rewrite.** |
 | D-d | Should the Al Sharq Forum IT-support volunteering (on the CV) be a Journey milestone? *Not added.* |
 | D-e | Should the YOUTHINK Academy / Woz U certificate (2022) go on About or Journey? *Not added.* |
 
