@@ -12,6 +12,7 @@ const SHOWN = new Set([
   "career-copilot",
   "Rafiq-ai",
   "brewhaus-practicum-learning-travel-agency",
+  "quiz-managemnt-system",
 ]);
 
 async function main() {

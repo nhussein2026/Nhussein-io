@@ -69,7 +69,8 @@
   date: "2022-12"
   title: First Java project
   kind: project
-  line: A quiz management system, my first project outside coursework.
+  line: A quiz management system for students and teachers, my first university app.
+  link: https://github.com/nhussein2026/quiz-managemnt-system
 - id: bsc
   date: "2021-10"
   title: Started the B.Sc.

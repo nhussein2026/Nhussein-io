@@ -68,5 +68,20 @@
     "url": "https://github.com/nhussein2026/DevLab",
     "homepage": "https://devlab.nhussein.io",
     "archived": false
+  },
+  {
+    "name": "quiz-managemnt-system",
+    "description": "My first Java app: a Swing and MySQL quiz system for students and teachers, built for an OOP course (2022–23).",
+    "topics": [
+      "java",
+      "mysql",
+      "swing",
+      "university-project"
+    ],
+    "language": "Java",
+    "year": 2022,
+    "url": "https://github.com/nhussein2026/quiz-managemnt-system",
+    "homepage": null,
+    "archived": true
   }
 ]

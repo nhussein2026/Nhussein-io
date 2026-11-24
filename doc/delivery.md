@@ -16,6 +16,26 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-22 · quiz-managemnt-system review done
+
+**Delivered** (quiz-managemnt-system `main`, committed and pushed by me as `35cd1a7`)
+- My first Java repository (OOP course, Dec 2022 – Jan 2023), 43 commits. Code and history left unchanged on purpose.
+- History checked: no real data. The test database holds one test student (me), and the classes hold local-only database settings. Both are kept, as rewriting history would lose the original commits.
+- New `README.md` to the README Standard v1.1: built by hand before AI tools, status **Archived** (does not build as committed: 8 classes never added; grade query typo), Learning, honest limitations (plain-text passwords, SQL built from strings).
+- The March 2023 README's text and screenshots kept: saved into `docs/images/`, with a private project's schema name covered in the MySQL Workbench sidebar.
+- `quiz-management-system` (a March 2023 re-upload with only README commits) deleted; this repository renamed back from `quiz-managemnt-system-old` to its original name.
+
+**Updated**
+- `scripts/fetch-repos.mjs`: quiz-managemnt-system added to `SHOWN`.
+- `src/content/journey.yaml`: First Java project milestone reworded ("my first university app") and linked to the repository.
+- `doc/repo-checklist.md`: both quiz entries done (one deleted); 8 of 43.
+- `doc/questions.md`, `doc/delivery.md`: private repository names and a local-password mention removed (24 Nov).
+
+**Notes**
+- GitHub settings set 24 Nov: description, topics (`university-project`, `java`, `mysql`, `swing`), wiki off, archived. `src/data/repos.json` refreshed.
+
+---
+
 ## 2026-11-22 · brewhaus-practicum-learning-travel-agency review done
 
 **Delivered** (brewhaus-practicum-learning-travel-agency `main`, pushed as `ca662c2`)
