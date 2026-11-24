@@ -10,6 +10,9 @@ const OUT = new URL("../src/data/repos.json", import.meta.url);
 const SHOWN = new Set([
   "DevLab",
   "career-copilot",
+  "Rafiq-ai",
+  "brewhaus-practicum-learning-travel-agency",
+  "quiz-managemnt-system",
 ]);
 
 async function main() {

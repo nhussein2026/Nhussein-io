@@ -16,14 +16,14 @@ Private repositories are tracked in `doc/private/repo-checklist-private.md`, whi
 
 **On the site:** Journey lists only reviewed repositories (the `SHOWN` list in `scripts/fetch-repos.mjs`). The portfolio launches with the reviewed ones; each repository joins the list when its review is done, so the launch does not wait for all 43. Repositories marked *on site* are on the list.
 
-**Progress:** 3 of 43 done (34 own, 9 forks) · 2 on the site (DevLab, career-copilot).
+**Progress:** 8 of 43 done (34 own, 9 forks; 2 deleted) · 5 on the site (DevLab, career-copilot, Rafiq-ai, brewhaus-practicum-learning-travel-agency, quiz-managemnt-system).
 
 ## Own repositories
 
 ### 2026
 
-- [ ] **Rafiq-ai** · 2026-10 · hackathon (Hack Day Istanbul); off the site until reviewed (milestone kept, repo link removed)
-- [ ] **brewhaus-practicum-learning-travel-agency** · 2026-10 · course assignment; hidden from Journey (D-c)
+- [x] ~~**Rafiq-ai**~~ · 2026-10 · hackathon (Hack Day Istanbul); archived · *on site* · done 22 Nov 2026
+- [x] ~~**brewhaus-practicum-learning-travel-agency**~~ · 2026-10 · BrewHaus Practicum (Wanderly Travel) · *on site* · done 22 Nov 2026
 - [x] ~~**career-copilot**~~ · 2026-07 · has a story page · *on site* · done 20 Nov 2026
 - [ ] **Software-Engineering-Resources** · 2026-05
 - [ ] **Assignment--3---AI-Agent-with-Tools** · 2026-05 · course assignment; hidden from Journey (D-c)
@@ -61,11 +61,11 @@ Private repositories are tracked in `doc/private/repo-checklist-private.md`, whi
 - [ ] **Nhussein-io** · 2023-10 · this site; README follows the standard, the rest is open
 - [ ] **Nhussein-vite** · 2023-08
 - [ ] **wpcourse** · 2023-05
-- [ ] **quiz-management-system** · 2023-03 · "First Java project" milestone; repo link removed until reviewed
+- [x] ~~**quiz-management-system** · 2023-03 [deleted 22 Nov 2026: a re-upload of quiz-managemnt-system with only README commits; its README and screenshots moved there]~~
 
 ### 2022
 
-- [ ] **quiz-managemnt-system-old** · 2022-12
+- [x] ~~**quiz-managemnt-system**~~ · 2022-12 · first Java app (OOP course); renamed back from `-old`; archived; "First Java project" milestone · *on site* · done 22 Nov 2026
 - [ ] **Traveller** · 2022-10
 - [ ] **trip-dash** · 2022-10
 

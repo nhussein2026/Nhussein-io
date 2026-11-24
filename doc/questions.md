@@ -10,12 +10,12 @@ Written 17 Nov 2026 on the `v2` branch; first round of answers applied the same 
 | --- | --- | --- |
 | A1 | Hop's own history is the source of truth: first commit 15 Sep 2026, `v1.0.0` tagged 22 Oct 2026. | `hop.md` → `start: Sep 2026` |
 | A2 | Eskici ended before graduation (7 Jul 2025); exact month unknown. Start kept at Nov 2024. | `eskici.md` → `end: Jul 2025` |
-| A3 | The Safha story is **safha.dev**, your own Arabic developer blog: WordPress first (the `Safha-Theme` repository, Dec 2023), now Astro. | `safha.md` → role, team, start, "My part" |
+| A3 | The Safha story is **safha.dev**, your own Arabic developer blog: WordPress first (Dec 2023), now Astro. | `safha.md` → role, team, start, "My part" |
 | A4 | About now uses the LinkedIn About word for word. | `src/pages/about.astro` |
 
-**Check in A3:** I used Dec 2023 (when `Safha-Theme` was created) as the start, and "Creator and sole developer" as the role. Correct either if needed.
+**Check in A3:** I used Dec 2023 (when its first theme repository was created) as the start, and "Creator and sole developer" as the role. Correct either if needed.
 
-**The other Safha** (the full-stack certificate graduation project: a book-review community, React, Express, SQL and Sequelize, three people sharing the work equally) is not on the site. Its repositories (`Safha-api-*`, `Safha-Front-New`, the forks from the `Safha2022` organisation) are private. Decide after the repository review whether it gets a Journey line.
+**The other Safha** (the full-stack certificate graduation project: a book-review community, React, Express, SQL and Sequelize, three people sharing the work equally) is not on the site. Its repositories are private; their names are kept in `doc/private/`. Decide after the repository review whether it gets a Journey line.
 
 ## B. Wording
 
@@ -41,7 +41,7 @@ Since 20 Nov, Journey lists only reviewed repositories (the `SHOWN` list in `scr
 | --- | --- |
 | D-a | The **Hop repository** is private. Its story links to GitHub automatically once it is public. The CV links `github.com/nhussein2026/hop`, which shows visitors a 404 until then. |
 | D-b | Is `non-profit-association-backend/-frontend` (Feb 2025) the volunteer project you are keeping private? *Hidden for now.* |
-| D-c | Should course-assignment repositories (`ai-bootcamp-assignment-1`, `ai-local-agent-assignment-2`, `Assignment--3---AI-Agent-with-Tools`, `brewhaus-practicum-learning-travel-agency`) show on Journey? *Hidden for now.* |
+| D-c | Should course-assignment repositories (`ai-bootcamp-assignment-1`, `ai-local-agent-assignment-2`, `Assignment--3---AI-Agent-with-Tools`) show on Journey? *Hidden for now.* **`brewhaus-practicum-learning-travel-agency`: answered 22 Nov, shown after its README rewrite.** |
 | D-d | Should the Al Sharq Forum IT-support volunteering (on the CV) be a Journey milestone? *Not added.* |
 | D-e | Should the YOUTHINK Academy / Woz U certificate (2022) go on About or Journey? *Not added.* |
 

@@ -16,6 +16,64 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 
 ---
 
+## 2026-11-22 · quiz-managemnt-system review done
+
+**Delivered** (quiz-managemnt-system `main`, committed and pushed by me as `35cd1a7`)
+- My first Java repository (OOP course, Dec 2022 – Jan 2023), 43 commits. Code and history left unchanged on purpose.
+- History checked: no real data. The test database holds one test student (me), and the classes hold local-only database settings. Both are kept, as rewriting history would lose the original commits.
+- New `README.md` to the README Standard v1.1: built by hand before AI tools, status **Archived** (does not build as committed: 8 classes never added; grade query typo), Learning, honest limitations (plain-text passwords, SQL built from strings).
+- The March 2023 README's text and screenshots kept: saved into `docs/images/`, with a private project's schema name covered in the MySQL Workbench sidebar.
+- `quiz-management-system` (a March 2023 re-upload with only README commits) deleted; this repository renamed back from `quiz-managemnt-system-old` to its original name.
+
+**Updated**
+- `scripts/fetch-repos.mjs`: quiz-managemnt-system added to `SHOWN`.
+- `src/content/journey.yaml`: First Java project milestone reworded ("my first university app") and linked to the repository.
+- `doc/repo-checklist.md`: both quiz entries done (one deleted); 8 of 43.
+- `doc/questions.md`, `doc/delivery.md`: private repository names and a local-password mention removed (24 Nov).
+
+**Notes**
+- GitHub settings set 24 Nov: description, topics (`university-project`, `java`, `mysql`, `swing`), wiki off, archived. `src/data/repos.json` refreshed.
+
+---
+
+## 2026-11-22 · brewhaus-practicum-learning-travel-agency review done
+
+**Delivered** (brewhaus-practicum-learning-travel-agency `main`, pushed as `ca662c2`)
+- History checked (43 commits): no secrets or `.env` files (only placeholders in `server/.env.example`), no real data. Reviews are labelled samples; the 12 photos are Wikimedia Commons (CC0 / CC BY / CC BY-SA), credited on `/credits`. Week 1 only linked Unsplash images.
+- `README.md` rewritten to the README Standard v1.1: Project Journey and Facts (BrewHaus Practicum, Oct – Nov 2026, solo; AI use: bilingual demo with Claude Code), status **Completed** (not deployed yet), technologies, how to run, structure, Learning, limitations, credits, all rights reserved.
+- Schema, auth, payments, API, setup, deployment and the week-by-week story moved word for word into `docs/architecture.md`, `docs/running-and-deployment.md` and `docs/development-story.md`.
+- The "pitch to a real agency… negotiating" sentence softened to "to show a regional tour agency what a modern site could look like". The old claim that both parts are live was removed.
+- GitHub: description set, topics `university-project` + react, express, postgresql, stripe, tailwindcss, drizzle-orm; wiki off; no website yet.
+
+**Updated**
+- `scripts/fetch-repos.mjs`: brewhaus-practicum-learning-travel-agency added to `SHOWN`.
+- `doc/repo-checklist.md`: done, *on site*; 5 of 43.
+- `doc/questions.md`: D-c answered for this repository (shown); the other three assignments stay hidden.
+
+**Notes**
+- Commits carry my old email as author; not rewritten (same as DevLab).
+- Follow-up when deployed: replace the `YOUR-RAILWAY-APP` placeholder in `client/vercel.json` and set the GitHub website.
+
+---
+
+## 2026-11-22 · Rafiq-ai review done
+
+**Delivered** (Rafiq-ai `main`, pushed as `ed9ae49` and `a08d84e` (English-only title), repository archived)
+- History checked: no secrets, `.env` files or real data. The removed `image.png` is a screenshot with the API key masked. 32 tests pass; Ruff clean.
+- `README.md` rewritten to the README Standard v1.1: version stamp, Project Journey and Facts (built this version at Hack Day Istanbul; team unnamed; AI use: Claude Code), status **Archived**, technologies, how to run, structure, Learning from `docs/retrospective.md`, limitations. All existing docs kept and linked.
+- Third-party content note moved from `LICENSE` to a new `NOTICE` file, so GitHub can recognise the MIT licence.
+
+**Updated** (this repository, `v2-design`)
+- `scripts/fetch-repos.mjs`: Rafiq-ai added to `SHOWN`.
+- `src/content/journey.yaml`: the Hack Day milestone links the Rafiq-ai repository again.
+- `doc/repo-checklist.md`: Rafiq-ai done, *on site*; 4 of 43.
+
+**Notes**
+- GitHub settings set before archiving: one-sentence description; topics `hackathon`, `python`, `streamlit`, `gemini-api`, `llm`, `ai-safety`. GitHub now recognises the licence as MIT. Repository archived (read-only).
+- 11 commits carry my old email as author; not rewritten (same as DevLab).
+
+---
+
 ## 2026-11-20 · Launch with reviewed repositories only
 
 **Decision:** the portfolio launches without waiting for every repository review. Journey lists only reviewed repositories; each one joins as its review is done.
@@ -34,6 +92,7 @@ Each entry: date, version or branch, then **Delivered**, **Updated** (changes to
 - To confirm: the Project Journey reason (AI tools make up claims) comes from the story page; the AI-use line comes from the Claude co-author lines in the commits.
 - career-copilot GitHub settings set: one-sentence description matching the Overview; topics `personal-project`, `claude-code`, `claude-code-plugin`, `claude-skills`, `job-search`, `resume`. GitHub sorts topics alphabetically, so the category topic cannot be listed first.
 - Checked on a local production preview: Journey lists DevLab and career-copilot only; no links to unreviewed repositories except learn-turkish in Skills.
+- One private client repository reviewed (it stays private): README to the standard, renamed, settings set. Details only in `doc/private/repo-checklist-private.md`.
 - `src/data/skills.ts` still links the learn-turkish repository (Astro proof), which is not reviewed yet.
 
 ---
